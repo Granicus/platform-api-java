@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a189aa48-c605-44da-be9b-337d12caab4d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/granicus/soap/PlatformClientTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platform-api-java.iml" afterPath="$PROJECT_DIR$/platform-api-java.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/granicus/soap/PlatformClient.java" afterPath="$PROJECT_DIR$/src/com/granicus/soap/PlatformClient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/granicus/soap/PlatformClientTest.java" afterPath="$PROJECT_DIR$/src/com/granicus/soap/PlatformClientTest.java" />
     </list>
     <ignored path="platform-api-java.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,19 +72,30 @@
       <file leaf-file-name="PlatformClient.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/granicus/soap/PlatformClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="27" selection-start="2642" selection-end="2642" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="14" column="12" selection-start="340" selection-end="340" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlatformClientTest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PlatformClientTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/granicus/soap/PlatformClientTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="97" selection-start="1120" selection-end="1120" vertical-scroll-proportion="0.63265306">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="43" selection-start="1285" selection-end="1285" vertical-scroll-proportion="0.63114756">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -132,12 +140,13 @@
         <option value="$PROJECT_DIR$/src/com/granicus/soap/Client.java" />
         <option value="$PROJECT_DIR$/src/com/granicus/soap/PlatformClient.java" />
         <option value="$PROJECT_DIR$/src/com/granicus/soap/PlatformClientTest.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="134" />
-    <option name="y" value="32" />
+    <option name="x" value="151" />
+    <option name="y" value="174" />
     <option name="width" value="1479" />
     <option name="height" value="892" />
   </component>
@@ -464,8 +473,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="134" y="32" width="1479" height="892" extended-state="0" />
-    <editor active="false" />
+    <frame x="151" y="174" width="1479" height="892" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -480,8 +489,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25856045" sideWeight="0.67055774" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3294423" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25856045" sideWeight="0.538262" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.461738" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -570,15 +579,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/granicus/soap/PlatformClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="27" selection-start="2642" selection-end="2642" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/granicus/soap/UserSDKServiceLocator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="76" selection-start="883" selection-end="1007" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/granicus/soap/PlatformClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="12" selection-start="340" selection-end="340" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/granicus/soap/PlatformClientTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -587,12 +609,10 @@
         <state line="16" column="51" selection-start="517" selection-end="517" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/granicus/soap/PlatformClientTest.java">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="97" selection-start="1120" selection-end="1120" vertical-scroll-proportion="0.63265306">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="28" column="43" selection-start="1285" selection-end="1285" vertical-scroll-proportion="0.63114756">
+          <folding />
         </state>
       </provider>
     </entry>

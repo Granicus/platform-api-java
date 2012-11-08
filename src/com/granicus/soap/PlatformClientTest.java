@@ -1,5 +1,6 @@
 package com.granicus.soap;
 
+import com.granicus.xsd.FolderData;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -25,6 +26,7 @@ public class PlatformClientTest {
         password = System.getenv("GRANICUS_PASSWORD");
         host = System.getenv("GRANICUS_HOST");
         client = new PlatformClient(host);
+        client.login(username,password);
     }
 
     @After
@@ -34,16 +36,24 @@ public class PlatformClientTest {
 
     @Test
     public void testLogin() throws Exception {
-        client.login(username, password);
         Assert.assertEquals(username.toLowerCase(), client.getCurrentUserLogon().toLowerCase());
     }
 
     @Test
     public void testImpersonation() throws Exception {
-        client.login(username,password);
         PlatformClient client2 = new PlatformClient(host);
         client2.setToken(client.getToken());
         Assert.assertEquals(username.toLowerCase(), client.getCurrentUserLogon().toLowerCase());
+    }
+
+    @Test
+    public void testGetFolders() throws Exception {
+        FolderData[] folders = client.getFolders();
+        for(FolderData folder : folders)
+        {
+            System.out.println(folder.getName());
+        }
+        Assert.assertNotSame(0, folders.length);
     }
 
 }
