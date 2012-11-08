@@ -3,6 +3,7 @@ package com.granicus.soap;
 import org.apache.axis.AxisFault;
 import java.net.MalformedURLException;
 import java.rmi.RemoteException;
+import java.security.PublicKey;
 import javax.xml.soap.*;
 import org.apache.axis.*;
 import org.apache.axis.client.*;
@@ -17,16 +18,54 @@ import org.apache.axis.transport.http.*;
  */
 public class PlatformClient extends UserSDKBindingStub {
 
-    public PlatformClient(String site, String username, String password) throws AxisFault, MalformedURLException, RemoteException {
+    // The WSDD service name defaults to the port name.
+    private String SessionCookieKey = "SESS1";
+
+    public PlatformClient(String site) throws AxisFault, MalformedURLException
+    {
         // construct ourselves using a new locator and a url endpoint
         super(new UserSDKServiceLocator());
         super.setPortName(((UserSDKServiceLocator) super.service).getUserSDKPortWSDDServiceName());
         super.cachedEndpoint = new java.net.URL("http://" + site + "/SDK/user/index.php");
+    }
+
+    public PlatformClient(String site, String token) throws AxisFault, MalformedURLException
+    {
+        this(site);
+
+        setToken(token);
+    }
+
+
+    public PlatformClient(String site, String username, String password) throws AxisFault, MalformedURLException, RemoteException {
+        this(site);
 
         // login to the given granicus site
         this.login(username, password);
+    }
 
-        // get the cookie from the response and assign it to our cookie container
+    public void login(String username, String password) throws AxisFault, RemoteException {
+         super.login(username, password);
+
+         String cookie = getCookiesFromResponse();
+
+         setCookie(cookie);
+    }
+
+    public void setToken(String token)
+    {
+        setCookie(SessionCookieKey + "=" + token + ";");
+    }
+
+    public void setCookie(String cookie)
+    {
+        ((Stub) this)._setProperty(Call.SESSION_MAINTAIN_PROPERTY, new Boolean(true));
+        ((Stub) this)._setProperty(HTTPConstants.HEADER_COOKIE, cookie);
+    }
+
+    public String getCookiesFromResponse()
+    {
+        // get the cookie from the response and return it
         MessageContext context = ((Stub) this)._getCall().getMessageContext();
         SOAPMessage message = context.getMessage();
         MimeHeaders headers = message.getMimeHeaders();
@@ -41,7 +80,6 @@ public class PlatformClient extends UserSDKBindingStub {
                 cookie = cookie.concat(";");
             }
         }
-        ((Stub) this)._setProperty(Call.SESSION_MAINTAIN_PROPERTY, new Boolean(true));
-        ((Stub) this)._setProperty(HTTPConstants.HEADER_COOKIE, cookie);
+        return cookie;
     }
 }
