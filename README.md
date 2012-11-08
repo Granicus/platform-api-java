@@ -14,8 +14,8 @@ In order to start using this SDK, simply add the platform-api-java.jar to your c
 namespaces: com.granicus.soap and com.granicus.xsd. To make things simple, we recommend importing both of these
 namespaces:
 
-    import com.granicus.soap;
-    import com.granicus.xsd;
+    import com.granicus.soap.*;
+    import com.granicus.xsd.*;
 
 
 com.granicus.soap is where you will find the PlatformClient class that you'll need for executing SOAP calls against the
