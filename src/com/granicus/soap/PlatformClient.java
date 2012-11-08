@@ -3,7 +3,6 @@ package com.granicus.soap;
 import org.apache.axis.AxisFault;
 import java.net.MalformedURLException;
 import java.rmi.RemoteException;
-import java.security.PublicKey;
 import javax.xml.soap.*;
 import org.apache.axis.*;
 import org.apache.axis.client.*;
@@ -19,7 +18,7 @@ import org.apache.axis.transport.http.*;
 public class PlatformClient extends UserSDKBindingStub {
 
     // The WSDD service name defaults to the port name.
-    private String SessionCookieKey = "SESS1";
+    private String SessionCookieKey = "PHPSESSID";
 
     public PlatformClient(String site) throws AxisFault, MalformedURLException
     {
@@ -35,7 +34,6 @@ public class PlatformClient extends UserSDKBindingStub {
 
         setToken(token);
     }
-
 
     public PlatformClient(String site, String username, String password) throws AxisFault, MalformedURLException, RemoteException {
         this(site);
@@ -55,6 +53,22 @@ public class PlatformClient extends UserSDKBindingStub {
     public void setToken(String token)
     {
         setCookie(SessionCookieKey + "=" + token + ";");
+    }
+
+    public String getToken()
+    {
+        String cookie = (String) ((Stub) this)._getProperty(HTTPConstants.HEADER_COOKIE);
+        String[] cookies = cookie.split(";");
+
+        for(int i = 0; i < cookies.length; i++)
+        {
+            String[] parts = cookies[i].split("=");
+            if(parts[0].equals(SessionCookieKey))
+            {
+                return parts[1];
+            }
+        }
+        return null;
     }
 
     public void setCookie(String cookie)
