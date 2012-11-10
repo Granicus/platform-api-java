@@ -7,8 +7,6 @@ import javax.xml.soap.*;
 import org.apache.axis.*;
 import org.apache.axis.client.*;
 import org.apache.axis.transport.http.*;
-import javax.activation.DataHandler;
-import javax.mail.internet.MimeMultipart;
 
 /**
  * Created with IntelliJ IDEA.
