@@ -1,5 +1,6 @@
 package com.granicus.soap;
 
+import com.granicus.xsd.EventData;
 import com.granicus.xsd.FolderData;
 import org.junit.After;
 import org.junit.Assert;
@@ -54,6 +55,22 @@ public class PlatformClientTest {
             System.out.println(folder.getName());
         }
         Assert.assertNotSame(0, folders.length);
+    }
+    @Test
+    public void testGetEvents() throws Exception {
+        EventData[] events = client.getEvents();
+        for(EventData event : events)
+        {
+            System.out.println(event.getName());
+        }
+        Assert.assertNotSame(0, events.length);
+    }
+
+    @Test
+    public void testGetEvent() throws Exception {
+        EventData[] events = client.getEvents();
+        EventData event = client.getEvent(events[0].getID());
+        Assert.assertEquals(event,events[0]);
     }
 
 }

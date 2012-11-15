@@ -1,7 +1,7 @@
 #! /bin/bash
 
 CP="."
-for JAR in `ls lib/*.jar`; do
+for JAR in `ls ../lib/*.jar`; do
         CP="$CP:$JAR"
 done
 #echo "classpath = $CP"

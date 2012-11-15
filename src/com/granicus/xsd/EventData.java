@@ -66,6 +66,10 @@ public class EventData  implements java.io.Serializable {
 
     private int agendaRolloverID;
 
+    private boolean commentEnabled;
+
+    private int commentCloseOffset;
+
     public EventData() {
     }
 
@@ -98,7 +102,9 @@ public class EventData  implements java.io.Serializable {
            java.util.Calendar meetingTime,
            java.util.Calendar agendaPostedDate,
            java.util.Calendar nextStartDate,
-           int agendaRolloverID) {
+           int agendaRolloverID,
+           boolean commentEnabled,
+           int commentCloseOffset) {
            this.ID = ID;
            this.UID = UID;
            this.foreignID = foreignID;
@@ -128,6 +134,8 @@ public class EventData  implements java.io.Serializable {
            this.agendaPostedDate = agendaPostedDate;
            this.nextStartDate = nextStartDate;
            this.agendaRolloverID = agendaRolloverID;
+           this.commentEnabled = commentEnabled;
+           this.commentCloseOffset = commentCloseOffset;
     }
 
 
@@ -710,6 +718,46 @@ public class EventData  implements java.io.Serializable {
         this.agendaRolloverID = agendaRolloverID;
     }
 
+
+    /**
+     * Gets the commentEnabled value for this EventData.
+     * 
+     * @return commentEnabled
+     */
+    public boolean isCommentEnabled() {
+        return commentEnabled;
+    }
+
+
+    /**
+     * Sets the commentEnabled value for this EventData.
+     * 
+     * @param commentEnabled
+     */
+    public void setCommentEnabled(boolean commentEnabled) {
+        this.commentEnabled = commentEnabled;
+    }
+
+
+    /**
+     * Gets the commentCloseOffset value for this EventData.
+     * 
+     * @return commentCloseOffset
+     */
+    public int getCommentCloseOffset() {
+        return commentCloseOffset;
+    }
+
+
+    /**
+     * Sets the commentCloseOffset value for this EventData.
+     * 
+     * @param commentCloseOffset
+     */
+    public void setCommentCloseOffset(int commentCloseOffset) {
+        this.commentCloseOffset = commentCloseOffset;
+    }
+
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof EventData)) return false;
@@ -788,7 +836,9 @@ public class EventData  implements java.io.Serializable {
             ((this.nextStartDate==null && other.getNextStartDate()==null) || 
              (this.nextStartDate!=null &&
               this.nextStartDate.equals(other.getNextStartDate()))) &&
-            this.agendaRolloverID == other.getAgendaRolloverID();
+            this.agendaRolloverID == other.getAgendaRolloverID() &&
+            this.commentEnabled == other.isCommentEnabled() &&
+            this.commentCloseOffset == other.getCommentCloseOffset();
         __equalsCalc = null;
         return _equals;
     }
@@ -883,6 +933,8 @@ public class EventData  implements java.io.Serializable {
             _hashCode += getNextStartDate().hashCode();
         }
         _hashCode += getAgendaRolloverID();
+        _hashCode += (isCommentEnabled() ? Boolean.TRUE : Boolean.FALSE).hashCode();
+        _hashCode += getCommentCloseOffset();
         __hashCodeCalc = false;
         return _hashCode;
     }
@@ -1064,6 +1116,18 @@ public class EventData  implements java.io.Serializable {
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("agendaRolloverID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "AgendaRolloverID"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("commentEnabled");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "CommentEnabled"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("commentCloseOffset");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "CommentCloseOffset"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

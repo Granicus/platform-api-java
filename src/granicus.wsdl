@@ -32,6 +32,8 @@
 <element name="AgendaPostedDate" type="xsd:dateTime" />
 <element name="NextStartDate" type="xsd:dateTime" />
 <element name="AgendaRolloverID" type="xsd:int" />
+<element name="CommentEnabled" type="xsd:boolean"/>
+<element name="CommentCloseOffset" type="xsd:int"/>
 </all>
 </complexType>
 <complexType name="FolderData">
