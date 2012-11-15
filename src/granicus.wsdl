@@ -158,6 +158,7 @@
 <element name="Name" type="xsd:string" />
 <element name="TimeStamp" type="xsd:int" />
 <element name="OrderID" type="xsd:int" />
+<element name="AllowComment" type="xsd:boolean"/>
 <element name="Payload" type="xsd:anyType" />
 <element name="Children" type="ns5:MetaDataDataCollection" />
 </all>

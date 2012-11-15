@@ -5,4 +5,4 @@ for JAR in `ls ../lib/*.jar`; do
         CP="$CP:$JAR"
 done
 #echo "classpath = $CP"
-java -cp $CP org.apache.axis.wsdl.WSDL2Java $@
+java -cp $CP org.apache.axis.wsdl.WSDL2Java granicus.wsdl

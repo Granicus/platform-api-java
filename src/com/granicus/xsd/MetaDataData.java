@@ -26,6 +26,8 @@ public class MetaDataData  implements java.io.Serializable {
 
     private int orderID;
 
+    private boolean allowComment;
+
     private java.lang.Object payload;
 
     private com.granicus.xsd.MetaDataData[] children;
@@ -43,6 +45,7 @@ public class MetaDataData  implements java.io.Serializable {
            java.lang.String name,
            int timeStamp,
            int orderID,
+           boolean allowComment,
            java.lang.Object payload,
            com.granicus.xsd.MetaDataData[] children) {
            this.ID = ID;
@@ -54,6 +57,7 @@ public class MetaDataData  implements java.io.Serializable {
            this.name = name;
            this.timeStamp = timeStamp;
            this.orderID = orderID;
+           this.allowComment = allowComment;
            this.payload = payload;
            this.children = children;
     }
@@ -240,6 +244,26 @@ public class MetaDataData  implements java.io.Serializable {
 
 
     /**
+     * Gets the allowComment value for this MetaDataData.
+     * 
+     * @return allowComment
+     */
+    public boolean isAllowComment() {
+        return allowComment;
+    }
+
+
+    /**
+     * Sets the allowComment value for this MetaDataData.
+     * 
+     * @param allowComment
+     */
+    public void setAllowComment(boolean allowComment) {
+        this.allowComment = allowComment;
+    }
+
+
+    /**
      * Gets the payload value for this MetaDataData.
      * 
      * @return payload
@@ -305,6 +329,7 @@ public class MetaDataData  implements java.io.Serializable {
               this.name.equals(other.getName()))) &&
             this.timeStamp == other.getTimeStamp() &&
             this.orderID == other.getOrderID() &&
+            this.allowComment == other.isAllowComment() &&
             ((this.payload==null && other.getPayload()==null) || 
              (this.payload!=null &&
               this.payload.equals(other.getPayload()))) &&
@@ -337,6 +362,7 @@ public class MetaDataData  implements java.io.Serializable {
         }
         _hashCode += getTimeStamp();
         _hashCode += getOrderID();
+        _hashCode += (isAllowComment() ? Boolean.TRUE : Boolean.FALSE).hashCode();
         if (getPayload() != null) {
             _hashCode += getPayload().hashCode();
         }
@@ -413,6 +439,12 @@ public class MetaDataData  implements java.io.Serializable {
         elemField.setFieldName("orderID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "OrderID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("allowComment");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "AllowComment"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
