@@ -2,6 +2,7 @@ package com.granicus.soap;
 
 import com.granicus.xsd.EventData;
 import com.granicus.xsd.FolderData;
+import com.granicus.xsd.MetaDataData;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -71,6 +72,12 @@ public class PlatformClientTest {
         EventData[] events = client.getEvents();
         EventData event = client.getEvent(events[0].getID());
         Assert.assertEquals(event,events[0]);
+    }
+
+    @Test
+    public void testGetEventMetaData() throws Exception {
+        EventData[] events = client.getEvents();
+        MetaDataData[] meta = client.getEventMetaData(events[0].getID());
     }
 
 }
