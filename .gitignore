@@ -1,0 +1,15 @@
+out/
+.idea/
+.idea/*
+.idea/copyright/*
+.idea/scopes/*
+*.iml
+*.ipr
+*.iws
+*.class
+
+# Package Files #
+*.war
+*.ear
+
+.DS_Store
