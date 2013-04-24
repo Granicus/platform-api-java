@@ -149,18 +149,18 @@
 </complexType>
 <complexType name="MetaDataData">
 <all>
-<element name="ID" type="xsd:int" />
-<element name="UID" type="xsd:string" />
-<element name="ParentID" type="xsd:int" />
-<element name="ParentUID" type="xsd:string" />
-<element name="ForeignID" type="xsd:int" />
-<element name="SourceID" type="xsd:int" />
+<element name="ID" type="xsd:int" nillable="true" minOccurs="0" />
+<element name="UID" type="xsd:string" nillable="true" minOccurs="0" />
+<element name="ParentID" type="xsd:int" nillable="true" minOccurs="0" />
+<element name="ParentUID" type="xsd:string" nillable="true" minOccurs="0" />
+<element name="ForeignID" type="xsd:int" nillable="true" minOccurs="0" />
+<element name="SourceID" type="xsd:int" nillable="true" minOccurs="0" />
 <element name="Name" type="xsd:string" />
-<element name="TimeStamp" type="xsd:int" />
-<element name="OrderID" type="xsd:int" />
-<element name="AllowComment" type="xsd:boolean"/>
+<element name="TimeStamp" type="xsd:int" nillable="true" minOccurs="0" />
+<element name="OrderID" type="xsd:int" nillable="true" minOccurs="0" />
+<element name="AllowComment" type="xsd:boolean" nillable="true" minOccurs="0"/>
 <element name="Payload" type="xsd:anyType" />
-<element name="Children" type="ns5:MetaDataDataCollection" />
+<element name="Children" type="ns5:MetaDataDataCollection" nillable="true" minOccurs="0" />
 </all>
 </complexType>
 <complexType name="CaptionData">
@@ -203,8 +203,8 @@
 </complexType>
 <complexType name="AgendaItem">
 <all>
-<element name="Department" type="xsd:string" />
-<element name="Actions" type="xsd:string" />
+<element name="Department" type="xsd:string" nillable="true" minOccurs="0" />
+<element name="Actions" type="xsd:string" nillable="true" minOccurs="0" />
 </all>
 </complexType>
 <complexType name="PracticeQuestion">
