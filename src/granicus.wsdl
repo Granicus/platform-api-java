@@ -3,37 +3,37 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://granicus.com/xsd">
 <complexType name="EventData">
 <all>
-<element name="ID" type="xsd:int" />
-<element name="UID" type="xsd:string" />
-<element name="ForeignID" type="xsd:int" />
+<element name="ID" type="xsd:int" nillable="true" minOccurs="0"/>
+<element name="UID" type="xsd:string" nillable="true" minOccurs="0"/>
+<element name="ForeignID" type="xsd:int" nillable="true" minOccurs="0"/>
 <element name="Name" type="xsd:string" />
 <element name="CameraID" type="xsd:int" />
 <element name="FolderID" type="xsd:int" />
-<element name="Status" type="xsd:string" />
-<element name="AgendaType" type="xsd:string" />
-<element name="AgendaFile" type="xsd:string" />
+<element name="Status" type="xsd:string"  nillable="true" minOccurs="0"/>
+<element name="AgendaType" type="xsd:string" nillable="true" minOccurs="0"/>
+<element name="AgendaFile" type="xsd:string" nillable="true" minOccurs="0" />
 <element name="PlayerTemplateID" type="xsd:int" />
-<element name="ArchiveStatus" type="xsd:string" />
+<element name="ArchiveStatus" type="xsd:string" nillable="true" minOccurs="0" />
 <element name="Duration" type="xsd:int" />
-<element name="Broadcast" type="xsd:boolean" />
-<element name="Record" type="xsd:boolean" />
-<element name="AutoStart" type="xsd:boolean" />
+<element name="Broadcast" type="xsd:boolean" nillable="true" minOccurs="0" />
+<element name="Record" type="xsd:boolean" nillable="true" minOccurs="0" />
+<element name="AutoStart" type="xsd:boolean" nillable="true" minOccurs="0" />
 <element name="StartTime" type="xsd:dateTime" />
-<element name="LastModified" type="xsd:dateTime" />
-<element name="Attendees" type="ns5:AttendeeCollection" />
-<element name="MotionTypes" type="ns5:StringCollection" />
-<element name="Street1" type="xsd:string" />
-<element name="Street2" type="xsd:string" />
-<element name="City" type="xsd:string" />
-<element name="State" type="xsd:string" />
-<element name="Zip" type="xsd:string" />
-<element name="AgendaTitle" type="xsd:string" />
-<element name="MeetingTime" type="xsd:dateTime" />
-<element name="AgendaPostedDate" type="xsd:dateTime" />
-<element name="NextStartDate" type="xsd:dateTime" />
-<element name="AgendaRolloverID" type="xsd:int" />
-<element name="CommentEnabled" type="xsd:boolean"/>
-<element name="CommentCloseOffset" type="xsd:int"/>
+<element name="LastModified" type="xsd:dateTime" nillable="true" minOccurs="0" />
+<element name="Attendees" type="ns5:AttendeeCollection" nillable="true" minOccurs="0" />
+<element name="MotionTypes" type="ns5:StringCollection" nillable="true" minOccurs="0" />
+<element name="Street1" type="xsd:string" nillable="true" minOccurs="0" />
+<element name="Street2" type="xsd:string" nillable="true" minOccurs="0" />
+<element name="City" type="xsd:string" nillable="true" minOccurs="0" />
+<element name="State" type="xsd:string" nillable="true" minOccurs="0" />
+<element name="Zip" type="xsd:string" nillable="true" minOccurs="0" />
+<element name="AgendaTitle" type="xsd:string" nillable="true" minOccurs="0" />
+<element name="MeetingTime" type="xsd:dateTime" nillable="true" minOccurs="0" />
+<element name="AgendaPostedDate" type="xsd:dateTime" nillable="true" minOccurs="0" />
+<element name="NextStartDate" type="xsd:dateTime" nillable="true" minOccurs="0" />
+<element name="AgendaRolloverID" type="xsd:int" nillable="true" minOccurs="0" />
+<element name="CommentEnabled" type="xsd:boolean" nillable="true" minOccurs="0"/>
+<element name="CommentCloseOffset" type="xsd:int" nillable="true" minOccurs="0"/>
 </all>
 </complexType>
 <complexType name="FolderData">
