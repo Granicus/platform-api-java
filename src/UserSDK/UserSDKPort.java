@@ -97,4 +97,7 @@ public interface UserSDKPort extends java.rmi.Remote {
     public int getPermissionLevel(java.lang.String assetType, int assetID) throws java.rmi.RemoteException;
     public void createClipGeneratedMinutesDocument(java.lang.String clipUid, java.lang.String name, java.lang.String templateUid, boolean isPublished, boolean isDefault) throws java.rmi.RemoteException;
     public com.granicus.xsd.Setting[] getSettings() throws java.rmi.RemoteException;
+    public void createMotionActions(java.lang.String[] motionActions) throws java.rmi.RemoteException;
+    public void createAttendees(com.granicus.xsd.Attendee[] attendeesData) throws java.rmi.RemoteException;
+    public java.lang.String[] getMotionActions() throws java.rmi.RemoteException;
 }

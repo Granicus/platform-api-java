@@ -14,9 +14,9 @@ public class MinutesDocumentData  implements java.io.Serializable {
 
     private java.lang.String type;
 
-    private boolean published;
+    private java.lang.Boolean published;
 
-    private boolean _default;
+    private java.lang.Boolean _default;
 
     public MinutesDocumentData() {
     }
@@ -25,8 +25,8 @@ public class MinutesDocumentData  implements java.io.Serializable {
            java.lang.String UID,
            java.lang.String name,
            java.lang.String type,
-           boolean published,
-           boolean _default) {
+           java.lang.Boolean published,
+           java.lang.Boolean _default) {
            this.UID = UID;
            this.name = name;
            this.type = type;
@@ -100,7 +100,7 @@ public class MinutesDocumentData  implements java.io.Serializable {
      * 
      * @return published
      */
-    public boolean isPublished() {
+    public java.lang.Boolean getPublished() {
         return published;
     }
 
@@ -110,7 +110,7 @@ public class MinutesDocumentData  implements java.io.Serializable {
      * 
      * @param published
      */
-    public void setPublished(boolean published) {
+    public void setPublished(java.lang.Boolean published) {
         this.published = published;
     }
 
@@ -120,7 +120,7 @@ public class MinutesDocumentData  implements java.io.Serializable {
      * 
      * @return _default
      */
-    public boolean is_default() {
+    public java.lang.Boolean get_default() {
         return _default;
     }
 
@@ -130,7 +130,7 @@ public class MinutesDocumentData  implements java.io.Serializable {
      * 
      * @param _default
      */
-    public void set_default(boolean _default) {
+    public void set_default(java.lang.Boolean _default) {
         this._default = _default;
     }
 
@@ -155,8 +155,12 @@ public class MinutesDocumentData  implements java.io.Serializable {
             ((this.type==null && other.getType()==null) || 
              (this.type!=null &&
               this.type.equals(other.getType()))) &&
-            this.published == other.isPublished() &&
-            this._default == other.is_default();
+            ((this.published==null && other.getPublished()==null) || 
+             (this.published!=null &&
+              this.published.equals(other.getPublished()))) &&
+            ((this._default==null && other.get_default()==null) || 
+             (this._default!=null &&
+              this._default.equals(other.get_default())));
         __equalsCalc = null;
         return _equals;
     }
@@ -177,8 +181,12 @@ public class MinutesDocumentData  implements java.io.Serializable {
         if (getType() != null) {
             _hashCode += getType().hashCode();
         }
-        _hashCode += (isPublished() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-        _hashCode += (is_default() ? Boolean.TRUE : Boolean.FALSE).hashCode();
+        if (getPublished() != null) {
+            _hashCode += getPublished().hashCode();
+        }
+        if (get_default() != null) {
+            _hashCode += get_default().hashCode();
+        }
         __hashCodeCalc = false;
         return _hashCode;
     }
@@ -193,31 +201,36 @@ public class MinutesDocumentData  implements java.io.Serializable {
         elemField.setFieldName("UID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "UID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("name");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Name"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("type");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Type"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("published");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Published"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("_default");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Default"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }
 

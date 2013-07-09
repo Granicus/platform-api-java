@@ -26,9 +26,11 @@ public class MetaDataData  implements java.io.Serializable {
 
     private java.lang.Integer orderID;
 
-    private java.lang.Boolean allowComment;
-
     private java.lang.Object payload;
+
+    private java.lang.Integer consent;
+
+    private java.lang.String consentVoteUID;
 
     private com.granicus.xsd.MetaDataData[] children;
 
@@ -45,8 +47,9 @@ public class MetaDataData  implements java.io.Serializable {
            java.lang.String name,
            java.lang.Integer timeStamp,
            java.lang.Integer orderID,
-           java.lang.Boolean allowComment,
            java.lang.Object payload,
+           java.lang.Integer consent,
+           java.lang.String consentVoteUID,
            com.granicus.xsd.MetaDataData[] children) {
            this.ID = ID;
            this.UID = UID;
@@ -57,8 +60,9 @@ public class MetaDataData  implements java.io.Serializable {
            this.name = name;
            this.timeStamp = timeStamp;
            this.orderID = orderID;
-           this.allowComment = allowComment;
            this.payload = payload;
+           this.consent = consent;
+           this.consentVoteUID = consentVoteUID;
            this.children = children;
     }
 
@@ -244,26 +248,6 @@ public class MetaDataData  implements java.io.Serializable {
 
 
     /**
-     * Gets the allowComment value for this MetaDataData.
-     * 
-     * @return allowComment
-     */
-    public java.lang.Boolean getAllowComment() {
-        return allowComment;
-    }
-
-
-    /**
-     * Sets the allowComment value for this MetaDataData.
-     * 
-     * @param allowComment
-     */
-    public void setAllowComment(java.lang.Boolean allowComment) {
-        this.allowComment = allowComment;
-    }
-
-
-    /**
      * Gets the payload value for this MetaDataData.
      * 
      * @return payload
@@ -280,6 +264,46 @@ public class MetaDataData  implements java.io.Serializable {
      */
     public void setPayload(java.lang.Object payload) {
         this.payload = payload;
+    }
+
+
+    /**
+     * Gets the consent value for this MetaDataData.
+     * 
+     * @return consent
+     */
+    public java.lang.Integer getConsent() {
+        return consent;
+    }
+
+
+    /**
+     * Sets the consent value for this MetaDataData.
+     * 
+     * @param consent
+     */
+    public void setConsent(java.lang.Integer consent) {
+        this.consent = consent;
+    }
+
+
+    /**
+     * Gets the consentVoteUID value for this MetaDataData.
+     * 
+     * @return consentVoteUID
+     */
+    public java.lang.String getConsentVoteUID() {
+        return consentVoteUID;
+    }
+
+
+    /**
+     * Sets the consentVoteUID value for this MetaDataData.
+     * 
+     * @param consentVoteUID
+     */
+    public void setConsentVoteUID(java.lang.String consentVoteUID) {
+        this.consentVoteUID = consentVoteUID;
     }
 
 
@@ -341,12 +365,15 @@ public class MetaDataData  implements java.io.Serializable {
             ((this.orderID==null && other.getOrderID()==null) || 
              (this.orderID!=null &&
               this.orderID.equals(other.getOrderID()))) &&
-            ((this.allowComment==null && other.getAllowComment()==null) || 
-             (this.allowComment!=null &&
-              this.allowComment.equals(other.getAllowComment()))) &&
             ((this.payload==null && other.getPayload()==null) || 
              (this.payload!=null &&
               this.payload.equals(other.getPayload()))) &&
+            ((this.consent==null && other.getConsent()==null) || 
+             (this.consent!=null &&
+              this.consent.equals(other.getConsent()))) &&
+            ((this.consentVoteUID==null && other.getConsentVoteUID()==null) || 
+             (this.consentVoteUID!=null &&
+              this.consentVoteUID.equals(other.getConsentVoteUID()))) &&
             ((this.children==null && other.getChildren()==null) || 
              (this.children!=null &&
               java.util.Arrays.equals(this.children, other.getChildren())));
@@ -388,11 +415,14 @@ public class MetaDataData  implements java.io.Serializable {
         if (getOrderID() != null) {
             _hashCode += getOrderID().hashCode();
         }
-        if (getAllowComment() != null) {
-            _hashCode += getAllowComment().hashCode();
-        }
         if (getPayload() != null) {
             _hashCode += getPayload().hashCode();
+        }
+        if (getConsent() != null) {
+            _hashCode += getConsent().hashCode();
+        }
+        if (getConsentVoteUID() != null) {
+            _hashCode += getConsentVoteUID().hashCode();
         }
         if (getChildren() != null) {
             for (int i=0;
@@ -461,7 +491,8 @@ public class MetaDataData  implements java.io.Serializable {
         elemField.setFieldName("name");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Name"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("timeStamp");
@@ -478,17 +509,25 @@ public class MetaDataData  implements java.io.Serializable {
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("allowComment");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "AllowComment"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setFieldName("payload");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "Payload"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "anyType"));
         elemField.setMinOccurs(0);
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("payload");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "Payload"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "anyType"));
-        elemField.setNillable(false);
+        elemField.setFieldName("consent");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "Consent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("consentVoteUID");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "ConsentVoteUID"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("children");

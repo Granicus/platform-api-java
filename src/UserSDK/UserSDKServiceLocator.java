@@ -22,7 +22,7 @@ public class UserSDKServiceLocator extends org.apache.axis.client.Service implem
     }
 
     // Use to get a proxy class for UserSDKPort
-    private java.lang.String UserSDKPort_address = "http://streaming.granicus.com/SDK/user/index.php";
+    private java.lang.String UserSDKPort_address = "http://gainesville.qa.granicus.com/SDK/user/index.php";
 
     public java.lang.String getUserSDKPortAddress() {
         return UserSDKPort_address;

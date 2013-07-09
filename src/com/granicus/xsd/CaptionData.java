@@ -10,14 +10,14 @@ package com.granicus.xsd;
 public class CaptionData  implements java.io.Serializable {
     private java.lang.String caption;
 
-    private long timeStamp;
+    private java.lang.Long timeStamp;
 
     public CaptionData() {
     }
 
     public CaptionData(
            java.lang.String caption,
-           long timeStamp) {
+           java.lang.Long timeStamp) {
            this.caption = caption;
            this.timeStamp = timeStamp;
     }
@@ -48,7 +48,7 @@ public class CaptionData  implements java.io.Serializable {
      * 
      * @return timeStamp
      */
-    public long getTimeStamp() {
+    public java.lang.Long getTimeStamp() {
         return timeStamp;
     }
 
@@ -58,7 +58,7 @@ public class CaptionData  implements java.io.Serializable {
      * 
      * @param timeStamp
      */
-    public void setTimeStamp(long timeStamp) {
+    public void setTimeStamp(java.lang.Long timeStamp) {
         this.timeStamp = timeStamp;
     }
 
@@ -77,7 +77,9 @@ public class CaptionData  implements java.io.Serializable {
             ((this.caption==null && other.getCaption()==null) || 
              (this.caption!=null &&
               this.caption.equals(other.getCaption()))) &&
-            this.timeStamp == other.getTimeStamp();
+            ((this.timeStamp==null && other.getTimeStamp()==null) || 
+             (this.timeStamp!=null &&
+              this.timeStamp.equals(other.getTimeStamp())));
         __equalsCalc = null;
         return _equals;
     }
@@ -92,7 +94,9 @@ public class CaptionData  implements java.io.Serializable {
         if (getCaption() != null) {
             _hashCode += getCaption().hashCode();
         }
-        _hashCode += new Long(getTimeStamp()).hashCode();
+        if (getTimeStamp() != null) {
+            _hashCode += getTimeStamp().hashCode();
+        }
         __hashCodeCalc = false;
         return _hashCode;
     }
@@ -107,13 +111,15 @@ public class CaptionData  implements java.io.Serializable {
         elemField.setFieldName("caption");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Caption"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("timeStamp");
         elemField.setXmlName(new javax.xml.namespace.QName("", "TimeStamp"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }
 

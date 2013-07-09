@@ -8,7 +8,7 @@
 package com.granicus.xsd;
 
 public class FolderData  implements java.io.Serializable {
-    private int ID;
+    private java.lang.Integer ID;
 
     private java.lang.String name;
 
@@ -16,7 +16,7 @@ public class FolderData  implements java.io.Serializable {
 
     private java.lang.String type;
 
-    private int playerTemplateID;
+    private java.lang.Integer playerTemplateID;
 
     private java.util.Calendar createdDate;
 
@@ -28,11 +28,11 @@ public class FolderData  implements java.io.Serializable {
     }
 
     public FolderData(
-           int ID,
+           java.lang.Integer ID,
            java.lang.String name,
            java.lang.String description,
            java.lang.String type,
-           int playerTemplateID,
+           java.lang.Integer playerTemplateID,
            java.util.Calendar createdDate,
            int[] views,
            int[] servers) {
@@ -52,7 +52,7 @@ public class FolderData  implements java.io.Serializable {
      * 
      * @return ID
      */
-    public int getID() {
+    public java.lang.Integer getID() {
         return ID;
     }
 
@@ -62,7 +62,7 @@ public class FolderData  implements java.io.Serializable {
      * 
      * @param ID
      */
-    public void setID(int ID) {
+    public void setID(java.lang.Integer ID) {
         this.ID = ID;
     }
 
@@ -132,7 +132,7 @@ public class FolderData  implements java.io.Serializable {
      * 
      * @return playerTemplateID
      */
-    public int getPlayerTemplateID() {
+    public java.lang.Integer getPlayerTemplateID() {
         return playerTemplateID;
     }
 
@@ -142,7 +142,7 @@ public class FolderData  implements java.io.Serializable {
      * 
      * @param playerTemplateID
      */
-    public void setPlayerTemplateID(int playerTemplateID) {
+    public void setPlayerTemplateID(java.lang.Integer playerTemplateID) {
         this.playerTemplateID = playerTemplateID;
     }
 
@@ -218,7 +218,9 @@ public class FolderData  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true && 
-            this.ID == other.getID() &&
+            ((this.ID==null && other.getID()==null) || 
+             (this.ID!=null &&
+              this.ID.equals(other.getID()))) &&
             ((this.name==null && other.getName()==null) || 
              (this.name!=null &&
               this.name.equals(other.getName()))) &&
@@ -228,7 +230,9 @@ public class FolderData  implements java.io.Serializable {
             ((this.type==null && other.getType()==null) || 
              (this.type!=null &&
               this.type.equals(other.getType()))) &&
-            this.playerTemplateID == other.getPlayerTemplateID() &&
+            ((this.playerTemplateID==null && other.getPlayerTemplateID()==null) || 
+             (this.playerTemplateID!=null &&
+              this.playerTemplateID.equals(other.getPlayerTemplateID()))) &&
             ((this.createdDate==null && other.getCreatedDate()==null) || 
              (this.createdDate!=null &&
               this.createdDate.equals(other.getCreatedDate()))) &&
@@ -249,7 +253,9 @@ public class FolderData  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        _hashCode += getID();
+        if (getID() != null) {
+            _hashCode += getID().hashCode();
+        }
         if (getName() != null) {
             _hashCode += getName().hashCode();
         }
@@ -259,7 +265,9 @@ public class FolderData  implements java.io.Serializable {
         if (getType() != null) {
             _hashCode += getType().hashCode();
         }
-        _hashCode += getPlayerTemplateID();
+        if (getPlayerTemplateID() != null) {
+            _hashCode += getPlayerTemplateID().hashCode();
+        }
         if (getCreatedDate() != null) {
             _hashCode += getCreatedDate().hashCode();
         }
@@ -299,49 +307,57 @@ public class FolderData  implements java.io.Serializable {
         elemField.setFieldName("ID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("name");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Name"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("description");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Description"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("type");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Type"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("playerTemplateID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "PlayerTemplateID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("createdDate");
         elemField.setXmlName(new javax.xml.namespace.QName("", "CreatedDate"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("views");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Views"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("servers");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Servers"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }
 

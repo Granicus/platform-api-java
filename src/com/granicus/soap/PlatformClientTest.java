@@ -1,22 +1,19 @@
 package com.granicus.soap;
 
-import com.granicus.xsd.EventData;
-import com.granicus.xsd.FolderData;
-import com.granicus.xsd.MetaDataData;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.Assert;
+import com.granicus.xsd.*;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Javier
- * Date: 11/7/12
- * Time: 4:48 PM
+ * User: javier
+ * Date: 7/8/13
+ * Time: 5:03 PM
  * To change this template use File | Settings | File Templates.
  */
 public class PlatformClientTest {
-
     PlatformClient client;
     String username;
     String password;
@@ -24,9 +21,9 @@ public class PlatformClientTest {
 
     @Before
     public void setUp() throws Exception {
-        username = System.getenv("GRANICUS_USERNAME");
-        password = System.getenv("GRANICUS_PASSWORD");
-        host = System.getenv("GRANICUS_HOST");
+        username = "chad";
+        password = "1234";
+        host = "gainesville.qa.granicus.com";
         client = new PlatformClient(host);
         client.login(username,password);
     }
@@ -79,5 +76,4 @@ public class PlatformClientTest {
         EventData[] events = client.getEvents();
         MetaDataData[] meta = client.getEventMetaData(events[0].getID());
     }
-
 }

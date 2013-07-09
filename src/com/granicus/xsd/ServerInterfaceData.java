@@ -8,9 +8,9 @@
 package com.granicus.xsd;
 
 public class ServerInterfaceData  implements java.io.Serializable {
-    private int ID;
+    private java.lang.Integer ID;
 
-    private int serverID;
+    private java.lang.Integer serverID;
 
     private java.lang.String name;
 
@@ -28,8 +28,8 @@ public class ServerInterfaceData  implements java.io.Serializable {
     }
 
     public ServerInterfaceData(
-           int ID,
-           int serverID,
+           java.lang.Integer ID,
+           java.lang.Integer serverID,
            java.lang.String name,
            java.lang.String host,
            java.lang.String controlPort,
@@ -52,7 +52,7 @@ public class ServerInterfaceData  implements java.io.Serializable {
      * 
      * @return ID
      */
-    public int getID() {
+    public java.lang.Integer getID() {
         return ID;
     }
 
@@ -62,7 +62,7 @@ public class ServerInterfaceData  implements java.io.Serializable {
      * 
      * @param ID
      */
-    public void setID(int ID) {
+    public void setID(java.lang.Integer ID) {
         this.ID = ID;
     }
 
@@ -72,7 +72,7 @@ public class ServerInterfaceData  implements java.io.Serializable {
      * 
      * @return serverID
      */
-    public int getServerID() {
+    public java.lang.Integer getServerID() {
         return serverID;
     }
 
@@ -82,7 +82,7 @@ public class ServerInterfaceData  implements java.io.Serializable {
      * 
      * @param serverID
      */
-    public void setServerID(int serverID) {
+    public void setServerID(java.lang.Integer serverID) {
         this.serverID = serverID;
     }
 
@@ -218,8 +218,12 @@ public class ServerInterfaceData  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true && 
-            this.ID == other.getID() &&
-            this.serverID == other.getServerID() &&
+            ((this.ID==null && other.getID()==null) || 
+             (this.ID!=null &&
+              this.ID.equals(other.getID()))) &&
+            ((this.serverID==null && other.getServerID()==null) || 
+             (this.serverID!=null &&
+              this.serverID.equals(other.getServerID()))) &&
             ((this.name==null && other.getName()==null) || 
              (this.name!=null &&
               this.name.equals(other.getName()))) &&
@@ -249,8 +253,12 @@ public class ServerInterfaceData  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        _hashCode += getID();
-        _hashCode += getServerID();
+        if (getID() != null) {
+            _hashCode += getID().hashCode();
+        }
+        if (getServerID() != null) {
+            _hashCode += getServerID().hashCode();
+        }
         if (getName() != null) {
             _hashCode += getName().hashCode();
         }
@@ -283,49 +291,57 @@ public class ServerInterfaceData  implements java.io.Serializable {
         elemField.setFieldName("ID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("serverID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ServerID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("name");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Name"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("host");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Host"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("controlPort");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ControlPort"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("directory");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Directory"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("replicationUN");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ReplicationUN"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("replicationPW");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ReplicationPW"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }
 

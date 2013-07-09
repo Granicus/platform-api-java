@@ -81,7 +81,8 @@ public class TrainingChapter  implements java.io.Serializable {
         elemField.setFieldName("subject");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Subject"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }
 

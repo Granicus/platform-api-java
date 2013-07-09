@@ -16,9 +16,9 @@ public class EventData  implements java.io.Serializable {
 
     private java.lang.String name;
 
-    private int cameraID;
+    private java.lang.Integer cameraID;
 
-    private int folderID;
+    private java.lang.Integer folderID;
 
     private java.lang.String status;
 
@@ -26,11 +26,11 @@ public class EventData  implements java.io.Serializable {
 
     private java.lang.String agendaFile;
 
-    private int playerTemplateID;
+    private java.lang.Integer playerTemplateID;
 
     private java.lang.String archiveStatus;
 
-    private int duration;
+    private java.lang.Integer duration;
 
     private java.lang.Boolean broadcast;
 
@@ -66,9 +66,7 @@ public class EventData  implements java.io.Serializable {
 
     private java.lang.Integer agendaRolloverID;
 
-    private java.lang.Boolean commentEnabled;
-
-    private java.lang.Integer commentCloseOffset;
+    private java.lang.Integer consentAgenda;
 
     public EventData() {
     }
@@ -78,14 +76,14 @@ public class EventData  implements java.io.Serializable {
            java.lang.String UID,
            java.lang.Integer foreignID,
            java.lang.String name,
-           int cameraID,
-           int folderID,
+           java.lang.Integer cameraID,
+           java.lang.Integer folderID,
            java.lang.String status,
            java.lang.String agendaType,
            java.lang.String agendaFile,
-           int playerTemplateID,
+           java.lang.Integer playerTemplateID,
            java.lang.String archiveStatus,
-           int duration,
+           java.lang.Integer duration,
            java.lang.Boolean broadcast,
            java.lang.Boolean record,
            java.lang.Boolean autoStart,
@@ -103,8 +101,7 @@ public class EventData  implements java.io.Serializable {
            java.util.Calendar agendaPostedDate,
            java.util.Calendar nextStartDate,
            java.lang.Integer agendaRolloverID,
-           java.lang.Boolean commentEnabled,
-           java.lang.Integer commentCloseOffset) {
+           java.lang.Integer consentAgenda) {
            this.ID = ID;
            this.UID = UID;
            this.foreignID = foreignID;
@@ -134,8 +131,7 @@ public class EventData  implements java.io.Serializable {
            this.agendaPostedDate = agendaPostedDate;
            this.nextStartDate = nextStartDate;
            this.agendaRolloverID = agendaRolloverID;
-           this.commentEnabled = commentEnabled;
-           this.commentCloseOffset = commentCloseOffset;
+           this.consentAgenda = consentAgenda;
     }
 
 
@@ -224,7 +220,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @return cameraID
      */
-    public int getCameraID() {
+    public java.lang.Integer getCameraID() {
         return cameraID;
     }
 
@@ -234,7 +230,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @param cameraID
      */
-    public void setCameraID(int cameraID) {
+    public void setCameraID(java.lang.Integer cameraID) {
         this.cameraID = cameraID;
     }
 
@@ -244,7 +240,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @return folderID
      */
-    public int getFolderID() {
+    public java.lang.Integer getFolderID() {
         return folderID;
     }
 
@@ -254,7 +250,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @param folderID
      */
-    public void setFolderID(int folderID) {
+    public void setFolderID(java.lang.Integer folderID) {
         this.folderID = folderID;
     }
 
@@ -324,7 +320,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @return playerTemplateID
      */
-    public int getPlayerTemplateID() {
+    public java.lang.Integer getPlayerTemplateID() {
         return playerTemplateID;
     }
 
@@ -334,7 +330,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @param playerTemplateID
      */
-    public void setPlayerTemplateID(int playerTemplateID) {
+    public void setPlayerTemplateID(java.lang.Integer playerTemplateID) {
         this.playerTemplateID = playerTemplateID;
     }
 
@@ -364,7 +360,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @return duration
      */
-    public int getDuration() {
+    public java.lang.Integer getDuration() {
         return duration;
     }
 
@@ -374,7 +370,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @param duration
      */
-    public void setDuration(int duration) {
+    public void setDuration(java.lang.Integer duration) {
         this.duration = duration;
     }
 
@@ -720,42 +716,22 @@ public class EventData  implements java.io.Serializable {
 
 
     /**
-     * Gets the commentEnabled value for this EventData.
+     * Gets the consentAgenda value for this EventData.
      * 
-     * @return commentEnabled
+     * @return consentAgenda
      */
-    public java.lang.Boolean getCommentEnabled() {
-        return commentEnabled;
+    public java.lang.Integer getConsentAgenda() {
+        return consentAgenda;
     }
 
 
     /**
-     * Sets the commentEnabled value for this EventData.
+     * Sets the consentAgenda value for this EventData.
      * 
-     * @param commentEnabled
+     * @param consentAgenda
      */
-    public void setCommentEnabled(java.lang.Boolean commentEnabled) {
-        this.commentEnabled = commentEnabled;
-    }
-
-
-    /**
-     * Gets the commentCloseOffset value for this EventData.
-     * 
-     * @return commentCloseOffset
-     */
-    public java.lang.Integer getCommentCloseOffset() {
-        return commentCloseOffset;
-    }
-
-
-    /**
-     * Sets the commentCloseOffset value for this EventData.
-     * 
-     * @param commentCloseOffset
-     */
-    public void setCommentCloseOffset(java.lang.Integer commentCloseOffset) {
-        this.commentCloseOffset = commentCloseOffset;
+    public void setConsentAgenda(java.lang.Integer consentAgenda) {
+        this.consentAgenda = consentAgenda;
     }
 
     private java.lang.Object __equalsCalc = null;
@@ -782,8 +758,12 @@ public class EventData  implements java.io.Serializable {
             ((this.name==null && other.getName()==null) || 
              (this.name!=null &&
               this.name.equals(other.getName()))) &&
-            this.cameraID == other.getCameraID() &&
-            this.folderID == other.getFolderID() &&
+            ((this.cameraID==null && other.getCameraID()==null) || 
+             (this.cameraID!=null &&
+              this.cameraID.equals(other.getCameraID()))) &&
+            ((this.folderID==null && other.getFolderID()==null) || 
+             (this.folderID!=null &&
+              this.folderID.equals(other.getFolderID()))) &&
             ((this.status==null && other.getStatus()==null) || 
              (this.status!=null &&
               this.status.equals(other.getStatus()))) &&
@@ -793,11 +773,15 @@ public class EventData  implements java.io.Serializable {
             ((this.agendaFile==null && other.getAgendaFile()==null) || 
              (this.agendaFile!=null &&
               this.agendaFile.equals(other.getAgendaFile()))) &&
-            this.playerTemplateID == other.getPlayerTemplateID() &&
+            ((this.playerTemplateID==null && other.getPlayerTemplateID()==null) || 
+             (this.playerTemplateID!=null &&
+              this.playerTemplateID.equals(other.getPlayerTemplateID()))) &&
             ((this.archiveStatus==null && other.getArchiveStatus()==null) || 
              (this.archiveStatus!=null &&
               this.archiveStatus.equals(other.getArchiveStatus()))) &&
-            this.duration == other.getDuration() &&
+            ((this.duration==null && other.getDuration()==null) || 
+             (this.duration!=null &&
+              this.duration.equals(other.getDuration()))) &&
             ((this.broadcast==null && other.getBroadcast()==null) || 
              (this.broadcast!=null &&
               this.broadcast.equals(other.getBroadcast()))) &&
@@ -849,12 +833,9 @@ public class EventData  implements java.io.Serializable {
             ((this.agendaRolloverID==null && other.getAgendaRolloverID()==null) || 
              (this.agendaRolloverID!=null &&
               this.agendaRolloverID.equals(other.getAgendaRolloverID()))) &&
-            ((this.commentEnabled==null && other.getCommentEnabled()==null) || 
-             (this.commentEnabled!=null &&
-              this.commentEnabled.equals(other.getCommentEnabled()))) &&
-            ((this.commentCloseOffset==null && other.getCommentCloseOffset()==null) || 
-             (this.commentCloseOffset!=null &&
-              this.commentCloseOffset.equals(other.getCommentCloseOffset())));
+            ((this.consentAgenda==null && other.getConsentAgenda()==null) || 
+             (this.consentAgenda!=null &&
+              this.consentAgenda.equals(other.getConsentAgenda())));
         __equalsCalc = null;
         return _equals;
     }
@@ -878,8 +859,12 @@ public class EventData  implements java.io.Serializable {
         if (getName() != null) {
             _hashCode += getName().hashCode();
         }
-        _hashCode += getCameraID();
-        _hashCode += getFolderID();
+        if (getCameraID() != null) {
+            _hashCode += getCameraID().hashCode();
+        }
+        if (getFolderID() != null) {
+            _hashCode += getFolderID().hashCode();
+        }
         if (getStatus() != null) {
             _hashCode += getStatus().hashCode();
         }
@@ -889,11 +874,15 @@ public class EventData  implements java.io.Serializable {
         if (getAgendaFile() != null) {
             _hashCode += getAgendaFile().hashCode();
         }
-        _hashCode += getPlayerTemplateID();
+        if (getPlayerTemplateID() != null) {
+            _hashCode += getPlayerTemplateID().hashCode();
+        }
         if (getArchiveStatus() != null) {
             _hashCode += getArchiveStatus().hashCode();
         }
-        _hashCode += getDuration();
+        if (getDuration() != null) {
+            _hashCode += getDuration().hashCode();
+        }
         if (getBroadcast() != null) {
             _hashCode += getBroadcast().hashCode();
         }
@@ -961,11 +950,8 @@ public class EventData  implements java.io.Serializable {
         if (getAgendaRolloverID() != null) {
             _hashCode += getAgendaRolloverID().hashCode();
         }
-        if (getCommentEnabled() != null) {
-            _hashCode += getCommentEnabled().hashCode();
-        }
-        if (getCommentCloseOffset() != null) {
-            _hashCode += getCommentCloseOffset().hashCode();
+        if (getConsentAgenda() != null) {
+            _hashCode += getConsentAgenda().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -1002,19 +988,22 @@ public class EventData  implements java.io.Serializable {
         elemField.setFieldName("name");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Name"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("cameraID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "CameraID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("folderID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "FolderID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("status");
@@ -1041,7 +1030,8 @@ public class EventData  implements java.io.Serializable {
         elemField.setFieldName("playerTemplateID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "PlayerTemplateID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("archiveStatus");
@@ -1054,7 +1044,8 @@ public class EventData  implements java.io.Serializable {
         elemField.setFieldName("duration");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Duration"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("broadcast");
@@ -1081,7 +1072,8 @@ public class EventData  implements java.io.Serializable {
         elemField.setFieldName("startTime");
         elemField.setXmlName(new javax.xml.namespace.QName("", "StartTime"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("lastModified");
@@ -1175,15 +1167,8 @@ public class EventData  implements java.io.Serializable {
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("commentEnabled");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "CommentEnabled"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("commentCloseOffset");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "CommentCloseOffset"));
+        elemField.setFieldName("consentAgenda");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "ConsentAgenda"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setMinOccurs(0);
         elemField.setNillable(true);

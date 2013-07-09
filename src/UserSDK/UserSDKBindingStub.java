@@ -16,7 +16,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
     static org.apache.axis.description.OperationDesc [] _operations;
 
     static {
-        _operations = new org.apache.axis.description.OperationDesc[89];
+        _operations = new org.apache.axis.description.OperationDesc[92];
         _initOperationDesc1();
         _initOperationDesc2();
         _initOperationDesc3();
@@ -26,6 +26,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         _initOperationDesc7();
         _initOperationDesc8();
         _initOperationDesc9();
+        _initOperationDesc10();
     }
 
     private static void _initOperationDesc1(){
@@ -1023,6 +1024,38 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[88] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("CreateMotionActions");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "MotionActions"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://granicus.com/xsd", "StringCollection"), java.lang.String[].class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[89] = oper;
+
+    }
+
+    private static void _initOperationDesc10(){
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("CreateAttendees");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "AttendeesData"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://granicus.com/xsd", "AttendeeCollection"), com.granicus.xsd.Attendee[].class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[90] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("GetMotionActions");
+        oper.setReturnType(new javax.xml.namespace.QName("http://granicus.com/xsd", "StringCollection"));
+        oper.setReturnClass(java.lang.String[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "MotionActions"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[91] = oper;
 
     }
 
@@ -4024,6 +4057,85 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
                 return (com.granicus.xsd.Setting[]) _resp;
             } catch (java.lang.Exception _exception) {
                 return (com.granicus.xsd.Setting[]) org.apache.axis.utils.JavaUtils.convert(_resp, com.granicus.xsd.Setting[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public void createMotionActions(java.lang.String[] motionActions) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[89]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("urn:UserSDK#UserWebservice#CreateMotionActions");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("urn:UserSDK", "CreateMotionActions"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {motionActions});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public void createAttendees(com.granicus.xsd.Attendee[] attendeesData) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[90]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("urn:UserSDK#UserWebservice#CreateAttendees");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("urn:UserSDK", "CreateAttendees"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {attendeesData});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.lang.String[] getMotionActions() throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[91]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetMotionActions");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("urn:UserSDK", "GetMotionActions"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.lang.String[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.lang.String[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String[].class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
