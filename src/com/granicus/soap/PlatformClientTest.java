@@ -29,7 +29,6 @@ public class PlatformClientTest {
         username = "chad";
         password = "1234";
         host = "lmcc.qa.granicus.com";
-
         client = new PlatformClient(host);
         client.login(username,password);
     }
@@ -111,7 +110,7 @@ public class PlatformClientTest {
         EventData[] events = client.getEvents();
         MetaDataData[] meta = client.getEventMetaData(events[0].getID());
     }
-
+    
     @Test
     public void TestGetEventsByForeignID()    throws Exception {
         EventData[] events = client.getEventsByForeignID(1447);

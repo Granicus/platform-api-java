@@ -8,7 +8,7 @@
 package com.granicus.xsd;
 
 public class CameraData  implements java.io.Serializable {
-    private int ID;
+    private java.lang.Integer ID;
 
     private java.lang.String type;
 
@@ -18,9 +18,9 @@ public class CameraData  implements java.io.Serializable {
 
     private java.lang.String externalIP;
 
-    private int broadcastPort;
+    private java.lang.Integer broadcastPort;
 
-    private int controlPort;
+    private java.lang.Integer controlPort;
 
     private java.lang.String identifier;
 
@@ -28,13 +28,13 @@ public class CameraData  implements java.io.Serializable {
     }
 
     public CameraData(
-           int ID,
+           java.lang.Integer ID,
            java.lang.String type,
            java.lang.String name,
            java.lang.String internalIP,
            java.lang.String externalIP,
-           int broadcastPort,
-           int controlPort,
+           java.lang.Integer broadcastPort,
+           java.lang.Integer controlPort,
            java.lang.String identifier) {
            this.ID = ID;
            this.type = type;
@@ -52,7 +52,7 @@ public class CameraData  implements java.io.Serializable {
      * 
      * @return ID
      */
-    public int getID() {
+    public java.lang.Integer getID() {
         return ID;
     }
 
@@ -62,7 +62,7 @@ public class CameraData  implements java.io.Serializable {
      * 
      * @param ID
      */
-    public void setID(int ID) {
+    public void setID(java.lang.Integer ID) {
         this.ID = ID;
     }
 
@@ -152,7 +152,7 @@ public class CameraData  implements java.io.Serializable {
      * 
      * @return broadcastPort
      */
-    public int getBroadcastPort() {
+    public java.lang.Integer getBroadcastPort() {
         return broadcastPort;
     }
 
@@ -162,7 +162,7 @@ public class CameraData  implements java.io.Serializable {
      * 
      * @param broadcastPort
      */
-    public void setBroadcastPort(int broadcastPort) {
+    public void setBroadcastPort(java.lang.Integer broadcastPort) {
         this.broadcastPort = broadcastPort;
     }
 
@@ -172,7 +172,7 @@ public class CameraData  implements java.io.Serializable {
      * 
      * @return controlPort
      */
-    public int getControlPort() {
+    public java.lang.Integer getControlPort() {
         return controlPort;
     }
 
@@ -182,7 +182,7 @@ public class CameraData  implements java.io.Serializable {
      * 
      * @param controlPort
      */
-    public void setControlPort(int controlPort) {
+    public void setControlPort(java.lang.Integer controlPort) {
         this.controlPort = controlPort;
     }
 
@@ -218,7 +218,9 @@ public class CameraData  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true && 
-            this.ID == other.getID() &&
+            ((this.ID==null && other.getID()==null) || 
+             (this.ID!=null &&
+              this.ID.equals(other.getID()))) &&
             ((this.type==null && other.getType()==null) || 
              (this.type!=null &&
               this.type.equals(other.getType()))) &&
@@ -231,8 +233,12 @@ public class CameraData  implements java.io.Serializable {
             ((this.externalIP==null && other.getExternalIP()==null) || 
              (this.externalIP!=null &&
               this.externalIP.equals(other.getExternalIP()))) &&
-            this.broadcastPort == other.getBroadcastPort() &&
-            this.controlPort == other.getControlPort() &&
+            ((this.broadcastPort==null && other.getBroadcastPort()==null) || 
+             (this.broadcastPort!=null &&
+              this.broadcastPort.equals(other.getBroadcastPort()))) &&
+            ((this.controlPort==null && other.getControlPort()==null) || 
+             (this.controlPort!=null &&
+              this.controlPort.equals(other.getControlPort()))) &&
             ((this.identifier==null && other.getIdentifier()==null) || 
              (this.identifier!=null &&
               this.identifier.equals(other.getIdentifier())));
@@ -247,7 +253,9 @@ public class CameraData  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        _hashCode += getID();
+        if (getID() != null) {
+            _hashCode += getID().hashCode();
+        }
         if (getType() != null) {
             _hashCode += getType().hashCode();
         }
@@ -260,8 +268,12 @@ public class CameraData  implements java.io.Serializable {
         if (getExternalIP() != null) {
             _hashCode += getExternalIP().hashCode();
         }
-        _hashCode += getBroadcastPort();
-        _hashCode += getControlPort();
+        if (getBroadcastPort() != null) {
+            _hashCode += getBroadcastPort().hashCode();
+        }
+        if (getControlPort() != null) {
+            _hashCode += getControlPort().hashCode();
+        }
         if (getIdentifier() != null) {
             _hashCode += getIdentifier().hashCode();
         }
@@ -279,49 +291,57 @@ public class CameraData  implements java.io.Serializable {
         elemField.setFieldName("ID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("type");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Type"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("name");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Name"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("internalIP");
         elemField.setXmlName(new javax.xml.namespace.QName("", "InternalIP"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("externalIP");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ExternalIP"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("broadcastPort");
         elemField.setXmlName(new javax.xml.namespace.QName("", "BroadcastPort"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("controlPort");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ControlPort"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("identifier");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Identifier"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }
 

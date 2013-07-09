@@ -81,7 +81,8 @@ public class PracticeQuestion  implements java.io.Serializable {
         elemField.setFieldName("XMLData");
         elemField.setXmlName(new javax.xml.namespace.QName("", "XMLData"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }
 

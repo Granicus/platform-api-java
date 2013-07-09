@@ -8,7 +8,7 @@
 package com.granicus.xsd;
 
 public class GroupData  implements java.io.Serializable {
-    private int ID;
+    private java.lang.Integer ID;
 
     private java.lang.String UID;
 
@@ -24,8 +24,8 @@ public class GroupData  implements java.io.Serializable {
     }
 
     public GroupData(
-           int ID,
            java.lang.String UID,
+           java.lang.Integer ID,
            java.lang.String name,
            java.lang.String description,
            java.util.Calendar createdDate,
@@ -41,27 +41,27 @@ public class GroupData  implements java.io.Serializable {
 
     /**
      * Gets the ID value for this GroupData.
-     * 
+     *
      * @return ID
      */
-    public int getID() {
+    public java.lang.Integer getID() {
         return ID;
     }
 
 
     /**
      * Sets the ID value for this GroupData.
-     * 
+     *
      * @param ID
      */
-    public void setID(int ID) {
+    public void setID(java.lang.Integer ID) {
         this.ID = ID;
     }
 
 
     /**
      * Gets the UID value for this GroupData.
-     * 
+     *
      * @return UID
      */
     public java.lang.String getUID() {
@@ -71,7 +71,7 @@ public class GroupData  implements java.io.Serializable {
 
     /**
      * Sets the UID value for this GroupData.
-     * 
+     *
      * @param UID
      */
     public void setUID(java.lang.String UID) {
@@ -81,7 +81,7 @@ public class GroupData  implements java.io.Serializable {
 
     /**
      * Gets the name value for this GroupData.
-     * 
+     *
      * @return name
      */
     public java.lang.String getName() {
@@ -91,7 +91,7 @@ public class GroupData  implements java.io.Serializable {
 
     /**
      * Sets the name value for this GroupData.
-     * 
+     *
      * @param name
      */
     public void setName(java.lang.String name) {
@@ -101,7 +101,7 @@ public class GroupData  implements java.io.Serializable {
 
     /**
      * Gets the description value for this GroupData.
-     * 
+     *
      * @return description
      */
     public java.lang.String getDescription() {
@@ -111,7 +111,7 @@ public class GroupData  implements java.io.Serializable {
 
     /**
      * Sets the description value for this GroupData.
-     * 
+     *
      * @param description
      */
     public void setDescription(java.lang.String description) {
@@ -121,7 +121,7 @@ public class GroupData  implements java.io.Serializable {
 
     /**
      * Gets the createdDate value for this GroupData.
-     * 
+     *
      * @return createdDate
      */
     public java.util.Calendar getCreatedDate() {
@@ -131,7 +131,7 @@ public class GroupData  implements java.io.Serializable {
 
     /**
      * Sets the createdDate value for this GroupData.
-     * 
+     *
      * @param createdDate
      */
     public void setCreatedDate(java.util.Calendar createdDate) {
@@ -141,7 +141,7 @@ public class GroupData  implements java.io.Serializable {
 
     /**
      * Gets the lastModified value for this GroupData.
-     * 
+     *
      * @return lastModified
      */
     public java.util.Calendar getLastModified() {
@@ -151,7 +151,7 @@ public class GroupData  implements java.io.Serializable {
 
     /**
      * Sets the lastModified value for this GroupData.
-     * 
+     *
      * @param lastModified
      */
     public void setLastModified(java.util.Calendar lastModified) {
@@ -169,21 +169,20 @@ public class GroupData  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true && 
-            this.ID == other.getID() &&
-            ((this.UID==null && other.getUID()==null) || 
-             (this.UID!=null &&
-              this.UID.equals(other.getUID()))) &&
-            ((this.name==null && other.getName()==null) || 
+        _equals = true &&
+            ((this.ID==null && other.getID()==null) ||
+             (this.ID!=null &&
+              this.ID.equals(other.getID()))) &&
+            ((this.name==null && other.getName()==null) ||
              (this.name!=null &&
               this.name.equals(other.getName()))) &&
-            ((this.description==null && other.getDescription()==null) || 
+            ((this.description==null && other.getDescription()==null) ||
              (this.description!=null &&
               this.description.equals(other.getDescription()))) &&
-            ((this.createdDate==null && other.getCreatedDate()==null) || 
+            ((this.createdDate==null && other.getCreatedDate()==null) ||
              (this.createdDate!=null &&
               this.createdDate.equals(other.getCreatedDate()))) &&
-            ((this.lastModified==null && other.getLastModified()==null) || 
+            ((this.lastModified==null && other.getLastModified()==null) ||
              (this.lastModified!=null &&
               this.lastModified.equals(other.getLastModified())));
         __equalsCalc = null;
@@ -227,7 +226,8 @@ public class GroupData  implements java.io.Serializable {
         elemField.setFieldName("ID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("UID");
@@ -239,25 +239,29 @@ public class GroupData  implements java.io.Serializable {
         elemField.setFieldName("name");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Name"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("description");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Description"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("createdDate");
         elemField.setXmlName(new javax.xml.namespace.QName("", "CreatedDate"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("lastModified");
         elemField.setXmlName(new javax.xml.namespace.QName("", "LastModified"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }
 
@@ -272,10 +276,10 @@ public class GroupData  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
+           java.lang.String mechType,
+           java.lang.Class _javaType,
            javax.xml.namespace.QName _xmlType) {
-        return 
+        return
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -284,10 +288,10 @@ public class GroupData  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
+           java.lang.String mechType,
+           java.lang.Class _javaType,
            javax.xml.namespace.QName _xmlType) {
-        return 
+        return
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

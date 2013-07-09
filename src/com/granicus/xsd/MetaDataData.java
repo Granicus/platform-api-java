@@ -8,31 +8,31 @@
 package com.granicus.xsd;
 
 public class MetaDataData  implements java.io.Serializable {
-    private int ID;
+    private java.lang.Integer ID;
 
     private java.lang.String UID;
 
-    private int parentID;
+    private java.lang.Integer parentID;
 
     private java.lang.String parentUID;
 
-    private int foreignID;
+    private java.lang.Integer foreignID;
 
-    private int sourceID;
+    private java.lang.Integer sourceID;
 
     private java.lang.String name;
 
-    private int timeStamp;
+    private java.lang.Integer timeStamp;
 
-    private int orderID;
+    private java.lang.Integer orderID;
 
     private java.lang.Object payload;
 
-    private int consent;
+    private java.lang.Integer consent;
 
     private java.lang.String consentVoteUID;
 
-    private int closedSession;
+    private java.lang.Integer closedSession;
 
     private com.granicus.xsd.MetaDataData[] children;
 
@@ -40,19 +40,19 @@ public class MetaDataData  implements java.io.Serializable {
     }
 
     public MetaDataData(
-           int ID,
+           java.lang.Integer ID,
            java.lang.String UID,
-           int parentID,
+           java.lang.Integer parentID,
            java.lang.String parentUID,
-           int foreignID,
-           int sourceID,
+           java.lang.Integer foreignID,
+           java.lang.Integer sourceID,
            java.lang.String name,
-           int timeStamp,
-           int orderID,
+           java.lang.Integer timeStamp,
+           java.lang.Integer orderID,
            java.lang.Object payload,
-           int consent,
+           java.lang.Integer consent,
            java.lang.String consentVoteUID,
-           int closedSession,
+           java.lang.Integer  closedSession,
            com.granicus.xsd.MetaDataData[] children) {
            this.ID = ID;
            this.UID = UID;
@@ -73,27 +73,27 @@ public class MetaDataData  implements java.io.Serializable {
 
     /**
      * Gets the ID value for this MetaDataData.
-     * 
+     *
      * @return ID
      */
-    public int getID() {
+    public java.lang.Integer getID() {
         return ID;
     }
 
 
     /**
      * Sets the ID value for this MetaDataData.
-     * 
+     *
      * @param ID
      */
-    public void setID(int ID) {
+    public void setID(java.lang.Integer ID) {
         this.ID = ID;
     }
 
 
     /**
      * Gets the UID value for this MetaDataData.
-     * 
+     *
      * @return UID
      */
     public java.lang.String getUID() {
@@ -103,7 +103,7 @@ public class MetaDataData  implements java.io.Serializable {
 
     /**
      * Sets the UID value for this MetaDataData.
-     * 
+     *
      * @param UID
      */
     public void setUID(java.lang.String UID) {
@@ -113,27 +113,27 @@ public class MetaDataData  implements java.io.Serializable {
 
     /**
      * Gets the parentID value for this MetaDataData.
-     * 
+     *
      * @return parentID
      */
-    public int getParentID() {
+    public java.lang.Integer getParentID() {
         return parentID;
     }
 
 
     /**
      * Sets the parentID value for this MetaDataData.
-     * 
+     *
      * @param parentID
      */
-    public void setParentID(int parentID) {
+    public void setParentID(java.lang.Integer parentID) {
         this.parentID = parentID;
     }
 
 
     /**
      * Gets the parentUID value for this MetaDataData.
-     * 
+     *
      * @return parentUID
      */
     public java.lang.String getParentUID() {
@@ -143,7 +143,7 @@ public class MetaDataData  implements java.io.Serializable {
 
     /**
      * Sets the parentUID value for this MetaDataData.
-     * 
+     *
      * @param parentUID
      */
     public void setParentUID(java.lang.String parentUID) {
@@ -153,47 +153,47 @@ public class MetaDataData  implements java.io.Serializable {
 
     /**
      * Gets the foreignID value for this MetaDataData.
-     * 
+     *
      * @return foreignID
      */
-    public int getForeignID() {
+    public java.lang.Integer getForeignID() {
         return foreignID;
     }
 
 
     /**
      * Sets the foreignID value for this MetaDataData.
-     * 
+     *
      * @param foreignID
      */
-    public void setForeignID(int foreignID) {
+    public void setForeignID(java.lang.Integer foreignID) {
         this.foreignID = foreignID;
     }
 
 
     /**
      * Gets the sourceID value for this MetaDataData.
-     * 
+     *
      * @return sourceID
      */
-    public int getSourceID() {
+    public java.lang.Integer getSourceID() {
         return sourceID;
     }
 
 
     /**
      * Sets the sourceID value for this MetaDataData.
-     * 
+     *
      * @param sourceID
      */
-    public void setSourceID(int sourceID) {
+    public void setSourceID(java.lang.Integer sourceID) {
         this.sourceID = sourceID;
     }
 
 
     /**
      * Gets the name value for this MetaDataData.
-     * 
+     *
      * @return name
      */
     public java.lang.String getName() {
@@ -203,7 +203,7 @@ public class MetaDataData  implements java.io.Serializable {
 
     /**
      * Sets the name value for this MetaDataData.
-     * 
+     *
      * @param name
      */
     public void setName(java.lang.String name) {
@@ -213,47 +213,47 @@ public class MetaDataData  implements java.io.Serializable {
 
     /**
      * Gets the timeStamp value for this MetaDataData.
-     * 
+     *
      * @return timeStamp
      */
-    public int getTimeStamp() {
+    public java.lang.Integer getTimeStamp() {
         return timeStamp;
     }
 
 
     /**
      * Sets the timeStamp value for this MetaDataData.
-     * 
+     *
      * @param timeStamp
      */
-    public void setTimeStamp(int timeStamp) {
+    public void setTimeStamp(java.lang.Integer timeStamp) {
         this.timeStamp = timeStamp;
     }
 
 
     /**
      * Gets the orderID value for this MetaDataData.
-     * 
+     *
      * @return orderID
      */
-    public int getOrderID() {
+    public java.lang.Integer getOrderID() {
         return orderID;
     }
 
 
     /**
      * Sets the orderID value for this MetaDataData.
-     * 
+     *
      * @param orderID
      */
-    public void setOrderID(int orderID) {
+    public void setOrderID(java.lang.Integer orderID) {
         this.orderID = orderID;
     }
 
 
     /**
      * Gets the payload value for this MetaDataData.
-     * 
+     *
      * @return payload
      */
     public java.lang.Object getPayload() {
@@ -263,7 +263,7 @@ public class MetaDataData  implements java.io.Serializable {
 
     /**
      * Sets the payload value for this MetaDataData.
-     * 
+     *
      * @param payload
      */
     public void setPayload(java.lang.Object payload) {
@@ -273,27 +273,27 @@ public class MetaDataData  implements java.io.Serializable {
 
     /**
      * Gets the consent value for this MetaDataData.
-     * 
+     *
      * @return consent
      */
-    public int getConsent() {
+    public java.lang.Integer getConsent() {
         return consent;
     }
 
 
     /**
      * Sets the consent value for this MetaDataData.
-     * 
+     *
      * @param consent
      */
-    public void setConsent(int consent) {
+    public void setConsent(java.lang.Integer consent) {
         this.consent = consent;
     }
 
 
     /**
      * Gets the consentVoteUID value for this MetaDataData.
-     * 
+     *
      * @return consentVoteUID
      */
     public java.lang.String getConsentVoteUID() {
@@ -303,7 +303,7 @@ public class MetaDataData  implements java.io.Serializable {
 
     /**
      * Sets the consentVoteUID value for this MetaDataData.
-     * 
+     *
      * @param consentVoteUID
      */
     public void setConsentVoteUID(java.lang.String consentVoteUID) {
@@ -313,27 +313,27 @@ public class MetaDataData  implements java.io.Serializable {
 
     /**
      * Gets the closedSession value for this MetaDataData.
-     * 
+     *
      * @return closedSession
      */
-    public int getClosedSession() {
+    public java.lang.Integer getClosedSession() {
         return closedSession;
     }
 
 
     /**
      * Sets the closedSession value for this MetaDataData.
-     * 
+     *
      * @param closedSession
      */
-    public void setClosedSession(int closedSession) {
+    public void setClosedSession(java.lang.Integer closedSession) {
         this.closedSession = closedSession;
     }
 
 
     /**
      * Gets the children value for this MetaDataData.
-     * 
+     *
      * @return children
      */
     public com.granicus.xsd.MetaDataData[] getChildren() {
@@ -343,7 +343,7 @@ public class MetaDataData  implements java.io.Serializable {
 
     /**
      * Sets the children value for this MetaDataData.
-     * 
+     *
      * @param children
      */
     public void setChildren(com.granicus.xsd.MetaDataData[] children) {
@@ -361,31 +361,37 @@ public class MetaDataData  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true && 
+        _equals = true &&
             this.ID == other.getID() &&
-            ((this.UID==null && other.getUID()==null) || 
+            ((this.UID==null && other.getUID()==null) ||
              (this.UID!=null &&
               this.UID.equals(other.getUID()))) &&
             this.parentID == other.getParentID() &&
-            ((this.parentUID==null && other.getParentUID()==null) || 
+            ((this.parentUID==null && other.getParentUID()==null) ||
              (this.parentUID!=null &&
               this.parentUID.equals(other.getParentUID()))) &&
             this.foreignID == other.getForeignID() &&
             this.sourceID == other.getSourceID() &&
-            ((this.name==null && other.getName()==null) || 
+            ((this.name==null && other.getName()==null) ||
              (this.name!=null &&
               this.name.equals(other.getName()))) &&
-            this.timeStamp == other.getTimeStamp() &&
-            this.orderID == other.getOrderID() &&
-            ((this.payload==null && other.getPayload()==null) || 
+            ((this.timeStamp==null && other.getTimeStamp()==null) ||
+             (this.timeStamp!=null &&
+              this.timeStamp.equals(other.getTimeStamp()))) &&
+            ((this.orderID==null && other.getOrderID()==null) ||
+             (this.orderID!=null &&
+              this.orderID.equals(other.getOrderID()))) &&
+            ((this.payload==null && other.getPayload()==null) ||
              (this.payload!=null &&
               this.payload.equals(other.getPayload()))) &&
-            this.consent == other.getConsent() &&
-            ((this.consentVoteUID==null && other.getConsentVoteUID()==null) || 
+            ((this.consent==null && other.getConsent()==null) ||
+             (this.consent!=null &&
+              this.consent.equals(other.getConsent()))) &&
+            ((this.consentVoteUID==null && other.getConsentVoteUID()==null) ||
              (this.consentVoteUID!=null &&
               this.consentVoteUID.equals(other.getConsentVoteUID()))) &&
-            this.closedSession == other.getClosedSession() &&
-            ((this.children==null && other.getChildren()==null) || 
+            ((this.children==null && other.getChildren()==null) &&
+            this.closedSession == other.getClosedSession() ||
              (this.children!=null &&
               java.util.Arrays.equals(this.children, other.getChildren())));
         __equalsCalc = null;
@@ -399,11 +405,11 @@ public class MetaDataData  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        _hashCode += getID();
+        _hashCode += getID().hashCode();
         if (getUID() != null) {
             _hashCode += getUID().hashCode();
         }
-        _hashCode += getParentID();
+        _hashCode += getParentID().hashCode();
         if (getParentUID() != null) {
             _hashCode += getParentUID().hashCode();
         }
@@ -412,16 +418,24 @@ public class MetaDataData  implements java.io.Serializable {
         if (getName() != null) {
             _hashCode += getName().hashCode();
         }
-        _hashCode += getTimeStamp();
-        _hashCode += getOrderID();
+        if (getTimeStamp() != null) {
+            _hashCode += getTimeStamp().hashCode();
+        }
+        if (getOrderID() != null) {
+            _hashCode += getOrderID().hashCode();
+        }
         if (getPayload() != null) {
             _hashCode += getPayload().hashCode();
         }
-        _hashCode += getConsent();
+        if (getConsent() != null) {
+            _hashCode += getConsent().hashCode();
+        }
         if (getConsentVoteUID() != null) {
             _hashCode += getConsentVoteUID().hashCode();
         }
-        _hashCode += getClosedSession();
+        if (getClosedSession() != null){
+          _hashCode += getClosedSession().hashCode();
+        }
         if (getChildren() != null) {
             for (int i=0;
                  i<java.lang.reflect.Array.getLength(getChildren());
@@ -483,7 +497,8 @@ public class MetaDataData  implements java.io.Serializable {
         elemField.setFieldName("name");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Name"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("timeStamp");
@@ -495,13 +510,29 @@ public class MetaDataData  implements java.io.Serializable {
         elemField.setFieldName("orderID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "OrderID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("payload");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Payload"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "anyType"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("consent");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "Consent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("consentVoteUID");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "ConsentVoteUID"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("consent");
@@ -540,10 +571,10 @@ public class MetaDataData  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
+           java.lang.String mechType,
+           java.lang.Class _javaType,
            javax.xml.namespace.QName _xmlType) {
-        return 
+        return
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -552,10 +583,10 @@ public class MetaDataData  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
+           java.lang.String mechType,
+           java.lang.Class _javaType,
            javax.xml.namespace.QName _xmlType) {
-        return 
+        return
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

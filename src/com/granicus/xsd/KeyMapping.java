@@ -8,16 +8,16 @@
 package com.granicus.xsd;
 
 public class KeyMapping  implements java.io.Serializable {
-    private int foreignID;
+    private java.lang.Integer foreignID;
 
-    private int granicusID;
+    private java.lang.Integer granicusID;
 
     public KeyMapping() {
     }
 
     public KeyMapping(
-           int foreignID,
-           int granicusID) {
+           java.lang.Integer foreignID,
+           java.lang.Integer granicusID) {
            this.foreignID = foreignID;
            this.granicusID = granicusID;
     }
@@ -28,7 +28,7 @@ public class KeyMapping  implements java.io.Serializable {
      * 
      * @return foreignID
      */
-    public int getForeignID() {
+    public java.lang.Integer getForeignID() {
         return foreignID;
     }
 
@@ -38,7 +38,7 @@ public class KeyMapping  implements java.io.Serializable {
      * 
      * @param foreignID
      */
-    public void setForeignID(int foreignID) {
+    public void setForeignID(java.lang.Integer foreignID) {
         this.foreignID = foreignID;
     }
 
@@ -48,7 +48,7 @@ public class KeyMapping  implements java.io.Serializable {
      * 
      * @return granicusID
      */
-    public int getGranicusID() {
+    public java.lang.Integer getGranicusID() {
         return granicusID;
     }
 
@@ -58,7 +58,7 @@ public class KeyMapping  implements java.io.Serializable {
      * 
      * @param granicusID
      */
-    public void setGranicusID(int granicusID) {
+    public void setGranicusID(java.lang.Integer granicusID) {
         this.granicusID = granicusID;
     }
 
@@ -74,8 +74,12 @@ public class KeyMapping  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true && 
-            this.foreignID == other.getForeignID() &&
-            this.granicusID == other.getGranicusID();
+            ((this.foreignID==null && other.getForeignID()==null) || 
+             (this.foreignID!=null &&
+              this.foreignID.equals(other.getForeignID()))) &&
+            ((this.granicusID==null && other.getGranicusID()==null) || 
+             (this.granicusID!=null &&
+              this.granicusID.equals(other.getGranicusID())));
         __equalsCalc = null;
         return _equals;
     }
@@ -87,8 +91,12 @@ public class KeyMapping  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        _hashCode += getForeignID();
-        _hashCode += getGranicusID();
+        if (getForeignID() != null) {
+            _hashCode += getForeignID().hashCode();
+        }
+        if (getGranicusID() != null) {
+            _hashCode += getGranicusID().hashCode();
+        }
         __hashCodeCalc = false;
         return _hashCode;
     }
@@ -103,13 +111,15 @@ public class KeyMapping  implements java.io.Serializable {
         elemField.setFieldName("foreignID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ForeignID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("granicusID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "GranicusID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }
 
