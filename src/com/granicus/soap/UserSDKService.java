@@ -7,10 +7,12 @@
 
 package com.granicus.soap;
 
+import com.granicus.soap.UserSDKPort;
+
 public interface UserSDKService extends javax.xml.rpc.Service {
     public java.lang.String getUserSDKPortAddress();
 
-    public com.granicus.soap.UserSDKPort getUserSDKPort() throws javax.xml.rpc.ServiceException;
+    public UserSDKPort getUserSDKPort() throws javax.xml.rpc.ServiceException;
 
-    public com.granicus.soap.UserSDKPort getUserSDKPort(java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
+    public UserSDKPort getUserSDKPort(java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
 }

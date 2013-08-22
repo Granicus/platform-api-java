@@ -475,6 +475,13 @@
 <message name="GetEventsResponse">
 <part name="events" type="ns5:EventCollection" />
 </message>
+<message name="GetEventsByDateRangeRequest">
+<part name="StartDate" type="xsd:dateTime"/>
+<part name="EndDate" type="xsd:dateTime"/>
+</message>
+<message name="GetEventsByDateRangeResponse">
+<part name="events" type="ns5:EventCollection"/>
+</message>
 <message name="GetEventsByForeignIDRequest">
 <part name="ForeignID" type="xsd:int" />
 </message>
@@ -953,6 +960,10 @@
 <input message="tns:GetEventsRequest" />
 <output message="tns:GetEventsResponse" />
 </operation>
+<operation name="GetEventsByDateRange">
+<input message="tns:GetEventsByDateRangeRequest"/>
+<output message="tns:GetEventsByDateRangeResponse"/>
+</operation>
 <operation name="GetEventsByForeignID">
 <input message="tns:GetEventsByForeignIDRequest" />
 <output message="tns:GetEventsByForeignIDResponse" />
@@ -1387,6 +1398,15 @@
 </input>
 <output>
 <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</output>
+</operation>
+<operation name="GetEventsByDateRange">
+<soap:operation soapAction="urn:UserSDK#UserWebservice#GetEventsByDateRange"/>
+<input>
+<soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
 </output>
 </operation>
 <operation name="GetEventsByForeignID">
