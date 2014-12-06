@@ -15,6 +15,8 @@ public class EventData  implements java.io.Serializable {
     private java.lang.Integer foreignID;
 
     private java.lang.String name;
+	
+	private java.lang.String description;
 
     private java.lang.Integer cameraID;
 
@@ -76,6 +78,7 @@ public class EventData  implements java.io.Serializable {
            java.lang.String UID,
            java.lang.Integer foreignID,
            java.lang.String name,
+		   java.lang.String description,
            java.lang.Integer cameraID,
            java.lang.Integer folderID,
            java.lang.String status,
@@ -106,6 +109,7 @@ public class EventData  implements java.io.Serializable {
            this.UID = UID;
            this.foreignID = foreignID;
            this.name = name;
+		   this.description = description;
            this.cameraID = cameraID;
            this.folderID = folderID;
            this.status = status;
@@ -212,6 +216,26 @@ public class EventData  implements java.io.Serializable {
      */
     public void setName(java.lang.String name) {
         this.name = name;
+    }
+	
+	
+    /**
+     * Gets the description value for this EventData.
+     * 
+     * @return description
+     */
+    public java.lang.String getDescription() {
+        return description;
+    }
+
+
+    /**
+     * Sets the name value for this EventData.
+     * 
+     * @param name
+     */
+    public void setDescription(java.lang.String description) {
+        this.description = description;
     }
 
 
@@ -758,6 +782,9 @@ public class EventData  implements java.io.Serializable {
             ((this.name==null && other.getName()==null) || 
              (this.name!=null &&
               this.name.equals(other.getName()))) &&
+			((this.description==null && other.getDescription()==null) || 
+			 (this.description!=null &&
+			  this.description.equals(other.getDescription()))) &&
             ((this.cameraID==null && other.getCameraID()==null) || 
              (this.cameraID!=null &&
               this.cameraID.equals(other.getCameraID()))) &&
@@ -987,6 +1014,13 @@ public class EventData  implements java.io.Serializable {
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("name");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Name"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("description");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "Description"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setMinOccurs(0);
         elemField.setNillable(true);
