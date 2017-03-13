@@ -8,9 +8,9 @@
 package com.granicus.xsd;
 
 public class VoteRecord  implements java.io.Serializable {
-    private java.lang.Integer motionID;
+    private int motionID;
 
-    private java.lang.Boolean passed;
+    private boolean passed;
 
     private com.granicus.xsd.VoteEntry[] votes;
 
@@ -18,8 +18,8 @@ public class VoteRecord  implements java.io.Serializable {
     }
 
     public VoteRecord(
-           java.lang.Integer motionID,
-           java.lang.Boolean passed,
+           int motionID,
+           boolean passed,
            com.granicus.xsd.VoteEntry[] votes) {
            this.motionID = motionID;
            this.passed = passed;
@@ -32,7 +32,7 @@ public class VoteRecord  implements java.io.Serializable {
      * 
      * @return motionID
      */
-    public java.lang.Integer getMotionID() {
+    public int getMotionID() {
         return motionID;
     }
 
@@ -42,7 +42,7 @@ public class VoteRecord  implements java.io.Serializable {
      * 
      * @param motionID
      */
-    public void setMotionID(java.lang.Integer motionID) {
+    public void setMotionID(int motionID) {
         this.motionID = motionID;
     }
 
@@ -52,7 +52,7 @@ public class VoteRecord  implements java.io.Serializable {
      * 
      * @return passed
      */
-    public java.lang.Boolean getPassed() {
+    public boolean isPassed() {
         return passed;
     }
 
@@ -62,7 +62,7 @@ public class VoteRecord  implements java.io.Serializable {
      * 
      * @param passed
      */
-    public void setPassed(java.lang.Boolean passed) {
+    public void setPassed(boolean passed) {
         this.passed = passed;
     }
 
@@ -98,12 +98,8 @@ public class VoteRecord  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true && 
-            ((this.motionID==null && other.getMotionID()==null) || 
-             (this.motionID!=null &&
-              this.motionID.equals(other.getMotionID()))) &&
-            ((this.passed==null && other.getPassed()==null) || 
-             (this.passed!=null &&
-              this.passed.equals(other.getPassed()))) &&
+            this.motionID == other.getMotionID() &&
+            this.passed == other.isPassed() &&
             ((this.votes==null && other.getVotes()==null) || 
              (this.votes!=null &&
               java.util.Arrays.equals(this.votes, other.getVotes())));
@@ -118,12 +114,8 @@ public class VoteRecord  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        if (getMotionID() != null) {
-            _hashCode += getMotionID().hashCode();
-        }
-        if (getPassed() != null) {
-            _hashCode += getPassed().hashCode();
-        }
+        _hashCode += getMotionID();
+        _hashCode += (isPassed() ? Boolean.TRUE : Boolean.FALSE).hashCode();
         if (getVotes() != null) {
             for (int i=0;
                  i<java.lang.reflect.Array.getLength(getVotes());
@@ -149,22 +141,19 @@ public class VoteRecord  implements java.io.Serializable {
         elemField.setFieldName("motionID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "MotionID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("passed");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Passed"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("votes");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Votes"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://granicus.com/xsd", "VoteEntry"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
     }
 

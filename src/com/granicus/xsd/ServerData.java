@@ -8,17 +8,17 @@
 package com.granicus.xsd;
 
 public class ServerData  implements java.io.Serializable {
-    private java.lang.Integer ID;
+    private int ID;
 
     private java.lang.String name;
 
-    private java.lang.Integer controlPort;
+    private int controlPort;
 
-    private java.lang.Boolean firewallCompatibility;
+    private boolean firewallCompatibility;
 
-    private java.lang.Boolean multicast;
+    private boolean multicast;
 
-    private java.lang.Integer loadBalancerScore;
+    private int loadBalancerScore;
 
     private java.lang.String replicationUN;
 
@@ -30,12 +30,12 @@ public class ServerData  implements java.io.Serializable {
     }
 
     public ServerData(
-           java.lang.Integer ID,
+           int ID,
            java.lang.String name,
-           java.lang.Integer controlPort,
-           java.lang.Boolean firewallCompatibility,
-           java.lang.Boolean multicast,
-           java.lang.Integer loadBalancerScore,
+           int controlPort,
+           boolean firewallCompatibility,
+           boolean multicast,
+           int loadBalancerScore,
            java.lang.String replicationUN,
            java.lang.String replicationPW,
            java.util.Calendar createdDate) {
@@ -56,7 +56,7 @@ public class ServerData  implements java.io.Serializable {
      * 
      * @return ID
      */
-    public java.lang.Integer getID() {
+    public int getID() {
         return ID;
     }
 
@@ -66,7 +66,7 @@ public class ServerData  implements java.io.Serializable {
      * 
      * @param ID
      */
-    public void setID(java.lang.Integer ID) {
+    public void setID(int ID) {
         this.ID = ID;
     }
 
@@ -96,7 +96,7 @@ public class ServerData  implements java.io.Serializable {
      * 
      * @return controlPort
      */
-    public java.lang.Integer getControlPort() {
+    public int getControlPort() {
         return controlPort;
     }
 
@@ -106,7 +106,7 @@ public class ServerData  implements java.io.Serializable {
      * 
      * @param controlPort
      */
-    public void setControlPort(java.lang.Integer controlPort) {
+    public void setControlPort(int controlPort) {
         this.controlPort = controlPort;
     }
 
@@ -116,7 +116,7 @@ public class ServerData  implements java.io.Serializable {
      * 
      * @return firewallCompatibility
      */
-    public java.lang.Boolean getFirewallCompatibility() {
+    public boolean isFirewallCompatibility() {
         return firewallCompatibility;
     }
 
@@ -126,7 +126,7 @@ public class ServerData  implements java.io.Serializable {
      * 
      * @param firewallCompatibility
      */
-    public void setFirewallCompatibility(java.lang.Boolean firewallCompatibility) {
+    public void setFirewallCompatibility(boolean firewallCompatibility) {
         this.firewallCompatibility = firewallCompatibility;
     }
 
@@ -136,7 +136,7 @@ public class ServerData  implements java.io.Serializable {
      * 
      * @return multicast
      */
-    public java.lang.Boolean getMulticast() {
+    public boolean isMulticast() {
         return multicast;
     }
 
@@ -146,7 +146,7 @@ public class ServerData  implements java.io.Serializable {
      * 
      * @param multicast
      */
-    public void setMulticast(java.lang.Boolean multicast) {
+    public void setMulticast(boolean multicast) {
         this.multicast = multicast;
     }
 
@@ -156,7 +156,7 @@ public class ServerData  implements java.io.Serializable {
      * 
      * @return loadBalancerScore
      */
-    public java.lang.Integer getLoadBalancerScore() {
+    public int getLoadBalancerScore() {
         return loadBalancerScore;
     }
 
@@ -166,7 +166,7 @@ public class ServerData  implements java.io.Serializable {
      * 
      * @param loadBalancerScore
      */
-    public void setLoadBalancerScore(java.lang.Integer loadBalancerScore) {
+    public void setLoadBalancerScore(int loadBalancerScore) {
         this.loadBalancerScore = loadBalancerScore;
     }
 
@@ -242,24 +242,14 @@ public class ServerData  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true && 
-            ((this.ID==null && other.getID()==null) || 
-             (this.ID!=null &&
-              this.ID.equals(other.getID()))) &&
+            this.ID == other.getID() &&
             ((this.name==null && other.getName()==null) || 
              (this.name!=null &&
               this.name.equals(other.getName()))) &&
-            ((this.controlPort==null && other.getControlPort()==null) || 
-             (this.controlPort!=null &&
-              this.controlPort.equals(other.getControlPort()))) &&
-            ((this.firewallCompatibility==null && other.getFirewallCompatibility()==null) || 
-             (this.firewallCompatibility!=null &&
-              this.firewallCompatibility.equals(other.getFirewallCompatibility()))) &&
-            ((this.multicast==null && other.getMulticast()==null) || 
-             (this.multicast!=null &&
-              this.multicast.equals(other.getMulticast()))) &&
-            ((this.loadBalancerScore==null && other.getLoadBalancerScore()==null) || 
-             (this.loadBalancerScore!=null &&
-              this.loadBalancerScore.equals(other.getLoadBalancerScore()))) &&
+            this.controlPort == other.getControlPort() &&
+            this.firewallCompatibility == other.isFirewallCompatibility() &&
+            this.multicast == other.isMulticast() &&
+            this.loadBalancerScore == other.getLoadBalancerScore() &&
             ((this.replicationUN==null && other.getReplicationUN()==null) || 
              (this.replicationUN!=null &&
               this.replicationUN.equals(other.getReplicationUN()))) &&
@@ -280,24 +270,14 @@ public class ServerData  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        if (getID() != null) {
-            _hashCode += getID().hashCode();
-        }
+        _hashCode += getID();
         if (getName() != null) {
             _hashCode += getName().hashCode();
         }
-        if (getControlPort() != null) {
-            _hashCode += getControlPort().hashCode();
-        }
-        if (getFirewallCompatibility() != null) {
-            _hashCode += getFirewallCompatibility().hashCode();
-        }
-        if (getMulticast() != null) {
-            _hashCode += getMulticast().hashCode();
-        }
-        if (getLoadBalancerScore() != null) {
-            _hashCode += getLoadBalancerScore().hashCode();
-        }
+        _hashCode += getControlPort();
+        _hashCode += (isFirewallCompatibility() ? Boolean.TRUE : Boolean.FALSE).hashCode();
+        _hashCode += (isMulticast() ? Boolean.TRUE : Boolean.FALSE).hashCode();
+        _hashCode += getLoadBalancerScore();
         if (getReplicationUN() != null) {
             _hashCode += getReplicationUN().hashCode();
         }
@@ -321,64 +301,55 @@ public class ServerData  implements java.io.Serializable {
         elemField.setFieldName("ID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("name");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Name"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("controlPort");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ControlPort"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("firewallCompatibility");
         elemField.setXmlName(new javax.xml.namespace.QName("", "FirewallCompatibility"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("multicast");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Multicast"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("loadBalancerScore");
         elemField.setXmlName(new javax.xml.namespace.QName("", "LoadBalancerScore"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("replicationUN");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ReplicationUN"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("replicationPW");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ReplicationPW"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("createdDate");
         elemField.setXmlName(new javax.xml.namespace.QName("", "CreatedDate"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
     }
 
