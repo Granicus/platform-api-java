@@ -5,7 +5,7 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package UserSDK;
+package com.granicus.soap;
 
 public interface UserSDKPort extends java.rmi.Remote {
     public int logMessage(java.lang.String message, java.lang.String application, java.lang.String _class, int priority) throws java.rmi.RemoteException;
