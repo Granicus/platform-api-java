@@ -362,16 +362,21 @@ public class MetaDataData  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true &&
-            this.ID == other.getID() &&
+            ((this.ID==null && other.getID()==null) ||
+             (this.ID!=null &&
+              this.ID.equals(other.getID()))) &&
             ((this.UID==null && other.getUID()==null) ||
              (this.UID!=null &&
               this.UID.equals(other.getUID()))) &&
-            this.parentID == other.getParentID() &&
             ((this.parentUID==null && other.getParentUID()==null) ||
              (this.parentUID!=null &&
               this.parentUID.equals(other.getParentUID()))) &&
-            this.foreignID == other.getForeignID() &&
-            this.sourceID == other.getSourceID() &&
+            ((this.foreignID ==null && other.getForeignID()==null) ||
+             (this.foreignID !=null &&
+              this.foreignID.equals(other.getForeignID()))) &&
+            ((this.sourceID ==null && other.getSourceID()==null) ||
+             (this.sourceID!=null &&
+              this.sourceID.equals(other.getSourceID()))) &&
             ((this.name==null && other.getName()==null) ||
              (this.name!=null &&
               this.name.equals(other.getName()))) &&
@@ -391,9 +396,11 @@ public class MetaDataData  implements java.io.Serializable {
              (this.consentVoteUID!=null &&
               this.consentVoteUID.equals(other.getConsentVoteUID()))) &&
             ((this.children==null && other.getChildren()==null) &&
-            this.closedSession == other.getClosedSession() ||
              (this.children!=null &&
-              java.util.Arrays.equals(this.children, other.getChildren())));
+              java.util.Arrays.equals(this.children, other.getChildren()))) &&
+            ((this.closedSession==null && other.getClosedSession()==null) ||
+             (this.closedSession!=null &&
+              this.closedSession.equals(other.getClosedSession())));
         __equalsCalc = null;
         return _equals;
     }
@@ -409,7 +416,6 @@ public class MetaDataData  implements java.io.Serializable {
         if (getUID() != null) {
             _hashCode += getUID().hashCode();
         }
-        _hashCode += getParentID().hashCode();
         if (getParentUID() != null) {
             _hashCode += getParentUID().hashCode();
         }
@@ -461,37 +467,43 @@ public class MetaDataData  implements java.io.Serializable {
         elemField.setFieldName("ID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("UID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "UID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("parentID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ParentID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("parentUID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ParentUID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("foreignID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ForeignID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("sourceID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "SourceID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("name");
@@ -504,7 +516,8 @@ public class MetaDataData  implements java.io.Serializable {
         elemField.setFieldName("timeStamp");
         elemField.setXmlName(new javax.xml.namespace.QName("", "TimeStamp"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("orderID");
@@ -538,25 +551,29 @@ public class MetaDataData  implements java.io.Serializable {
         elemField.setFieldName("consent");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Consent"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("consentVoteUID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ConsentVoteUID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("closedSession");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ClosedSession"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("children");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Children"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://granicus.com/xsd", "MetaDataData"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }
 

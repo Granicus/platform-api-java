@@ -8,11 +8,11 @@
 package com.granicus.xsd;
 
 public class EventData  implements java.io.Serializable {
-    private int ID;
+    private java.lang.Integer ID;
 
     private java.lang.String UID;
 
-    private int foreignID;
+    private java.lang.Integer foreignID;
 
     private java.lang.String name;
 
@@ -76,9 +76,9 @@ public class EventData  implements java.io.Serializable {
     }
 
     public EventData(
-           int ID,
+           java.lang.Integer ID,
            java.lang.String UID,
-           int foreignID,
+           java.lang.Integer foreignID,
            java.lang.String name,
            java.lang.String description,
            java.lang.Integer cameraID,
@@ -148,7 +148,7 @@ public class EventData  implements java.io.Serializable {
      *
      * @return ID
      */
-    public int getID() {
+    public java.lang.Integer getID() {
         return ID;
     }
 
@@ -158,7 +158,7 @@ public class EventData  implements java.io.Serializable {
      *
      * @param ID
      */
-    public void setID(int ID) {
+    public void setID(java.lang.Integer ID) {
         this.ID = ID;
     }
 
@@ -188,7 +188,7 @@ public class EventData  implements java.io.Serializable {
      *
      * @return foreignID
      */
-    public int getForeignID() {
+    public java.lang.Integer getForeignID() {
         return foreignID;
     }
 
@@ -198,7 +198,7 @@ public class EventData  implements java.io.Serializable {
      *
      * @param foreignID
      */
-    public void setForeignID(int foreignID) {
+    public void setForeignID(java.lang.Integer foreignID) {
         this.foreignID = foreignID;
     }
 
@@ -738,7 +738,7 @@ public class EventData  implements java.io.Serializable {
      *
      * @param agendaRolloverID
      */
-    public void setAgendaRolloverID(int agendaRolloverID) {
+    public void setAgendaRolloverID(java.lang.Integer agendaRolloverID) {
         this.agendaRolloverID = agendaRolloverID;
     }
 
@@ -747,7 +747,7 @@ public class EventData  implements java.io.Serializable {
      *
      * @param consentAgenda
      */
-    public void setConsentAgenda(int consentAgenda) {
+    public void setConsentAgenda(java.lang.Integer consentAgenda) {
         this.consentAgenda = consentAgenda;
     }
 
@@ -782,9 +782,6 @@ public class EventData  implements java.io.Serializable {
      *
      * @param consentAgenda
      */
-    public void setConsentAgenda(java.lang.Integer consentAgenda) {
-        this.consentAgenda = consentAgenda;
-    }
 
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
@@ -798,11 +795,15 @@ public class EventData  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true &&
-            this.ID == other.getID() &&
+            ((this.ID==null && other.getID()==null) ||
+             (this.ID!=null &&
+              this.ID.equals(other.getID()))) &&
             ((this.UID==null && other.getUID()==null) ||
              (this.UID!=null &&
               this.UID.equals(other.getUID()))) &&
-            this.foreignID == other.getForeignID() &&
+            ((this.foreignID==null && other.getForeignID()==null) ||
+             (this.foreignID!=null &&
+              this.foreignID.equals(other.getForeignID()))) &&
             ((this.name==null && other.getName()==null) ||
              (this.name!=null &&
               this.name.equals(other.getName()))) &&
@@ -878,8 +879,6 @@ public class EventData  implements java.io.Serializable {
             ((this.nextStartDate==null && other.getNextStartDate()==null) ||
              (this.nextStartDate!=null &&
               this.nextStartDate.equals(other.getNextStartDate()))) &&
-            this.agendaRolloverID == other.getAgendaRolloverID() &&
-            this.consentAgenda == other.getConsentAgenda() &&
             ((this.views==null && other.getViews()==null) ||
              (this.views!=null &&
               java.util.Arrays.equals(this.views, other.getViews()))) &&
@@ -900,19 +899,21 @@ public class EventData  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        _hashCode += getID();
+        if (getUID() != null) {
+          _hashCode += getID().hashCode();
+        }
         if (getUID() != null) {
             _hashCode += getUID().hashCode();
         }
-        _hashCode += getForeignID();
+        if (getForeignID() != null) {
+            _hashCode += getForeignID().hashCode();
+        }
         if (getName() != null) {
             _hashCode += getName().hashCode();
         }
         if (getDescription() != null) {
             _hashCode += getDescription().hashCode();
         }
-        _hashCode += getCameraID();
-        _hashCode += getFolderID();
         if (getCameraID() != null) {
             _hashCode += getCameraID().hashCode();
         }
@@ -1001,8 +1002,12 @@ public class EventData  implements java.io.Serializable {
         if (getNextStartDate() != null) {
             _hashCode += getNextStartDate().hashCode();
         }
-        _hashCode += getAgendaRolloverID();
-        _hashCode += getConsentAgenda();
+        if (getConsentAgenda() != null) {
+              _hashCode += getConsentAgenda().hashCode();
+        }
+        if (getAgendaRolloverID() != null) {
+            _hashCode += getAgendaRolloverID().hashCode();
+        }
         if (getViews() != null) {
             for (int i=0;
                  i<java.lang.reflect.Array.getLength(getViews());
@@ -1014,12 +1019,7 @@ public class EventData  implements java.io.Serializable {
                 }
             }
           }
-        if (getAgendaRolloverID() != null) {
-            _hashCode += getAgendaRolloverID().hashCode();
-        }
-        if (getConsentAgenda() != null) {
-            _hashCode += getConsentAgenda().hashCode();
-        }
+
         __hashCodeCalc = false;
         return _hashCode;
     }
@@ -1034,19 +1034,22 @@ public class EventData  implements java.io.Serializable {
         elemField.setFieldName("ID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("UID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "UID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("foreignID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ForeignID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("name");
@@ -1059,7 +1062,8 @@ public class EventData  implements java.io.Serializable {
         elemField.setFieldName("description");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Description"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("cameraID");
@@ -1079,19 +1083,22 @@ public class EventData  implements java.io.Serializable {
         elemField.setFieldName("status");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Status"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("agendaType");
         elemField.setXmlName(new javax.xml.namespace.QName("", "AgendaType"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("agendaFile");
         elemField.setXmlName(new javax.xml.namespace.QName("", "AgendaFile"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("playerTemplateID");
@@ -1104,7 +1111,8 @@ public class EventData  implements java.io.Serializable {
         elemField.setFieldName("archiveStatus");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ArchiveStatus"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("duration");
@@ -1117,19 +1125,22 @@ public class EventData  implements java.io.Serializable {
         elemField.setFieldName("broadcast");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Broadcast"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("record");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Record"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("autoStart");
         elemField.setXmlName(new javax.xml.namespace.QName("", "AutoStart"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("startTime");
@@ -1142,79 +1153,92 @@ public class EventData  implements java.io.Serializable {
         elemField.setFieldName("lastModified");
         elemField.setXmlName(new javax.xml.namespace.QName("", "LastModified"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("attendees");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Attendees"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://granicus.com/xsd", "Attendee"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("motionTypes");
         elemField.setXmlName(new javax.xml.namespace.QName("", "MotionTypes"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("street1");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Street1"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("street2");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Street2"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("city");
         elemField.setXmlName(new javax.xml.namespace.QName("", "City"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("state");
         elemField.setXmlName(new javax.xml.namespace.QName("", "State"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("zip");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Zip"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("agendaTitle");
         elemField.setXmlName(new javax.xml.namespace.QName("", "AgendaTitle"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("meetingTime");
         elemField.setXmlName(new javax.xml.namespace.QName("", "MeetingTime"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("agendaPostedDate");
         elemField.setXmlName(new javax.xml.namespace.QName("", "AgendaPostedDate"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("nextStartDate");
         elemField.setXmlName(new javax.xml.namespace.QName("", "NextStartDate"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("agendaRolloverID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "AgendaRolloverID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("consentAgenda");
@@ -1222,7 +1246,6 @@ public class EventData  implements java.io.Serializable {
         elemField.setMinOccurs(0);
         elemField.setNillable(true);
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("views");

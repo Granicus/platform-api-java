@@ -196,7 +196,9 @@ public class GroupData  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        _hashCode += getID();
+        if (getID() != null) {
+            _hashCode += getID().hashCode();
+        }
         if (getUID() != null) {
             _hashCode += getUID().hashCode();
         }
@@ -233,7 +235,8 @@ public class GroupData  implements java.io.Serializable {
         elemField.setFieldName("UID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "UID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("name");

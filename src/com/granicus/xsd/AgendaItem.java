@@ -25,7 +25,7 @@ public class AgendaItem  implements java.io.Serializable {
 
     /**
      * Gets the department value for this AgendaItem.
-     * 
+     *
      * @return department
      */
     public java.lang.String getDepartment() {
@@ -35,7 +35,7 @@ public class AgendaItem  implements java.io.Serializable {
 
     /**
      * Sets the department value for this AgendaItem.
-     * 
+     *
      * @param department
      */
     public void setDepartment(java.lang.String department) {
@@ -45,7 +45,7 @@ public class AgendaItem  implements java.io.Serializable {
 
     /**
      * Gets the actions value for this AgendaItem.
-     * 
+     *
      * @return actions
      */
     public java.lang.String getActions() {
@@ -55,7 +55,7 @@ public class AgendaItem  implements java.io.Serializable {
 
     /**
      * Sets the actions value for this AgendaItem.
-     * 
+     *
      * @param actions
      */
     public void setActions(java.lang.String actions) {
@@ -73,11 +73,11 @@ public class AgendaItem  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true && 
-            ((this.department==null && other.getDepartment()==null) || 
+        _equals = true &&
+            ((this.department==null && other.getDepartment()==null) ||
              (this.department!=null &&
               this.department.equals(other.getDepartment()))) &&
-            ((this.actions==null && other.getActions()==null) || 
+            ((this.actions==null && other.getActions()==null) ||
              (this.actions!=null &&
               this.actions.equals(other.getActions())));
         __equalsCalc = null;
@@ -111,13 +111,15 @@ public class AgendaItem  implements java.io.Serializable {
         elemField.setFieldName("department");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Department"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("actions");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Actions"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }
 
@@ -132,10 +134,10 @@ public class AgendaItem  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
+           java.lang.String mechType,
+           java.lang.Class _javaType,
            javax.xml.namespace.QName _xmlType) {
-        return 
+        return
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -144,10 +146,10 @@ public class AgendaItem  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
+           java.lang.String mechType,
+           java.lang.Class _javaType,
            javax.xml.namespace.QName _xmlType) {
-        return 
+        return
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

@@ -273,7 +273,8 @@ public class Attendee  implements java.io.Serializable {
         elemField.setFieldName("personUID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "PersonUID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }
 

@@ -6,7 +6,7 @@ out/
 *.iml
 *.ipr
 *.iws
-*.class
+
 
 # Package Files #
 *.war
