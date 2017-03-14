@@ -170,14 +170,24 @@ public class PlatformClientTest {
         client.deleteEvent(eventID);
     }
 
-    @Test
-    public void   testGetUserDetail() throws Exception {
-        client.
-    }
+    // @Test
+    // public void   testGetUserDetail() throws Exception {
+    //     client.
+    // }
 
     @Test
     public void testUpdateEvent() throws Exception {
         EventData event = client.getEvent(5868);
         client.updateEvent(event);
+    }
+
+    @Test
+    public void testGetClipMetaData() throws Exception {
+      //GUB-19458
+      MetaDataData[] data = client.getClipMetaData(295);
+      for(MetaDataData metaData: data){
+        Assert.assertNotNull(metaData);
+      }
+
     }
 }
