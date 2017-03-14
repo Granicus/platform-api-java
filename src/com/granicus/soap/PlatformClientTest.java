@@ -53,30 +53,30 @@ public class PlatformClientTest {
     @Test
     public void testGetFolders() throws Exception {
         FolderData[] folders = client.getFolders();
-        for(FolderData folder : folders)
-        {
-            System.out.println(folder.getName());
-        }
+        // for(FolderData folder : folders)
+        // {
+        //     System.out.println(folder.getName());
+        // }
         Assert.assertNotSame(0, folders.length);
     }
 
     @Test
     public void testGetCameras() throws Exception {
         CameraData[] cams = client.getCameras();
-        for(CameraData cam : cams)
-        {
-            System.out.println(cam.getName());
-        }
+        // for(CameraData cam : cams)
+        // {
+        //     System.out.println(cam.getName());
+        // }
         Assert.assertNotSame(0, cams.length);
     }
 
     @Test
     public void testGetEvents() throws Exception {
         EventData[] events = client.getEvents();
-        for(EventData event : events)
-        {
-            System.out.println(event.getName());
-        }
+        // for(EventData event : events)
+        // {
+        //     System.out.println(event.getName());
+        // }
         Assert.assertNotSame(0, events.length);
     }
 
@@ -84,24 +84,25 @@ public class PlatformClientTest {
     public void testGetEventsByDateRange() throws Exception {
         Calendar s_time = Calendar.getInstance();
         s_time.clear();
-        s_time.set(Calendar.YEAR, 2013);
+        s_time.set(Calendar.YEAR, 2016);
         s_time.set(Calendar.MONTH, 6);
         s_time.set(Calendar.DATE, 30);
 
         java.util.Calendar e_time = java.util.Calendar.getInstance();
         e_time.clear();
-        e_time.set(Calendar.YEAR, 2013);
+        e_time.set(Calendar.YEAR, 2016);
         e_time.set(Calendar.MONTH, 7);
         e_time.set(Calendar.DATE, 30);
 
         EventData[] events = client.getEventsByDateRange(s_time,e_time);
-        Assert.assertEquals(events.length,10);
+        Assert.assertEquals(events.length,8);
     }
 
     @Test
     public void testGetEvent() throws Exception {
         EventData[] events = client.getEvents();
         EventData event = client.getEvent(events[0].getID());
+        Assert.assertTrue(event.hashCode() == events[0].hashCode());
         Assert.assertEquals(event,events[0]);
     }
 
