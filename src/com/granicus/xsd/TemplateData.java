@@ -8,7 +8,7 @@
 package com.granicus.xsd;
 
 public class TemplateData  implements java.io.Serializable {
-    private java.lang.Integer ID;
+    private int ID;
 
     private java.lang.String name;
 
@@ -24,7 +24,7 @@ public class TemplateData  implements java.io.Serializable {
     }
 
     public TemplateData(
-           java.lang.Integer ID,
+           int ID,
            java.lang.String name,
            java.lang.String description,
            java.lang.String type,
@@ -44,7 +44,7 @@ public class TemplateData  implements java.io.Serializable {
      * 
      * @return ID
      */
-    public java.lang.Integer getID() {
+    public int getID() {
         return ID;
     }
 
@@ -54,7 +54,7 @@ public class TemplateData  implements java.io.Serializable {
      * 
      * @param ID
      */
-    public void setID(java.lang.Integer ID) {
+    public void setID(int ID) {
         this.ID = ID;
     }
 
@@ -170,9 +170,7 @@ public class TemplateData  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true && 
-            ((this.ID==null && other.getID()==null) || 
-             (this.ID!=null &&
-              this.ID.equals(other.getID()))) &&
+            this.ID == other.getID() &&
             ((this.name==null && other.getName()==null) || 
              (this.name!=null &&
               this.name.equals(other.getName()))) &&
@@ -199,9 +197,7 @@ public class TemplateData  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        if (getID() != null) {
-            _hashCode += getID().hashCode();
-        }
+        _hashCode += getID();
         if (getName() != null) {
             _hashCode += getName().hashCode();
         }
@@ -231,43 +227,37 @@ public class TemplateData  implements java.io.Serializable {
         elemField.setFieldName("ID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("name");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Name"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("description");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Description"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("type");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Type"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("lastModified");
         elemField.setXmlName(new javax.xml.namespace.QName("", "LastModified"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("createdDate");
         elemField.setXmlName(new javax.xml.namespace.QName("", "CreatedDate"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
     }
 

@@ -8,13 +8,13 @@
 package com.granicus.xsd;
 
 public class ViewData  implements java.io.Serializable {
-    private java.lang.Integer ID;
+    private int ID;
 
-    private java.lang.Integer foreignID;
+    private int foreignID;
 
     private java.lang.String name;
 
-    private java.lang.Boolean isActive;
+    private boolean isActive;
 
     private int[] events;
 
@@ -24,10 +24,10 @@ public class ViewData  implements java.io.Serializable {
     }
 
     public ViewData(
-           java.lang.Integer ID,
-           java.lang.Integer foreignID,
+           int ID,
+           int foreignID,
            java.lang.String name,
-           java.lang.Boolean isActive,
+           boolean isActive,
            int[] events,
            int[] folders) {
            this.ID = ID;
@@ -44,7 +44,7 @@ public class ViewData  implements java.io.Serializable {
      * 
      * @return ID
      */
-    public java.lang.Integer getID() {
+    public int getID() {
         return ID;
     }
 
@@ -54,7 +54,7 @@ public class ViewData  implements java.io.Serializable {
      * 
      * @param ID
      */
-    public void setID(java.lang.Integer ID) {
+    public void setID(int ID) {
         this.ID = ID;
     }
 
@@ -64,7 +64,7 @@ public class ViewData  implements java.io.Serializable {
      * 
      * @return foreignID
      */
-    public java.lang.Integer getForeignID() {
+    public int getForeignID() {
         return foreignID;
     }
 
@@ -74,7 +74,7 @@ public class ViewData  implements java.io.Serializable {
      * 
      * @param foreignID
      */
-    public void setForeignID(java.lang.Integer foreignID) {
+    public void setForeignID(int foreignID) {
         this.foreignID = foreignID;
     }
 
@@ -104,7 +104,7 @@ public class ViewData  implements java.io.Serializable {
      * 
      * @return isActive
      */
-    public java.lang.Boolean getIsActive() {
+    public boolean isIsActive() {
         return isActive;
     }
 
@@ -114,7 +114,7 @@ public class ViewData  implements java.io.Serializable {
      * 
      * @param isActive
      */
-    public void setIsActive(java.lang.Boolean isActive) {
+    public void setIsActive(boolean isActive) {
         this.isActive = isActive;
     }
 
@@ -170,18 +170,12 @@ public class ViewData  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true && 
-            ((this.ID==null && other.getID()==null) || 
-             (this.ID!=null &&
-              this.ID.equals(other.getID()))) &&
-            ((this.foreignID==null && other.getForeignID()==null) || 
-             (this.foreignID!=null &&
-              this.foreignID.equals(other.getForeignID()))) &&
+            this.ID == other.getID() &&
+            this.foreignID == other.getForeignID() &&
             ((this.name==null && other.getName()==null) || 
              (this.name!=null &&
               this.name.equals(other.getName()))) &&
-            ((this.isActive==null && other.getIsActive()==null) || 
-             (this.isActive!=null &&
-              this.isActive.equals(other.getIsActive()))) &&
+            this.isActive == other.isIsActive() &&
             ((this.events==null && other.getEvents()==null) || 
              (this.events!=null &&
               java.util.Arrays.equals(this.events, other.getEvents()))) &&
@@ -199,18 +193,12 @@ public class ViewData  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        if (getID() != null) {
-            _hashCode += getID().hashCode();
-        }
-        if (getForeignID() != null) {
-            _hashCode += getForeignID().hashCode();
-        }
+        _hashCode += getID();
+        _hashCode += getForeignID();
         if (getName() != null) {
             _hashCode += getName().hashCode();
         }
-        if (getIsActive() != null) {
-            _hashCode += getIsActive().hashCode();
-        }
+        _hashCode += (isIsActive() ? Boolean.TRUE : Boolean.FALSE).hashCode();
         if (getEvents() != null) {
             for (int i=0;
                  i<java.lang.reflect.Array.getLength(getEvents());
@@ -247,43 +235,37 @@ public class ViewData  implements java.io.Serializable {
         elemField.setFieldName("ID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("foreignID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ForeignID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("name");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Name"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("isActive");
         elemField.setXmlName(new javax.xml.namespace.QName("", "IsActive"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("events");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Events"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("folders");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Folders"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
     }
 
