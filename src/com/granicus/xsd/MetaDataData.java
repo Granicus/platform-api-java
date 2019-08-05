@@ -8,29 +8,31 @@
 package com.granicus.xsd;
 
 public class MetaDataData  implements java.io.Serializable {
-    private java.lang.Integer ID;
+    private int ID;
 
     private java.lang.String UID;
 
-    private java.lang.Integer parentID;
+    private int parentID;
 
     private java.lang.String parentUID;
 
-    private java.lang.Integer foreignID;
+    private int foreignID;
 
-    private java.lang.Integer sourceID;
+    private int sourceID;
 
     private java.lang.String name;
 
-    private java.lang.Integer timeStamp;
+    private int timeStamp;
 
-    private java.lang.Integer orderID;
+    private int orderID;
 
     private java.lang.Object payload;
 
-    private java.lang.Integer consent;
+    private int consent;
 
     private java.lang.String consentVoteUID;
+
+    private int closedSession;
 
     private com.granicus.xsd.MetaDataData[] children;
 
@@ -38,18 +40,19 @@ public class MetaDataData  implements java.io.Serializable {
     }
 
     public MetaDataData(
-           java.lang.Integer ID,
+           int ID,
            java.lang.String UID,
-           java.lang.Integer parentID,
+           int parentID,
            java.lang.String parentUID,
-           java.lang.Integer foreignID,
-           java.lang.Integer sourceID,
+           int foreignID,
+           int sourceID,
            java.lang.String name,
-           java.lang.Integer timeStamp,
-           java.lang.Integer orderID,
+           int timeStamp,
+           int orderID,
            java.lang.Object payload,
-           java.lang.Integer consent,
+           int consent,
            java.lang.String consentVoteUID,
+           int closedSession,
            com.granicus.xsd.MetaDataData[] children) {
            this.ID = ID;
            this.UID = UID;
@@ -63,6 +66,7 @@ public class MetaDataData  implements java.io.Serializable {
            this.payload = payload;
            this.consent = consent;
            this.consentVoteUID = consentVoteUID;
+           this.closedSession = closedSession;
            this.children = children;
     }
 
@@ -72,7 +76,7 @@ public class MetaDataData  implements java.io.Serializable {
      * 
      * @return ID
      */
-    public java.lang.Integer getID() {
+    public int getID() {
         return ID;
     }
 
@@ -82,7 +86,7 @@ public class MetaDataData  implements java.io.Serializable {
      * 
      * @param ID
      */
-    public void setID(java.lang.Integer ID) {
+    public void setID(int ID) {
         this.ID = ID;
     }
 
@@ -112,7 +116,7 @@ public class MetaDataData  implements java.io.Serializable {
      * 
      * @return parentID
      */
-    public java.lang.Integer getParentID() {
+    public int getParentID() {
         return parentID;
     }
 
@@ -122,7 +126,7 @@ public class MetaDataData  implements java.io.Serializable {
      * 
      * @param parentID
      */
-    public void setParentID(java.lang.Integer parentID) {
+    public void setParentID(int parentID) {
         this.parentID = parentID;
     }
 
@@ -152,7 +156,7 @@ public class MetaDataData  implements java.io.Serializable {
      * 
      * @return foreignID
      */
-    public java.lang.Integer getForeignID() {
+    public int getForeignID() {
         return foreignID;
     }
 
@@ -162,7 +166,7 @@ public class MetaDataData  implements java.io.Serializable {
      * 
      * @param foreignID
      */
-    public void setForeignID(java.lang.Integer foreignID) {
+    public void setForeignID(int foreignID) {
         this.foreignID = foreignID;
     }
 
@@ -172,7 +176,7 @@ public class MetaDataData  implements java.io.Serializable {
      * 
      * @return sourceID
      */
-    public java.lang.Integer getSourceID() {
+    public int getSourceID() {
         return sourceID;
     }
 
@@ -182,7 +186,7 @@ public class MetaDataData  implements java.io.Serializable {
      * 
      * @param sourceID
      */
-    public void setSourceID(java.lang.Integer sourceID) {
+    public void setSourceID(int sourceID) {
         this.sourceID = sourceID;
     }
 
@@ -212,7 +216,7 @@ public class MetaDataData  implements java.io.Serializable {
      * 
      * @return timeStamp
      */
-    public java.lang.Integer getTimeStamp() {
+    public int getTimeStamp() {
         return timeStamp;
     }
 
@@ -222,7 +226,7 @@ public class MetaDataData  implements java.io.Serializable {
      * 
      * @param timeStamp
      */
-    public void setTimeStamp(java.lang.Integer timeStamp) {
+    public void setTimeStamp(int timeStamp) {
         this.timeStamp = timeStamp;
     }
 
@@ -232,7 +236,7 @@ public class MetaDataData  implements java.io.Serializable {
      * 
      * @return orderID
      */
-    public java.lang.Integer getOrderID() {
+    public int getOrderID() {
         return orderID;
     }
 
@@ -242,7 +246,7 @@ public class MetaDataData  implements java.io.Serializable {
      * 
      * @param orderID
      */
-    public void setOrderID(java.lang.Integer orderID) {
+    public void setOrderID(int orderID) {
         this.orderID = orderID;
     }
 
@@ -272,7 +276,7 @@ public class MetaDataData  implements java.io.Serializable {
      * 
      * @return consent
      */
-    public java.lang.Integer getConsent() {
+    public int getConsent() {
         return consent;
     }
 
@@ -282,7 +286,7 @@ public class MetaDataData  implements java.io.Serializable {
      * 
      * @param consent
      */
-    public void setConsent(java.lang.Integer consent) {
+    public void setConsent(int consent) {
         this.consent = consent;
     }
 
@@ -304,6 +308,26 @@ public class MetaDataData  implements java.io.Serializable {
      */
     public void setConsentVoteUID(java.lang.String consentVoteUID) {
         this.consentVoteUID = consentVoteUID;
+    }
+
+
+    /**
+     * Gets the closedSession value for this MetaDataData.
+     * 
+     * @return closedSession
+     */
+    public int getClosedSession() {
+        return closedSession;
+    }
+
+
+    /**
+     * Sets the closedSession value for this MetaDataData.
+     * 
+     * @param closedSession
+     */
+    public void setClosedSession(int closedSession) {
+        this.closedSession = closedSession;
     }
 
 
@@ -338,42 +362,29 @@ public class MetaDataData  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true && 
-            ((this.ID==null && other.getID()==null) || 
-             (this.ID!=null &&
-              this.ID.equals(other.getID()))) &&
+            this.ID == other.getID() &&
             ((this.UID==null && other.getUID()==null) || 
              (this.UID!=null &&
               this.UID.equals(other.getUID()))) &&
-            ((this.parentID==null && other.getParentID()==null) || 
-             (this.parentID!=null &&
-              this.parentID.equals(other.getParentID()))) &&
+            this.parentID == other.getParentID() &&
             ((this.parentUID==null && other.getParentUID()==null) || 
              (this.parentUID!=null &&
               this.parentUID.equals(other.getParentUID()))) &&
-            ((this.foreignID==null && other.getForeignID()==null) || 
-             (this.foreignID!=null &&
-              this.foreignID.equals(other.getForeignID()))) &&
-            ((this.sourceID==null && other.getSourceID()==null) || 
-             (this.sourceID!=null &&
-              this.sourceID.equals(other.getSourceID()))) &&
+            this.foreignID == other.getForeignID() &&
+            this.sourceID == other.getSourceID() &&
             ((this.name==null && other.getName()==null) || 
              (this.name!=null &&
               this.name.equals(other.getName()))) &&
-            ((this.timeStamp==null && other.getTimeStamp()==null) || 
-             (this.timeStamp!=null &&
-              this.timeStamp.equals(other.getTimeStamp()))) &&
-            ((this.orderID==null && other.getOrderID()==null) || 
-             (this.orderID!=null &&
-              this.orderID.equals(other.getOrderID()))) &&
+            this.timeStamp == other.getTimeStamp() &&
+            this.orderID == other.getOrderID() &&
             ((this.payload==null && other.getPayload()==null) || 
              (this.payload!=null &&
               this.payload.equals(other.getPayload()))) &&
-            ((this.consent==null && other.getConsent()==null) || 
-             (this.consent!=null &&
-              this.consent.equals(other.getConsent()))) &&
+            this.consent == other.getConsent() &&
             ((this.consentVoteUID==null && other.getConsentVoteUID()==null) || 
              (this.consentVoteUID!=null &&
               this.consentVoteUID.equals(other.getConsentVoteUID()))) &&
+            this.closedSession == other.getClosedSession() &&
             ((this.children==null && other.getChildren()==null) || 
              (this.children!=null &&
               java.util.Arrays.equals(this.children, other.getChildren())));
@@ -388,42 +399,29 @@ public class MetaDataData  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        if (getID() != null) {
-            _hashCode += getID().hashCode();
-        }
+        _hashCode += getID();
         if (getUID() != null) {
             _hashCode += getUID().hashCode();
         }
-        if (getParentID() != null) {
-            _hashCode += getParentID().hashCode();
-        }
+        _hashCode += getParentID();
         if (getParentUID() != null) {
             _hashCode += getParentUID().hashCode();
         }
-        if (getForeignID() != null) {
-            _hashCode += getForeignID().hashCode();
-        }
-        if (getSourceID() != null) {
-            _hashCode += getSourceID().hashCode();
-        }
+        _hashCode += getForeignID();
+        _hashCode += getSourceID();
         if (getName() != null) {
             _hashCode += getName().hashCode();
         }
-        if (getTimeStamp() != null) {
-            _hashCode += getTimeStamp().hashCode();
-        }
-        if (getOrderID() != null) {
-            _hashCode += getOrderID().hashCode();
-        }
+        _hashCode += getTimeStamp();
+        _hashCode += getOrderID();
         if (getPayload() != null) {
             _hashCode += getPayload().hashCode();
         }
-        if (getConsent() != null) {
-            _hashCode += getConsent().hashCode();
-        }
+        _hashCode += getConsent();
         if (getConsentVoteUID() != null) {
             _hashCode += getConsentVoteUID().hashCode();
         }
+        _hashCode += getClosedSession();
         if (getChildren() != null) {
             for (int i=0;
                  i<java.lang.reflect.Array.getLength(getChildren());
@@ -449,92 +447,85 @@ public class MetaDataData  implements java.io.Serializable {
         elemField.setFieldName("ID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("UID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "UID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("parentID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ParentID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("parentUID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ParentUID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("foreignID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ForeignID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("sourceID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "SourceID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("name");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Name"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("timeStamp");
         elemField.setXmlName(new javax.xml.namespace.QName("", "TimeStamp"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("orderID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "OrderID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("payload");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Payload"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "anyType"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("consent");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Consent"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("consentVoteUID");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ConsentVoteUID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("closedSession");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "ClosedSession"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("children");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Children"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://granicus.com/xsd", "MetaDataData"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
     }
 

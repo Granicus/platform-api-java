@@ -10,14 +10,14 @@ package com.granicus.xsd;
 public class VoteEntry  implements java.io.Serializable {
     private java.lang.String name;
 
-    private java.lang.Integer vote;
+    private int vote;
 
     public VoteEntry() {
     }
 
     public VoteEntry(
            java.lang.String name,
-           java.lang.Integer vote) {
+           int vote) {
            this.name = name;
            this.vote = vote;
     }
@@ -48,7 +48,7 @@ public class VoteEntry  implements java.io.Serializable {
      * 
      * @return vote
      */
-    public java.lang.Integer getVote() {
+    public int getVote() {
         return vote;
     }
 
@@ -58,7 +58,7 @@ public class VoteEntry  implements java.io.Serializable {
      * 
      * @param vote
      */
-    public void setVote(java.lang.Integer vote) {
+    public void setVote(int vote) {
         this.vote = vote;
     }
 
@@ -77,9 +77,7 @@ public class VoteEntry  implements java.io.Serializable {
             ((this.name==null && other.getName()==null) || 
              (this.name!=null &&
               this.name.equals(other.getName()))) &&
-            ((this.vote==null && other.getVote()==null) || 
-             (this.vote!=null &&
-              this.vote.equals(other.getVote())));
+            this.vote == other.getVote();
         __equalsCalc = null;
         return _equals;
     }
@@ -94,9 +92,7 @@ public class VoteEntry  implements java.io.Serializable {
         if (getName() != null) {
             _hashCode += getName().hashCode();
         }
-        if (getVote() != null) {
-            _hashCode += getVote().hashCode();
-        }
+        _hashCode += getVote();
         __hashCodeCalc = false;
         return _hashCode;
     }
@@ -111,15 +107,13 @@ public class VoteEntry  implements java.io.Serializable {
         elemField.setFieldName("name");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Name"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("vote");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Vote"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
     }
 

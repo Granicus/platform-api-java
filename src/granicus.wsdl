@@ -3,185 +3,194 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://granicus.com/xsd">
 <complexType name="EventData">
 <all>
-<element name="ID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="UID" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="ForeignID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="Name" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="CameraID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="FolderID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="Status" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="AgendaType" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="AgendaFile" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="PlayerTemplateID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="ArchiveStatus" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Duration" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="Broadcast" type="xsd:boolean" nillable="true" minOccurs="0" />
-<element name="Record" type="xsd:boolean" nillable="true" minOccurs="0" />
-<element name="AutoStart" type="xsd:boolean" nillable="true" minOccurs="0" />
-<element name="StartTime" type="xsd:dateTime" nillable="true" minOccurs="0" />
-<element name="LastModified" type="xsd:dateTime" nillable="true" minOccurs="0" />
-<element name="Attendees" type="ns5:AttendeeCollection" nillable="true" minOccurs="0" />
-<element name="MotionTypes" type="ns5:StringCollection" nillable="true" minOccurs="0" />
-<element name="Street1" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Street2" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="City" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="State" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Zip" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="AgendaTitle" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="MeetingTime" type="xsd:dateTime" nillable="true" minOccurs="0" />
-<element name="AgendaPostedDate" type="xsd:dateTime" nillable="true" minOccurs="0" />
-<element name="NextStartDate" type="xsd:dateTime" nillable="true" minOccurs="0" />
-<element name="AgendaRolloverID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="ConsentAgenda" type="xsd:int" nillable="true" minOccurs="0" />
+<element name="ID" type="xsd:int" />
+<element name="UID" type="xsd:string" />
+<element name="ForeignID" type="xsd:int" />
+<element name="Name" type="xsd:string" />
+<element name="Description" type="xsd:string" />
+<element name="CameraID" type="xsd:int" />
+<element name="FolderID" type="xsd:int" />
+<element name="Status" type="xsd:string" />
+<element name="AgendaType" type="xsd:string" />
+<element name="AgendaFile" type="xsd:string" />
+<element name="PlayerTemplateID" type="xsd:int" />
+<element name="ArchiveStatus" type="xsd:string" />
+<element name="Duration" type="xsd:int" />
+<element name="Broadcast" type="xsd:boolean" />
+<element name="Record" type="xsd:boolean" />
+<element name="AutoStart" type="xsd:boolean" />
+<element name="StartTime" type="xsd:dateTime" />
+<element name="LastModified" type="xsd:dateTime" />
+<element name="Attendees" type="ns5:AttendeeCollection" />
+<element name="MotionTypes" type="ns5:StringCollection" />
+<element name="Street1" type="xsd:string" />
+<element name="Street2" type="xsd:string" />
+<element name="City" type="xsd:string" />
+<element name="State" type="xsd:string" />
+<element name="Zip" type="xsd:string" />
+<element name="AgendaTitle" type="xsd:string" />
+<element name="MeetingTime" type="xsd:dateTime" />
+<element name="AgendaPostedDate" type="xsd:dateTime" />
+<element name="NextStartDate" type="xsd:dateTime" />
+<element name="AgendaRolloverID" type="xsd:int" />
+<element name="ConsentAgenda" type="xsd:int" />
+<element name="Views" type="ns5:IntegerCollection" />
 </all>
 </complexType>
 <complexType name="FolderData">
 <all>
-<element name="ID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="Name" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Description" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Type" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="PlayerTemplateID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="CreatedDate" type="xsd:dateTime" nillable="true" minOccurs="0" />
-<element name="Views" type="ns5:IntegerCollection" nillable="true" minOccurs="0" />
-<element name="Servers" type="ns5:IntegerCollection" nillable="true" minOccurs="0" />
+<element name="ID" type="xsd:int" />
+<element name="Name" type="xsd:string" />
+<element name="Description" type="xsd:string" />
+<element name="Type" type="xsd:string" />
+<element name="PlayerTemplateID" type="xsd:int" />
+<element name="CreatedDate" type="xsd:dateTime" />
+<element name="Views" type="ns5:IntegerCollection" />
+<element name="Servers" type="ns5:IntegerCollection" />
 </all>
 </complexType>
 <complexType name="ClipData">
 <all>
-<element name="ID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="UID" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="EventUID" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="ForeignID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="Type" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Name" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Description" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Keywords" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Date" type="xsd:dateTime" nillable="true" minOccurs="0" />
-<element name="CameraID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="FolderID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="FileName" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="MinutesType" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="MinutesFile" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="AgendaType" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="AgendaFile" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Duration" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="Status" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="StartTime" type="xsd:dateTime" nillable="true" minOccurs="0" />
-<element name="LastModified" type="xsd:dateTime" nillable="true" minOccurs="0" />
-<element name="Attendees" type="ns5:AttendeeCollection" nillable="true" minOccurs="0" />
-<element name="MotionTypes" type="ns5:StringCollection" nillable="true" minOccurs="0" />
-<element name="Street1" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Street2" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="City" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="State" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Zip" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="AgendaTitle" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="AgendaPostedDate" type="xsd:dateTime" nillable="true" minOccurs="0" />
+<element name="ID" type="xsd:int" />
+<element name="UID" type="xsd:string" />
+<element name="EventUID" type="xsd:string" />
+<element name="ForeignID" type="xsd:int" />
+<element name="Type" type="xsd:string" />
+<element name="Name" type="xsd:string" />
+<element name="Description" type="xsd:string" />
+<element name="Keywords" type="xsd:string" />
+<element name="Date" type="xsd:dateTime" />
+<element name="CameraID" type="xsd:int" />
+<element name="FolderID" type="xsd:int" />
+<element name="FileName" type="xsd:string" />
+<element name="MinutesType" type="xsd:string" />
+<element name="MinutesFile" type="xsd:string" />
+<element name="AgendaType" type="xsd:string" />
+<element name="AgendaFile" type="xsd:string" />
+<element name="Duration" type="xsd:int" />
+<element name="Status" type="xsd:string" />
+<element name="StartTime" type="xsd:dateTime" />
+<element name="LastModified" type="xsd:dateTime" />
+<element name="Attendees" type="ns5:AttendeeCollection" />
+<element name="MotionTypes" type="ns5:StringCollection" />
+<element name="Street1" type="xsd:string" />
+<element name="Street2" type="xsd:string" />
+<element name="City" type="xsd:string" />
+<element name="State" type="xsd:string" />
+<element name="Zip" type="xsd:string" />
+<element name="AgendaTitle" type="xsd:string" />
+<element name="AgendaPostedDate" type="xsd:dateTime" />
 </all>
 </complexType>
 <complexType name="CameraData">
 <all>
-<element name="ID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="Type" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Name" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="InternalIP" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="ExternalIP" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="BroadcastPort" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="ControlPort" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="Identifier" type="xsd:string" nillable="true" minOccurs="0" />
+<element name="ID" type="xsd:int" />
+<element name="Type" type="xsd:string" />
+<element name="Name" type="xsd:string" />
+<element name="InternalIP" type="xsd:string" />
+<element name="ExternalIP" type="xsd:string" />
+<element name="BroadcastPort" type="xsd:int" />
+<element name="ControlPort" type="xsd:int" />
+<element name="Identifier" type="xsd:string" />
 </all>
 </complexType>
 <complexType name="UserData">
 <all>
-<element name="ID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="Username" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Password" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Fullname" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Email" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="CreatedDate" type="xsd:dateTime" nillable="true" minOccurs="0" />
-<element name="LastModified" type="xsd:dateTime" nillable="true" minOccurs="0" />
+<element name="ID" type="xsd:int" />
+<element name="UID" type="xsd:string" />
+<element name="Username" type="xsd:string" />
+<element name="Password" type="xsd:string" />
+<element name="FirstName" type="xsd:string" />
+<element name="LastName" type="xsd:string" />
+<element name="MiddleName" type="xsd:string" />
+<element name="Phone" type="xsd:string" />
+<element name="Email" type="xsd:string" />
+<element name="CreatedDate" type="xsd:dateTime" />
+<element name="LastModified" type="xsd:dateTime" />
 </all>
 </complexType>
 <complexType name="GroupData">
 <all>
-<element name="ID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="Name" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Description" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="CreatedDate" type="xsd:dateTime" nillable="true" minOccurs="0" />
+<element name="ID" type="xsd:int" />
+<element name="UID" type="xsd:string" />
+<element name="Name" type="xsd:string" />
+<element name="Description" type="xsd:string" />
+<element name="CreatedDate" type="xsd:dateTime" />
+<element name="LastModified" type="xsd:dateTime" />
 </all>
 </complexType>
 <complexType name="TemplateData">
 <all>
-<element name="ID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="Name" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Description" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Type" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="LastModified" type="xsd:dateTime" nillable="true" minOccurs="0" />
-<element name="CreatedDate" type="xsd:dateTime" nillable="true" minOccurs="0" />
+<element name="ID" type="xsd:int" />
+<element name="Name" type="xsd:string" />
+<element name="Description" type="xsd:string" />
+<element name="Type" type="xsd:string" />
+<element name="LastModified" type="xsd:dateTime" />
+<element name="CreatedDate" type="xsd:dateTime" />
 </all>
 </complexType>
 <complexType name="ServerData">
 <all>
-<element name="ID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="Name" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="ControlPort" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="FirewallCompatibility" type="xsd:boolean" nillable="true" minOccurs="0" />
-<element name="Multicast" type="xsd:boolean" nillable="true" minOccurs="0" />
-<element name="LoadBalancerScore" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="ReplicationUN" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="ReplicationPW" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="CreatedDate" type="xsd:dateTime" nillable="true" minOccurs="0" />
+<element name="ID" type="xsd:int" />
+<element name="Name" type="xsd:string" />
+<element name="ControlPort" type="xsd:int" />
+<element name="FirewallCompatibility" type="xsd:boolean" />
+<element name="Multicast" type="xsd:boolean" />
+<element name="LoadBalancerScore" type="xsd:int" />
+<element name="ReplicationUN" type="xsd:string" />
+<element name="ReplicationPW" type="xsd:string" />
+<element name="CreatedDate" type="xsd:dateTime" />
 </all>
 </complexType>
 <complexType name="ServerInterfaceData">
 <all>
-<element name="ID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="ServerID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="Name" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Host" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="ControlPort" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Directory" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="ReplicationUN" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="ReplicationPW" type="xsd:string" nillable="true" minOccurs="0" />
+<element name="ID" type="xsd:int" />
+<element name="ServerID" type="xsd:int" />
+<element name="Name" type="xsd:string" />
+<element name="Host" type="xsd:string" />
+<element name="ControlPort" type="xsd:string" />
+<element name="Directory" type="xsd:string" />
+<element name="ReplicationUN" type="xsd:string" />
+<element name="ReplicationPW" type="xsd:string" />
 </all>
 </complexType>
 <complexType name="MetaDataData">
 <all>
-<element name="ID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="UID" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="ParentID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="ParentUID" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="ForeignID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="SourceID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="Name" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="TimeStamp" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="OrderID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="Payload" type="xsd:anyType" nillable="true" minOccurs="0" />
-<element name="Consent" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="ConsentVoteUID" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Children" type="ns5:MetaDataDataCollection" nillable="true" minOccurs="0" />
+<element name="ID" type="xsd:int" />
+<element name="UID" type="xsd:string" />
+<element name="ParentID" type="xsd:int" />
+<element name="ParentUID" type="xsd:string" />
+<element name="ForeignID" type="xsd:int" />
+<element name="SourceID" type="xsd:int" />
+<element name="Name" type="xsd:string" />
+<element name="TimeStamp" type="xsd:int" />
+<element name="OrderID" type="xsd:int" />
+<element name="Payload" type="xsd:anyType" />
+<element name="Consent" type="xsd:int" />
+<element name="ConsentVoteUID" type="xsd:string" />
+<element name="ClosedSession" type="xsd:int" />
+<element name="Children" type="ns5:MetaDataDataCollection" />
 </all>
 </complexType>
 <complexType name="CaptionData">
 <all>
-<element name="Caption" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="TimeStamp" type="xsd:long" nillable="true" minOccurs="0" />
+<element name="Caption" type="xsd:string" />
+<element name="TimeStamp" type="xsd:long" />
 </all>
 </complexType>
 <complexType name="MinutesDocumentData">
 <all>
-<element name="UID" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Name" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Type" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Published" type="xsd:boolean" nillable="true" minOccurs="0" />
-<element name="Default" type="xsd:boolean" nillable="true" minOccurs="0" />
+<element name="UID" type="xsd:string" />
+<element name="Name" type="xsd:string" />
+<element name="Type" type="xsd:string" />
+<element name="Published" type="xsd:boolean" />
+<element name="Default" type="xsd:boolean" />
 </all>
 </complexType>
 <complexType name="KeyMapping">
 <all>
-<element name="ForeignID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="GranicusID" type="xsd:int" nillable="true" minOccurs="0" />
+<element name="ForeignID" type="xsd:int" />
+<element name="GranicusID" type="xsd:int" />
 </all>
 </complexType>
 <complexType name="KeyTable">
@@ -193,56 +202,56 @@
 </complexType>
 <complexType name="ViewData">
 <all>
-<element name="ID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="ForeignID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="Name" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="IsActive" type="xsd:boolean" nillable="true" minOccurs="0" />
-<element name="Events" type="ns5:IntegerCollection" nillable="true" minOccurs="0" />
-<element name="Folders" type="ns5:IntegerCollection" nillable="true" minOccurs="0" />
+<element name="ID" type="xsd:int" />
+<element name="ForeignID" type="xsd:int" />
+<element name="Name" type="xsd:string" />
+<element name="IsActive" type="xsd:boolean" />
+<element name="Events" type="ns5:IntegerCollection" />
+<element name="Folders" type="ns5:IntegerCollection" />
 </all>
 </complexType>
 <complexType name="AgendaItem">
 <all>
-<element name="Department" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Actions" type="xsd:string" nillable="true" minOccurs="0" />
+<element name="Department" type="xsd:string" />
+<element name="Actions" type="xsd:string" />
 </all>
 </complexType>
 <complexType name="PracticeQuestion">
 <all>
-<element name="XMLData" type="xsd:string" nillable="true" minOccurs="0" />
+<element name="XMLData" type="xsd:string" />
 </all>
 </complexType>
 <complexType name="TrainingChapter">
 <all>
-<element name="Subject" type="xsd:string" nillable="true" minOccurs="0" />
+<element name="Subject" type="xsd:string" />
 </all>
 </complexType>
 <complexType name="Document">
 <all>
-<element name="Description" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Location" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="FileContents" type="xsd:base64Binary" nillable="true" minOccurs="0" />
-<element name="FileExtension" type="xsd:string" nillable="true" minOccurs="0" />
+<element name="Description" type="xsd:string" />
+<element name="Location" type="xsd:string" />
+<element name="FileContents" type="xsd:base64Binary" />
+<element name="FileExtension" type="xsd:string" />
 </all>
 </complexType>
 <complexType name="Note">
 <all>
-<element name="NoteText" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="EditorsNotes" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Private" type="xsd:boolean" nillable="true" minOccurs="0" />
+<element name="NoteText" type="xsd:string" />
+<element name="EditorsNotes" type="xsd:string" />
+<element name="Private" type="xsd:boolean" />
 </all>
 </complexType>
 <complexType name="VoteEntry">
 <all>
-<element name="Name" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Vote" type="xsd:int" nillable="true" minOccurs="0" />
+<element name="Name" type="xsd:string" />
+<element name="Vote" type="xsd:int" />
 </all>
 </complexType>
 <complexType name="VoteRecord">
 <all>
-<element name="MotionID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="Passed" type="xsd:boolean" nillable="true" minOccurs="0" />
-<element name="Votes" type="ns5:VoteCollection" nillable="true" minOccurs="0" />
+<element name="MotionID" type="xsd:int" />
+<element name="Passed" type="xsd:boolean" />
+<element name="Votes" type="ns5:VoteCollection" />
 </all>
 </complexType>
 <complexType name="Rollcall">
@@ -252,32 +261,32 @@
 </complexType>
 <complexType name="AttendeeStatus">
 <all>
-<element name="Name" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Status" type="xsd:int" nillable="true" minOccurs="0" />
+<element name="Name" type="xsd:string" />
+<element name="Status" type="xsd:int" />
 </all>
 </complexType>
 <complexType name="Motion">
 <all>
-<element name="Mover" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Seconder" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Type" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="MotionText" type="xsd:string" nillable="true" minOccurs="0" />
+<element name="Mover" type="xsd:string" />
+<element name="Seconder" type="xsd:string" />
+<element name="Type" type="xsd:string" />
+<element name="MotionText" type="xsd:string" />
 </all>
 </complexType>
 <complexType name="Attendee">
 <all>
-<element name="ID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="Name" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="OrderID" type="xsd:int" nillable="true" minOccurs="0" />
-<element name="Voting" type="xsd:boolean" nillable="true" minOccurs="0" />
-<element name="Chair" type="xsd:boolean" nillable="true" minOccurs="0" />
-<element name="PersonUID" type="xsd:string" nillable="true" minOccurs="0" />
+<element name="ID" type="xsd:int" />
+<element name="Name" type="xsd:string" />
+<element name="OrderID" type="xsd:int" />
+<element name="Voting" type="xsd:boolean" />
+<element name="Chair" type="xsd:boolean" />
+<element name="PersonUID" type="xsd:string" />
 </all>
 </complexType>
 <complexType name="Setting">
 <all>
-<element name="Name" type="xsd:string" nillable="true" minOccurs="0" />
-<element name="Value" type="xsd:string" nillable="true" minOccurs="0" />
+<element name="Name" type="xsd:string" />
+<element name="Value" type="xsd:string" />
 </all>
 </complexType>
 <complexType name="VoteCollection">
@@ -406,6 +415,24 @@
 </restriction>
 </complexContent>
 </complexType>
+<complexType name="PublishClipResult">
+<all>
+<element name="ClipID" type="xsd:int" />
+<element name="URL" type="xsd:string" />
+<element name="PublishPoint" type="xsd:string" />
+</all>
+</complexType>
+<complexType name="PublishClipData">
+<all>
+<element name="ClipID" type="xsd:int" />
+<element name="Public" type="xsd:boolean" />
+<element name="Name" type="xsd:string" />
+<element name="Title" type="xsd:string" />
+<element name="TextField" type="xsd:string" />
+<element name="TemplateID" type="xsd:int" />
+<element name="MetaID" type="xsd:int" />
+</all>
+</complexType>
 </schema>
 </types>
 <message name="LogMessageRequest">
@@ -476,11 +503,11 @@
 <part name="events" type="ns5:EventCollection" />
 </message>
 <message name="GetEventsByDateRangeRequest">
-<part name="StartDate" type="xsd:dateTime"/>
-<part name="EndDate" type="xsd:dateTime"/>
+<part name="StartDate" type="xsd:dateTime" />
+<part name="EndDate" type="xsd:dateTime" />
 </message>
 <message name="GetEventsByDateRangeResponse">
-<part name="events" type="ns5:EventCollection"/>
+<part name="events" type="ns5:EventCollection" />
 </message>
 <message name="GetEventsByForeignIDRequest">
 <part name="ForeignID" type="xsd:int" />
@@ -623,6 +650,12 @@
 </message>
 <message name="GetClipResponse">
 <part name="clip" type="ns5:ClipData" />
+</message>
+<message name="PublishClipRequest">
+<part name="PublishClipData" type="ns5:PublishClipData" />
+</message>
+<message name="PublishClipResponse">
+<part name="PublishClipResult" type="ns5:PublishClipResult" />
 </message>
 <message name="GetClipByUIDRequest">
 <part name="ClipUID" type="xsd:string" />
@@ -784,12 +817,21 @@
 <part name="UserData" type="ns5:UserData" />
 </message>
 <message name="CreateUserResponse">
-<part name="UserID" type="xsd:int" />
+<part name="UserUID" type="xsd:string" />
 </message>
 <message name="GetCurrentUserIDRequest" />
 <message name="GetCurrentUserIDResponse">
 <part name="UserID" type="xsd:int" />
 </message>
+<message name="GetCurrentUserUIDRequest" />
+<message name="GetCurrentUserUIDResponse">
+<part name="UserUID" type="xsd:string" />
+</message>
+<message name="SetUserMembershipsRequest">
+<part name="UserUID" type="xsd:string" />
+<part name="GroupUIDs" type="ns5:StringCollection" />
+</message>
+<message name="SetUserMembershipsResponse" />
 <message name="GetCurrentUserLogonRequest" />
 <message name="GetCurrentUserLogonResponse">
 <part name="Logon" type="xsd:string" />
@@ -799,7 +841,7 @@
 <part name="users" type="ns5:UserCollection" />
 </message>
 <message name="GetUserRequest">
-<part name="UserID" type="xsd:int" />
+<part name="UserUID" type="xsd:string" />
 </message>
 <message name="GetUserResponse">
 <part name="user" type="ns5:UserData" />
@@ -808,18 +850,22 @@
 <part name="user" type="ns5:UserData" />
 </message>
 <message name="UpdateUserResponse" />
+<message name="DeleteUserRequest">
+<part name="UserUID" type="xsd:string" />
+</message>
+<message name="DeleteUserResponse" />
 <message name="CreateGroupRequest">
 <part name="GroupData" type="ns5:GroupData" />
 </message>
 <message name="CreateGroupResponse">
-<part name="GroupID" type="xsd:int" />
+<part name="GroupUID" type="xsd:string" />
 </message>
 <message name="GetGroupsRequest" />
 <message name="GetGroupsResponse">
 <part name="groups" type="ns5:GroupCollection" />
 </message>
 <message name="GetGroupRequest">
-<part name="GroupID" type="xsd:int" />
+<part name="GroupUID" type="xsd:string" />
 </message>
 <message name="GetGroupResponse">
 <part name="group" type="ns5:GroupData" />
@@ -961,8 +1007,8 @@
 <output message="tns:GetEventsResponse" />
 </operation>
 <operation name="GetEventsByDateRange">
-<input message="tns:GetEventsByDateRangeRequest"/>
-<output message="tns:GetEventsByDateRangeResponse"/>
+<input message="tns:GetEventsByDateRangeRequest" />
+<output message="tns:GetEventsByDateRangeResponse" />
 </operation>
 <operation name="GetEventsByForeignID">
 <input message="tns:GetEventsByForeignIDRequest" />
@@ -1063,6 +1109,10 @@
 <operation name="GetClip">
 <input message="tns:GetClipRequest" />
 <output message="tns:GetClipResponse" />
+</operation>
+<operation name="PublishClip">
+<input message="tns:PublishClipRequest" />
+<output message="tns:PublishClipResponse" />
 </operation>
 <operation name="GetClipByUID">
 <input message="tns:GetClipByUIDRequest" />
@@ -1184,6 +1234,14 @@
 <input message="tns:GetCurrentUserIDRequest" />
 <output message="tns:GetCurrentUserIDResponse" />
 </operation>
+<operation name="GetCurrentUserUID">
+<input message="tns:GetCurrentUserUIDRequest" />
+<output message="tns:GetCurrentUserUIDResponse" />
+</operation>
+<operation name="SetUserMemberships">
+<input message="tns:SetUserMembershipsRequest" />
+<output message="tns:SetUserMembershipsResponse" />
+</operation>
 <operation name="GetCurrentUserLogon">
 <input message="tns:GetCurrentUserLogonRequest" />
 <output message="tns:GetCurrentUserLogonResponse" />
@@ -1199,6 +1257,10 @@
 <operation name="UpdateUser">
 <input message="tns:UpdateUserRequest" />
 <output message="tns:UpdateUserResponse" />
+</operation>
+<operation name="DeleteUser">
+<input message="tns:DeleteUserRequest" />
+<output message="tns:DeleteUserResponse" />
 </operation>
 <operation name="CreateGroup">
 <input message="tns:CreateGroupRequest" />
@@ -1401,12 +1463,12 @@
 </output>
 </operation>
 <operation name="GetEventsByDateRange">
-<soap:operation soapAction="urn:UserSDK#UserWebservice#GetEventsByDateRange"/>
+<soap:operation soapAction="urn:UserSDK#UserWebservice#GetEventsByDateRange" />
 <input>
-<soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+<soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
 </input>
 <output>
-<soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+<soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
 </output>
 </operation>
 <operation name="GetEventsByForeignID">
@@ -1627,6 +1689,15 @@
 </operation>
 <operation name="GetClip">
 <soap:operation soapAction="urn:UserSDK#UserWebservice#GetClip" />
+<input>
+<soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</input>
+<output>
+<soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</output>
+</operation>
+<operation name="PublishClip">
+<soap:operation soapAction="urn:UserSDK#UserWebservice#PublishClip" />
 <input>
 <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
 </input>
@@ -1904,6 +1975,24 @@
 <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
 </output>
 </operation>
+<operation name="GetCurrentUserUID">
+<soap:operation soapAction="urn:UserSDK#UserWebservice#GetCurrentUserUID" />
+<input>
+<soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</input>
+<output>
+<soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</output>
+</operation>
+<operation name="SetUserMemberships">
+<soap:operation soapAction="urn:UserSDK#UserWebservice#SetUserMemberships" />
+<input>
+<soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</input>
+<output>
+<soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</output>
+</operation>
 <operation name="GetCurrentUserLogon">
 <soap:operation soapAction="urn:UserSDK#UserWebservice#GetCurrentUserLogon" />
 <input>
@@ -1933,6 +2022,15 @@
 </operation>
 <operation name="UpdateUser">
 <soap:operation soapAction="urn:UserSDK#UserWebservice#UpdateUser" />
+<input>
+<soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</input>
+<output>
+<soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</output>
+</operation>
+<operation name="DeleteUser">
+<soap:operation soapAction="urn:UserSDK#UserWebservice#DeleteUser" />
 <input>
 <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
 </input>
@@ -2124,7 +2222,7 @@
 <service name="UserSDKService">
 <documentation />
 <port name="UserSDKPort" binding="tns:UserSDKBinding">
-<soap:address location="http://gainesville.qa.granicus.com/SDK/user/index.php" />
+<soap:address location="https://crumpets.qa.granicus.com/sdk/user/index.php" />
 </port>
 </service>
 </definitions>

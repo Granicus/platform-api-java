@@ -10,14 +10,14 @@ package com.granicus.xsd;
 public class AttendeeStatus  implements java.io.Serializable {
     private java.lang.String name;
 
-    private java.lang.Integer status;
+    private int status;
 
     public AttendeeStatus() {
     }
 
     public AttendeeStatus(
            java.lang.String name,
-           java.lang.Integer status) {
+           int status) {
            this.name = name;
            this.status = status;
     }
@@ -48,7 +48,7 @@ public class AttendeeStatus  implements java.io.Serializable {
      * 
      * @return status
      */
-    public java.lang.Integer getStatus() {
+    public int getStatus() {
         return status;
     }
 
@@ -58,7 +58,7 @@ public class AttendeeStatus  implements java.io.Serializable {
      * 
      * @param status
      */
-    public void setStatus(java.lang.Integer status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
@@ -77,9 +77,7 @@ public class AttendeeStatus  implements java.io.Serializable {
             ((this.name==null && other.getName()==null) || 
              (this.name!=null &&
               this.name.equals(other.getName()))) &&
-            ((this.status==null && other.getStatus()==null) || 
-             (this.status!=null &&
-              this.status.equals(other.getStatus())));
+            this.status == other.getStatus();
         __equalsCalc = null;
         return _equals;
     }
@@ -94,9 +92,7 @@ public class AttendeeStatus  implements java.io.Serializable {
         if (getName() != null) {
             _hashCode += getName().hashCode();
         }
-        if (getStatus() != null) {
-            _hashCode += getStatus().hashCode();
-        }
+        _hashCode += getStatus();
         __hashCodeCalc = false;
         return _hashCode;
     }
@@ -111,15 +107,13 @@ public class AttendeeStatus  implements java.io.Serializable {
         elemField.setFieldName("name");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Name"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("status");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Status"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
     }
 

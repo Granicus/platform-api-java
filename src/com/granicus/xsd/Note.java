@@ -12,7 +12,7 @@ public class Note  implements java.io.Serializable {
 
     private java.lang.String editorsNotes;
 
-    private java.lang.Boolean _private;
+    private boolean _private;
 
     public Note() {
     }
@@ -20,7 +20,7 @@ public class Note  implements java.io.Serializable {
     public Note(
            java.lang.String noteText,
            java.lang.String editorsNotes,
-           java.lang.Boolean _private) {
+           boolean _private) {
            this.noteText = noteText;
            this.editorsNotes = editorsNotes;
            this._private = _private;
@@ -72,7 +72,7 @@ public class Note  implements java.io.Serializable {
      * 
      * @return _private
      */
-    public java.lang.Boolean get_private() {
+    public boolean is_private() {
         return _private;
     }
 
@@ -82,7 +82,7 @@ public class Note  implements java.io.Serializable {
      * 
      * @param _private
      */
-    public void set_private(java.lang.Boolean _private) {
+    public void set_private(boolean _private) {
         this._private = _private;
     }
 
@@ -104,9 +104,7 @@ public class Note  implements java.io.Serializable {
             ((this.editorsNotes==null && other.getEditorsNotes()==null) || 
              (this.editorsNotes!=null &&
               this.editorsNotes.equals(other.getEditorsNotes()))) &&
-            ((this._private==null && other.get_private()==null) || 
-             (this._private!=null &&
-              this._private.equals(other.get_private())));
+            this._private == other.is_private();
         __equalsCalc = null;
         return _equals;
     }
@@ -124,9 +122,7 @@ public class Note  implements java.io.Serializable {
         if (getEditorsNotes() != null) {
             _hashCode += getEditorsNotes().hashCode();
         }
-        if (get_private() != null) {
-            _hashCode += get_private().hashCode();
-        }
+        _hashCode += (is_private() ? Boolean.TRUE : Boolean.FALSE).hashCode();
         __hashCodeCalc = false;
         return _hashCode;
     }
@@ -141,22 +137,19 @@ public class Note  implements java.io.Serializable {
         elemField.setFieldName("noteText");
         elemField.setXmlName(new javax.xml.namespace.QName("", "NoteText"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("editorsNotes");
         elemField.setXmlName(new javax.xml.namespace.QName("", "EditorsNotes"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("_private");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Private"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(true);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
     }
 
