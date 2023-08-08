@@ -22,13 +22,7 @@ public class LinkedVideoData  implements java.io.Serializable {
 
     private java.lang.String agendaPacketUrl;
 
-    private java.util.Calendar created;
-
-    private java.util.Calendar lastModified;
-
     private java.util.Calendar videoDate;
-
-    private java.lang.String name;
 
     public LinkedVideoData() {
     }
@@ -41,10 +35,7 @@ public class LinkedVideoData  implements java.io.Serializable {
            java.lang.String minutesUrl,
            java.lang.String agendaUrl,
            java.lang.String agendaPacketUrl,
-           java.util.Calendar created,
-           java.util.Calendar lastModified,
-           java.util.Calendar videoDate,
-           java.lang.String name) {
+           java.util.Calendar videoDate) {
            this.ID = ID;
            this.eventID = eventID;
            this.folderID = folderID;
@@ -52,10 +43,7 @@ public class LinkedVideoData  implements java.io.Serializable {
            this.minutesUrl = minutesUrl;
            this.agendaUrl = agendaUrl;
            this.agendaPacketUrl = agendaPacketUrl;
-           this.created = created;
-           this.lastModified = lastModified;
            this.videoDate = videoDate;
-           this.name = name;
     }
 
 
@@ -198,47 +186,6 @@ public class LinkedVideoData  implements java.io.Serializable {
         this.agendaPacketUrl = agendaPacketUrl;
     }
 
-
-    /**
-     * Gets the created value for this LinkedVideoData.
-     * 
-     * @return created
-     */
-    public java.util.Calendar getCreated() {
-        return created;
-    }
-
-
-    /**
-     * Sets the created value for this LinkedVideoData.
-     * 
-     * @param created
-     */
-    public void setCreated(java.util.Calendar created) {
-        this.created = created;
-    }
-
-
-    /**
-     * Gets the lastModified value for this LinkedVideoData.
-     * 
-     * @return lastModified
-     */
-    public java.util.Calendar getLastModified() {
-        return lastModified;
-    }
-
-
-    /**
-     * Sets the lastModified value for this LinkedVideoData.
-     * 
-     * @param lastModified
-     */
-    public void setLastModified(java.util.Calendar lastModified) {
-        this.lastModified = lastModified;
-    }
-
-
     /**
      * Gets the videoDate value for this LinkedVideoData.
      * 
@@ -256,26 +203,6 @@ public class LinkedVideoData  implements java.io.Serializable {
      */
     public void setVideoDate(java.util.Calendar videoDate) {
         this.videoDate = videoDate;
-    }
-
-
-    /**
-     * Gets the name value for this LinkedVideoData.
-     * 
-     * @return name
-     */
-    public java.lang.String getName() {
-        return name;
-    }
-
-
-    /**
-     * Sets the name value for this LinkedVideoData.
-     * 
-     * @param name
-     */
-    public void setName(java.lang.String name) {
-        this.name = name;
     }
 
     private java.lang.Object __equalsCalc = null;
@@ -305,18 +232,9 @@ public class LinkedVideoData  implements java.io.Serializable {
             ((this.agendaPacketUrl==null && other.getAgendaPacketUrl()==null) || 
              (this.agendaPacketUrl!=null &&
               this.agendaPacketUrl.equals(other.getAgendaPacketUrl()))) &&
-            ((this.created==null && other.getCreated()==null) || 
-             (this.created!=null &&
-              this.created.equals(other.getCreated()))) &&
-            ((this.lastModified==null && other.getLastModified()==null) || 
-             (this.lastModified!=null &&
-              this.lastModified.equals(other.getLastModified()))) &&
             ((this.videoDate==null && other.getVideoDate()==null) || 
              (this.videoDate!=null &&
-              this.videoDate.equals(other.getVideoDate()))) &&
-            ((this.name==null && other.getName()==null) || 
-             (this.name!=null &&
-              this.name.equals(other.getName())));
+              this.videoDate.equals(other.getVideoDate())));
         __equalsCalc = null;
         return _equals;
     }
@@ -343,17 +261,8 @@ public class LinkedVideoData  implements java.io.Serializable {
         if (getAgendaPacketUrl() != null) {
             _hashCode += getAgendaPacketUrl().hashCode();
         }
-        if (getCreated() != null) {
-            _hashCode += getCreated().hashCode();
-        }
-        if (getLastModified() != null) {
-            _hashCode += getLastModified().hashCode();
-        }
         if (getVideoDate() != null) {
             _hashCode += getVideoDate().hashCode();
-        }
-        if (getName() != null) {
-            _hashCode += getName().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
