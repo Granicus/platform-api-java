@@ -48,10 +48,7 @@
                     <element name="MinutesUrl" type="xsd:string"/>
                     <element name="AgendaUrl" type="xsd:string"/>
                     <element name="AgendaPacketUrl" type="xsd:string"/>
-                    <element name="Created" type="xsd:dateTime"/>
-                    <element name="LastModified" type="xsd:dateTime"/>
                     <element name="VideoDate" type="xsd:dateTime"/>
-                    <element name="Name" type="xsd:string"/>
                 </all>
             </complexType>
             <complexType name="FolderData">
@@ -970,11 +967,6 @@
     <message name="GetMotionActionsResponse">
         <part name="MotionActions" type="ns5:StringCollection" />
     </message>
-    <message name="SetLinkedVideoStreamUrlRequest">
-        <part name="EventID" type="xsd:int" />
-        <part name="LinkedVideoStreamUrl" type="xsd:string" />
-    </message>
-    <message name="SetLinkedVideoStreamUrlResponse" />
     <message name="CreateLinkedVideoRequest">
         <part name="LinkedVideoData" type="ns5:LinkedVideoData" />
     </message>
@@ -1369,10 +1361,6 @@
         <operation name="GetMotionActions">
             <input message="tns:GetMotionActionsRequest" />
             <output message="tns:GetMotionActionsResponse" />
-        </operation>
-        <operation name="SetLinkedVideoStreamUrl">
-            <input message="tns:SetLinkedVideoStreamUrlRequest" />
-            <output message="tns:SetLinkedVideoStreamUrlResponse" />
         </operation>
         <operation name="CreateLinkedVideo">
             <input message="tns:CreateLinkedVideoRequest" />
@@ -2247,15 +2235,6 @@
         </operation>
         <operation name="GetMotionActions">
             <soap:operation soapAction="urn:UserSDK#UserWebservice#GetMotionActions" />
-            <input>
-                <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-            </input>
-            <output>
-                <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-            </output>
-        </operation>
-        <operation name="SetLinkedVideoStreamUrl">
-            <soap:operation soapAction="urn:UserSDK#UserWebservice#SetLinkedVideoStreamUrl" />
             <input>
                 <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
             </input>

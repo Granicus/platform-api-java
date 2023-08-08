@@ -16,7 +16,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
     static org.apache.axis.description.OperationDesc [] _operations;
 
     static {
-        _operations = new org.apache.axis.description.OperationDesc[99];
+        _operations = new org.apache.axis.description.OperationDesc[98];
         _initOperationDesc1();
         _initOperationDesc2();
         _initOperationDesc3();
@@ -1110,17 +1110,6 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         _operations[96] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("SetLinkedVideoStreamUrl");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "EventID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "LinkedVideoStreamUrl"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[97] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("CreateLinkedVideo");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "LinkedVideoData"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://granicus.com/xsd", "LinkedVideoData"), com.granicus.xsd.LinkedVideoData.class, false, false);
         oper.addParameter(param);
@@ -1129,7 +1118,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnQName(new javax.xml.namespace.QName("", "LinkedVideoID"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[98] = oper;
+        _operations[97] = oper;
     }
 
     public UserSDKBindingStub() throws org.apache.axis.AxisFault {
@@ -4313,36 +4302,12 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         }
     }
 
-    public void setLinkedVideoStreamUrl(int eventID, java.lang.String url) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[97]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("urn:UserSDK#UserWebservice#SetLinkedVideoStreamUrl");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("urn:UserSDK", "SetLinkedVideoStreamUrl"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
-        try {
-            java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(eventID), url});
-            if (_resp instanceof java.rmi.RemoteException) {
-                throw (java.rmi.RemoteException)_resp;
-            }
-            extractAttachments(_call);
-        } catch (org.apache.axis.AxisFault axisFaultException) {
-            throw axisFaultException;
-        }
-    }
-
     public int createLinkedVideo(com.granicus.xsd.LinkedVideoData linkedVideoData) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[98]);
+        _call.setOperation(_operations[97]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebService#CreateLinkedVideo");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);

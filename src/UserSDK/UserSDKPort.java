@@ -105,6 +105,5 @@ public interface UserSDKPort extends java.rmi.Remote {
     public void createMotionActions(java.lang.String[] motionActions) throws java.rmi.RemoteException;
     public void createAttendees(com.granicus.xsd.Attendee[] attendeesData) throws java.rmi.RemoteException;
     public java.lang.String[] getMotionActions() throws java.rmi.RemoteException;
-    public void setLinkedVideoStreamUrl(int eventID, java.lang.String linkedVideoStreamUrl) throws java.rmi.RemoteException;
     public int createLinkedVideo(com.granicus.xsd.LinkedVideoData linkedVideoData) throws java.rmi.RemoteException;
 }
