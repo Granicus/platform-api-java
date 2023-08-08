@@ -72,6 +72,8 @@ public class EventData  implements java.io.Serializable {
 
     private int[] views;
 
+    private java.lang.String linkedVideoStreamUrl;
+
     public EventData() {
     }
 
@@ -107,7 +109,8 @@ public class EventData  implements java.io.Serializable {
            java.util.Calendar nextStartDate,
            int agendaRolloverID,
            int consentAgenda,
-           int[] views) {
+           int[] views,
+           java.lang.String linkedVideoStreamUrl) {
            this.ID = ID;
            this.UID = UID;
            this.foreignID = foreignID;
@@ -140,6 +143,7 @@ public class EventData  implements java.io.Serializable {
            this.agendaRolloverID = agendaRolloverID;
            this.consentAgenda = consentAgenda;
            this.views = views;
+           this.linkedVideoStreamUrl = linkedVideoStreamUrl;
     }
 
 
@@ -782,6 +786,26 @@ public class EventData  implements java.io.Serializable {
         this.views = views;
     }
 
+
+    /**
+     * Gets the linkedVideoStreamUrl value for this EventData.
+     * 
+     * @return linkedVideoStreamUrl
+     */
+    public java.lang.String getLinkedVideoStreamUrl() {
+        return linkedVideoStreamUrl;
+    }
+
+
+    /**
+     * Sets the linkedVideoStreamUrl value for this EventData.
+     * 
+     * @param linkedVideoStreamUrl
+     */
+    public void setLinkedVideoStreamUrl(java.lang.String linkedVideoStreamUrl) {
+        this.linkedVideoStreamUrl = linkedVideoStreamUrl;
+    }
+
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof EventData)) return false;
@@ -867,7 +891,10 @@ public class EventData  implements java.io.Serializable {
             this.consentAgenda == other.getConsentAgenda() &&
             ((this.views==null && other.getViews()==null) || 
              (this.views!=null &&
-              java.util.Arrays.equals(this.views, other.getViews())));
+              java.util.Arrays.equals(this.views, other.getViews()))) &&
+            ((this.linkedVideoStreamUrl==null && other.getLinkedVideoStreamUrl()==null) || 
+             (this.linkedVideoStreamUrl!=null &&
+              this.linkedVideoStreamUrl.equals(other.getLinkedVideoStreamUrl())));
         __equalsCalc = null;
         return _equals;
     }
@@ -976,6 +1003,9 @@ public class EventData  implements java.io.Serializable {
                     _hashCode += obj.hashCode();
                 }
             }
+        }
+        if (getLinkedVideoStreamUrl() != null) {
+            _hashCode += getLinkedVideoStreamUrl().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -1177,6 +1207,12 @@ public class EventData  implements java.io.Serializable {
         elemField.setFieldName("views");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Views"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        elemField.setNillable(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("linkedVideoStreamUrl");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "LinkedVideoStreamUrl"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }

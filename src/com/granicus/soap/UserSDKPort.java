@@ -47,6 +47,7 @@ public interface UserSDKPort extends java.rmi.Remote {
     public com.granicus.xsd.ClipData[] getClips(int folderID) throws java.rmi.RemoteException;
     public com.granicus.xsd.ClipData[] getClipsByForeignID(int foreignID) throws java.rmi.RemoteException;
     public com.granicus.xsd.ClipData getClip(int clipID) throws java.rmi.RemoteException;
+    public com.granicus.xsd.PublishClipResult publishClip(com.granicus.xsd.PublishClipData publishClipData) throws java.rmi.RemoteException;
     public com.granicus.xsd.ClipData getClipByUID(java.lang.String clipUID) throws java.rmi.RemoteException;
     public java.lang.String getClipVideoLocation(int clipID) throws java.rmi.RemoteException;
     public com.granicus.xsd.MetaDataData[] getClipMetaData(int clipID) throws java.rmi.RemoteException;
@@ -77,11 +78,14 @@ public interface UserSDKPort extends java.rmi.Remote {
     public void updateView(com.granicus.xsd.ViewData view) throws java.rmi.RemoteException;
     public int createUser(com.granicus.xsd.UserData userData) throws java.rmi.RemoteException;
     public int getCurrentUserID() throws java.rmi.RemoteException;
+    public java.lang.String getCurrentUserUID() throws java.rmi.RemoteException;
+    public void setUserMemberships(java.lang.String userUID, java.lang.String[] groupUIDs) throws java.rmi.RemoteException;
     public java.lang.String getCurrentUserLogon() throws java.rmi.RemoteException;
     public com.granicus.xsd.UserData[] getUsers() throws java.rmi.RemoteException;
     public com.granicus.xsd.UserData getUser(int userID) throws java.rmi.RemoteException;
     public void updateUser(com.granicus.xsd.UserData user) throws java.rmi.RemoteException;
-    public int createGroup(com.granicus.xsd.GroupData groupData) throws java.rmi.RemoteException;
+    public void deleteUser(java.lang.String userUID) throws java.rmi.RemoteException;
+    public java.lang.String createGroup(com.granicus.xsd.GroupData groupData) throws java.rmi.RemoteException;
     public com.granicus.xsd.GroupData[] getGroups() throws java.rmi.RemoteException;
     public com.granicus.xsd.GroupData getGroup(int groupID) throws java.rmi.RemoteException;
     public void updateGroup(com.granicus.xsd.GroupData group) throws java.rmi.RemoteException;
@@ -101,6 +105,8 @@ public interface UserSDKPort extends java.rmi.Remote {
     public void createMotionActions(java.lang.String[] motionActions) throws java.rmi.RemoteException;
     public void createAttendees(com.granicus.xsd.Attendee[] attendeesData) throws java.rmi.RemoteException;
     public java.lang.String[] getMotionActions() throws java.rmi.RemoteException;
+    public void setLinkedVideoStreamUrl(int eventID, java.lang.String url) throws java.rmi.RemoteException;
+    public int createLinkedVideo(com.granicus.xsd.LinkedVideoData linkedVideoData) throws java.rmi.RemoteException;
 
     class UserSDKServiceLocator extends org.apache.axis.client.Service implements UserSDKService {
 
