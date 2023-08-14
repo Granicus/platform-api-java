@@ -5,10 +5,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.Assert;
 import com.granicus.xsd.*;
-
-import javax.print.attribute.standard.DateTimeAtCompleted;
-
-import java.rmi.RemoteException;
 import java.util.*;
 
 /**
@@ -77,7 +73,6 @@ public class PlatformClientTest {
 
 	@Test
 	public void testGetEventsByDateRange() throws Exception {
-		
 		Calendar currTime = Calendar.getInstance();
 		Calendar pastTime = Calendar.getInstance();
 		pastTime.add(Calendar.YEAR, -1);
@@ -106,7 +101,6 @@ public class PlatformClientTest {
 
 	@Test
 	public void TestGetEventsByForeignID() throws Exception {
-		
 		int foreignID = 99999;
 		EventData[] events = client.getEventsByForeignID(foreignID);
 		
@@ -123,7 +117,6 @@ public class PlatformClientTest {
 
 	@Test
 	public void UpdateClipDate() throws Exception {
-		
 		ClipData clip = FindFirstClip();
 		Calendar new_date = clip.getDate();
 		new_date.add(Calendar.HOUR_OF_DAY, 1);
@@ -136,7 +129,6 @@ public class PlatformClientTest {
 
 	@Test
 	public void UpdateClipDuration() throws Exception {
-
 		ClipData clip = FindFirstClip();
 
 		clip.setDuration(clip.getDuration() + 60);
@@ -145,7 +137,6 @@ public class PlatformClientTest {
 	}
 
 	private ClipData FindFirstClip() throws Exception {
-
 		ClipData clip = null;
 
 		FolderData[] folders = client.getFolders();
@@ -161,7 +152,6 @@ public class PlatformClientTest {
 		}
 
 		return clip;
-
 	}
 
 	@Test
@@ -172,18 +162,15 @@ public class PlatformClientTest {
 
 	@Test
 	public void testCreateDeleteEvent() throws Exception {
-
 		EventData event = MakeNewEvent(Calendar.getInstance());
 		int eventID = client.createEvent(event);
 		EventData getEvent = client.getEvent(eventID);
 		
 		Assert.assertEquals(getEvent.getName(), event.getName());
 		client.deleteEvent(eventID);
-		
 	}
 	
 	private EventData MakeNewEvent(Calendar meetingDate) throws Exception {
-		
 		// get the prerequisite data
 		CameraData[] cams = client.getCameras();
 		FolderData[] folders = client.getFolders();
@@ -211,15 +198,39 @@ public class PlatformClientTest {
 
 	@Test
 	public void testGetUserDetail() throws Exception {
-
 	}
 
 	@Test
 	public void testUpdateEvent() throws Exception {
-
 		EventData[] events = client.getEvents();
 		EventData event = events[events.length - 1];
 		client.updateEvent(event);
+	}
 
+	@Test
+	public void testCreateLinkedVideoFromEvent() throws Exception {
+		// create a "link" type folder
+		// for some reason creating the folder with PlatformClient isn't
+		// allowing the type to be set upon create so it's a separate update.
+		FolderData folder = new FolderData();
+		folder.setName("The New Adventures of Linked");
+		int folderId = client.createFolder(folder);
+		folder = client.getFolder(folderId);
+		folder.setType("link");
+		client.updateFolder(folder);
+		// get an event and assign the link folder to it
+		// (creating a linkedvideo from an event requires event to have a link folder)
+		EventData[] events = client.getEvents();
+		EventData event = events[events.length - 1];
+		int originalFolderId = event.getFolderID(); // keep track of this so we can set it back
+		event.setFolderID(folderId);
+		client.updateEvent(event);
+
+		client.createLinkedVideoFromEvent(event.getID(), "https://www.google.com");
+
+		// clean up or we'll end up with a million folders
+		event.setFolderID(originalFolderId);
+		client.updateEvent(event);
+		client.deleteFolder(folderId);
 	}
 }

@@ -8,11 +8,11 @@
 package com.granicus.xsd;
 
 public class LinkedVideoData  implements java.io.Serializable {
-    private int ID;
+    private java.lang.Integer ID;
 
-    private int eventID;
+    private java.lang.Integer eventId;
 
-    private int folderID;
+    private java.lang.Integer folderId;
 
     private java.lang.String url;
 
@@ -24,26 +24,30 @@ public class LinkedVideoData  implements java.io.Serializable {
 
     private java.util.Calendar videoDate;
 
+    private java.lang.String name;
+
     public LinkedVideoData() {
     }
 
     public LinkedVideoData(
-           int ID,
-           int eventID,
-           int folderID,
+           java.lang.Integer ID,
+           java.lang.Integer eventId,
+           java.lang.Integer folderId,
            java.lang.String url,
            java.lang.String minutesUrl,
            java.lang.String agendaUrl,
            java.lang.String agendaPacketUrl,
-           java.util.Calendar videoDate) {
+           java.util.Calendar videoDate,
+           java.lang.String name) {
            this.ID = ID;
-           this.eventID = eventID;
-           this.folderID = folderID;
+           this.eventId = eventId;
+           this.folderId = folderId;
            this.url = url;
            this.minutesUrl = minutesUrl;
            this.agendaUrl = agendaUrl;
            this.agendaPacketUrl = agendaPacketUrl;
            this.videoDate = videoDate;
+           this.name = name;
     }
 
 
@@ -52,7 +56,7 @@ public class LinkedVideoData  implements java.io.Serializable {
      * 
      * @return ID
      */
-    public int getID() {
+    public java.lang.Integer getID() {
         return ID;
     }
 
@@ -62,48 +66,48 @@ public class LinkedVideoData  implements java.io.Serializable {
      * 
      * @param ID
      */
-    public void setID(int ID) {
+    public void setID(java.lang.Integer ID) {
         this.ID = ID;
     }
 
 
     /**
-     * Gets the eventID value for this LinkedVideoData.
+     * Gets the eventId value for this LinkedVideoData.
      * 
-     * @return eventID
+     * @return eventId
      */
-    public int getEventID() {
-        return eventID;
+    public java.lang.Integer getEventId() {
+        return eventId;
     }
 
 
     /**
-     * Sets the eventID value for this LinkedVideoData.
+     * Sets the eventId value for this LinkedVideoData.
      * 
-     * @param eventID
+     * @param eventId
      */
-    public void setEventID(int eventID) {
-        this.eventID = eventID;
+    public void setEventId(java.lang.Integer eventId) {
+        this.eventId = eventId;
     }
 
 
     /**
-     * Gets the folderID value for this LinkedVideoData.
+     * Gets the folderId value for this LinkedVideoData.
      * 
-     * @return folderID
+     * @return folderId
      */
-    public int getFolderID() {
-        return folderID;
+    public java.lang.Integer getFolderId() {
+        return folderId;
     }
 
 
     /**
-     * Sets the folderID value for this LinkedVideoData.
+     * Sets the folderId value for this LinkedVideoData.
      * 
-     * @param folderID
+     * @param folderId
      */
-    public void setFolderID(int folderID) {
-        this.folderID = folderID;
+    public void setFolderId(java.lang.Integer folderId) {
+        this.folderId = folderId;
     }
 
 
@@ -186,6 +190,7 @@ public class LinkedVideoData  implements java.io.Serializable {
         this.agendaPacketUrl = agendaPacketUrl;
     }
 
+
     /**
      * Gets the videoDate value for this LinkedVideoData.
      * 
@@ -205,6 +210,26 @@ public class LinkedVideoData  implements java.io.Serializable {
         this.videoDate = videoDate;
     }
 
+
+    /**
+     * Gets the name value for this LinkedVideoData.
+     * 
+     * @return name
+     */
+    public java.lang.String getName() {
+        return name;
+    }
+
+
+    /**
+     * Sets the name value for this LinkedVideoData.
+     * 
+     * @param name
+     */
+    public void setName(java.lang.String name) {
+        this.name = name;
+    }
+
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof LinkedVideoData)) return false;
@@ -217,9 +242,15 @@ public class LinkedVideoData  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true && 
-            this.ID == other.getID() &&
-            this.eventID == other.getEventID() &&
-            this.folderID == other.getFolderID() &&
+            ((this.ID==null && other.getID()==null) || 
+             (this.ID!=null &&
+              this.ID.equals(other.getID()))) &&
+            ((this.eventId==null && other.getEventId()==null) || 
+             (this.eventId!=null &&
+              this.eventId.equals(other.getEventId()))) &&
+            ((this.folderId==null && other.getFolderId()==null) || 
+             (this.folderId!=null &&
+              this.folderId.equals(other.getFolderId()))) &&
             ((this.url==null && other.getUrl()==null) || 
              (this.url!=null &&
               this.url.equals(other.getUrl()))) &&
@@ -234,7 +265,10 @@ public class LinkedVideoData  implements java.io.Serializable {
               this.agendaPacketUrl.equals(other.getAgendaPacketUrl()))) &&
             ((this.videoDate==null && other.getVideoDate()==null) || 
              (this.videoDate!=null &&
-              this.videoDate.equals(other.getVideoDate())));
+              this.videoDate.equals(other.getVideoDate()))) &&
+            ((this.name==null && other.getName()==null) || 
+             (this.name!=null &&
+              this.name.equals(other.getName())));
         __equalsCalc = null;
         return _equals;
     }
@@ -246,9 +280,15 @@ public class LinkedVideoData  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        _hashCode += getID();
-        _hashCode += getEventID();
-        _hashCode += getFolderID();
+        if (getID() != null) {
+            _hashCode += getID().hashCode();
+        }
+        if (getEventId() != null) {
+            _hashCode += getEventId().hashCode();
+        }
+        if (getFolderId() != null) {
+            _hashCode += getFolderId().hashCode();
+        }
         if (getUrl() != null) {
             _hashCode += getUrl().hashCode();
         }
@@ -263,6 +303,9 @@ public class LinkedVideoData  implements java.io.Serializable {
         }
         if (getVideoDate() != null) {
             _hashCode += getVideoDate().hashCode();
+        }
+        if (getName() != null) {
+            _hashCode += getName().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -281,14 +324,14 @@ public class LinkedVideoData  implements java.io.Serializable {
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("eventID");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "EventID"));
+        elemField.setFieldName("eventId");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "EventId"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("folderID");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "FolderID"));
+        elemField.setFieldName("folderId");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "FolderId"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
@@ -320,6 +363,12 @@ public class LinkedVideoData  implements java.io.Serializable {
         elemField.setFieldName("videoDate");
         elemField.setXmlName(new javax.xml.namespace.QName("", "VideoDate"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setNillable(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("name");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "Name"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }

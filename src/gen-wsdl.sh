@@ -1,10 +1,20 @@
 #! /bin/bash
 
+# copy the wsdl file and update so we can also update the UserSDK package
+cp granicus.wsdl usersdk-granicus.wsdl
+OLDNAME="soap.granicus.com"
+NEWNAME="UserSDK"
+sed -i '' "s/$OLDNAME/$NEWNAME/g" usersdk-granicus.wsdl
+
 CP="."
 for JAR in `ls ../lib/*.jar`; do
         CP="$CP:$JAR"
 done
-#echo "classpath = $CP"
+
+# generate new java in com.granicus.soap package from original wsdl
 java -cp $CP org.apache.axis.wsdl.WSDL2Java granicus.wsdl
-#java -cp $CP org.apache.axis.wsdl.WSDL2Java encoder.wsdl --package com.granicus.encoder
-#java -cp $CP org.apache.axis.wsdl.WSDL2Java accelerator.wsdl --package com.granicus.accelerator
+#generate new java in UserSDK package from copied and modified wsdl
+java -cp $CP org.apache.axis.wsdl.WSDL2Java usersdk-granicus.wsdl
+
+# delete the extra wsdl
+rm usersdk-granicus.wsdl

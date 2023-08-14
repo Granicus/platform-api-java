@@ -36,6 +36,8 @@ public class MetaDataData  implements java.io.Serializable {
 
     private com.granicus.xsd.MetaDataData[] children;
 
+    private java.lang.String visibility;
+
     public MetaDataData() {
     }
 
@@ -53,7 +55,8 @@ public class MetaDataData  implements java.io.Serializable {
            int consent,
            java.lang.String consentVoteUID,
            int closedSession,
-           com.granicus.xsd.MetaDataData[] children) {
+           com.granicus.xsd.MetaDataData[] children,
+           java.lang.String visibility) {
            this.ID = ID;
            this.UID = UID;
            this.parentID = parentID;
@@ -68,6 +71,7 @@ public class MetaDataData  implements java.io.Serializable {
            this.consentVoteUID = consentVoteUID;
            this.closedSession = closedSession;
            this.children = children;
+           this.visibility = visibility;
     }
 
 
@@ -350,6 +354,26 @@ public class MetaDataData  implements java.io.Serializable {
         this.children = children;
     }
 
+
+    /**
+     * Gets the visibility value for this MetaDataData.
+     * 
+     * @return visibility
+     */
+    public java.lang.String getVisibility() {
+        return visibility;
+    }
+
+
+    /**
+     * Sets the visibility value for this MetaDataData.
+     * 
+     * @param visibility
+     */
+    public void setVisibility(java.lang.String visibility) {
+        this.visibility = visibility;
+    }
+
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof MetaDataData)) return false;
@@ -387,7 +411,10 @@ public class MetaDataData  implements java.io.Serializable {
             this.closedSession == other.getClosedSession() &&
             ((this.children==null && other.getChildren()==null) || 
              (this.children!=null &&
-              java.util.Arrays.equals(this.children, other.getChildren())));
+              java.util.Arrays.equals(this.children, other.getChildren()))) &&
+            ((this.visibility==null && other.getVisibility()==null) || 
+             (this.visibility!=null &&
+              this.visibility.equals(other.getVisibility())));
         __equalsCalc = null;
         return _equals;
     }
@@ -432,6 +459,9 @@ public class MetaDataData  implements java.io.Serializable {
                     _hashCode += obj.hashCode();
                 }
             }
+        }
+        if (getVisibility() != null) {
+            _hashCode += getVisibility().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -525,6 +555,12 @@ public class MetaDataData  implements java.io.Serializable {
         elemField.setFieldName("children");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Children"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://granicus.com/xsd", "MetaDataData"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("visibility");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "Visibility"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
     }

@@ -1,99 +1,100 @@
 <?xml version="1.0"?>
-<definitions name="UserSDK" targetNamespace="urn:UserSDK" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:UserSDK" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns5="http://granicus.com/xsd">
+<definitions name="soap.granicus.com" targetNamespace="urn:soap.granicus.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:soap.granicus.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns5="http://granicus.com/xsd">
     <types xmlns="http://schemas.xmlsoap.org/wsdl/">
         <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://granicus.com/xsd">
             <complexType name="EventData">
                 <all>
-                    <element name="ID" type="xsd:int" />
-                    <element name="UID" type="xsd:string" />
-                    <element name="ForeignID" type="xsd:int" />
-                    <element name="Name" type="xsd:string" />
-                    <element name="Description" type="xsd:string" />
-                    <element name="CameraID" type="xsd:int" />
-                    <element name="FolderID" type="xsd:int" />
-                    <element name="Status" type="xsd:string" />
-                    <element name="AgendaType" type="xsd:string" />
-                    <element name="AgendaFile" type="xsd:string" />
-                    <element name="PlayerTemplateID" type="xsd:int" />
-                    <element name="ArchiveStatus" type="xsd:string" />
-                    <element name="Duration" type="xsd:int" />
-                    <element name="Broadcast" type="xsd:boolean" />
-                    <element name="Record" type="xsd:boolean" />
-                    <element name="AutoStart" type="xsd:boolean" />
-                    <element name="StartTime" type="xsd:dateTime" />
-                    <element name="LastModified" type="xsd:dateTime" />
-                    <element name="Attendees" type="ns5:AttendeeCollection" />
-                    <element name="MotionTypes" type="ns5:StringCollection" />
-                    <element name="Street1" type="xsd:string" />
-                    <element name="Street2" type="xsd:string" />
-                    <element name="City" type="xsd:string" />
-                    <element name="State" type="xsd:string" />
-                    <element name="Zip" type="xsd:string" />
-                    <element name="AgendaTitle" type="xsd:string" />
-                    <element name="MeetingTime" type="xsd:dateTime" />
-                    <element name="AgendaPostedDate" type="xsd:dateTime" />
-                    <element name="NextStartDate" type="xsd:dateTime" />
-                    <element name="AgendaRolloverID" type="xsd:int" />
-                    <element name="ConsentAgenda" type="xsd:int" />
-                    <element name="Views" type="ns5:IntegerCollection" />
-                    <element name="LinkedVideoStreamUrl" type="xsd:string" />
+                    <element name="ID" nillable="true" type="xsd:int" />
+                    <element name="UID" nillable="true" type="xsd:string" />
+                    <element name="ForeignID" nillable="true" type="xsd:int" />
+                    <element name="Name" nillable="true" type="xsd:string" />
+                    <element name="Description" nillable="true" type="xsd:string" />
+                    <element name="CameraID" nillable="true" type="xsd:int" />
+                    <element name="FolderID" nillable="true" type="xsd:int" />
+                    <element name="Status" nillable="true" type="xsd:string" />
+                    <element name="AgendaType" nillable="true" type="xsd:string" />
+                    <element name="AgendaFile" nillable="true" type="xsd:string" />
+                    <element name="PlayerTemplateID" nillable="true" type="xsd:int" />
+                    <element name="ArchiveStatus" nillable="true" type="xsd:string" />
+                    <element name="Duration" nillable="true" type="xsd:int" />
+                    <element name="Broadcast" nillable="true" type="xsd:boolean" />
+                    <element name="Record" nillable="true" type="xsd:boolean" />
+                    <element name="AutoStart" nillable="true" type="xsd:boolean" />
+                    <element name="StartTime" nillable="true" type="xsd:dateTime" />
+                    <element name="LastModified" nillable="true" type="xsd:dateTime" />
+                    <element name="Attendees" nillable="true" type="ns5:AttendeeCollection" />
+                    <element name="MotionTypes" nillable="true" type="ns5:StringCollection" />
+                    <element name="Street1" nillable="true" type="xsd:string" />
+                    <element name="Street2" nillable="true" type="xsd:string" />
+                    <element name="City" nillable="true" type="xsd:string" />
+                    <element name="State" nillable="true" type="xsd:string" />
+                    <element name="Zip" nillable="true" type="xsd:string" />
+                    <element name="AgendaTitle" nillable="true" type="xsd:string" />
+                    <element name="MeetingTime" nillable="true" type="xsd:dateTime" />
+                    <element name="AgendaPostedDate" nillable="true" type="xsd:dateTime" />
+                    <element name="NextStartDate" nillable="true" type="xsd:dateTime" />
+                    <element name="AgendaRolloverID" nillable="true" type="xsd:int" />
+                    <element name="ConsentAgenda" nillable="true" type="xsd:int" />
+                    <element name="Views" nillable="true" type="ns5:IntegerCollection" />
+                    <element name="LinkedVideoStreamUrl" nillable="true" type="xsd:string" />
                 </all>
             </complexType>
             <complexType name="LinkedVideoData">
                 <all>
-                    <element name="ID" type="xsd:int"/>
-                    <element name="EventID" type="xsd:int"/>
-                    <element name="FolderID" type="xsd:int"/>
-                    <element name="Url" type="xsd:string"/>
-                    <element name="MinutesUrl" type="xsd:string"/>
-                    <element name="AgendaUrl" type="xsd:string"/>
-                    <element name="AgendaPacketUrl" type="xsd:string"/>
-                    <element name="VideoDate" type="xsd:dateTime"/>
+                    <element name="ID" nillable="true" type="xsd:int"/>
+                    <element name="EventId" nillable="true" type="xsd:int"/>
+                    <element name="FolderId" nillable="true" type="xsd:int"/>
+                    <element name="Url" nillable="true" type="xsd:string"/>
+                    <element name="MinutesUrl" nillable="true" type="xsd:string"/>
+                    <element name="AgendaUrl" nillable="true" type="xsd:string"/>
+                    <element name="AgendaPacketUrl" nillable="true" type="xsd:string"/>
+                    <element name="VideoDate" nillable="true" type="xsd:dateTime"/>
+                    <element name="Name" nillable="true" type="xsd:string"/>
                 </all>
             </complexType>
             <complexType name="FolderData">
                 <all>
                     <element name="ID" type="xsd:int" />
                     <element name="Name" type="xsd:string" />
-                    <element name="Description" type="xsd:string" />
-                    <element name="Type" type="xsd:string" />
-                    <element name="PlayerTemplateID" type="xsd:int" />
-                    <element name="CreatedDate" type="xsd:dateTime" />
-                    <element name="Views" type="ns5:IntegerCollection" />
-                    <element name="Servers" type="ns5:IntegerCollection" />
+                    <element name="Description" nillable="true" type="xsd:string" />
+                    <element name="Type" nillable="true" type="xsd:string" />
+                    <element name="PlayerTemplateID" nillable="true" type="xsd:int" />
+                    <element name="CreatedDate" nillable="true" type="xsd:dateTime" />
+                    <element name="Views" nillable="true" type="ns5:IntegerCollection" />
+                    <element name="Servers" nillable="true" type="ns5:IntegerCollection" />
                 </all>
             </complexType>
             <complexType name="ClipData">
                 <all>
-                    <element name="ID" type="xsd:int" />
-                    <element name="UID" type="xsd:string" />
-                    <element name="EventUID" type="xsd:string" />
-                    <element name="ForeignID" type="xsd:int" />
-                    <element name="Type" type="xsd:string" />
-                    <element name="Name" type="xsd:string" />
-                    <element name="Description" type="xsd:string" />
-                    <element name="Keywords" type="xsd:string" />
-                    <element name="Date" type="xsd:dateTime" />
-                    <element name="CameraID" type="xsd:int" />
-                    <element name="FolderID" type="xsd:int" />
-                    <element name="FileName" type="xsd:string" />
-                    <element name="MinutesType" type="xsd:string" />
-                    <element name="MinutesFile" type="xsd:string" />
-                    <element name="AgendaType" type="xsd:string" />
-                    <element name="AgendaFile" type="xsd:string" />
-                    <element name="Duration" type="xsd:int" />
-                    <element name="Status" type="xsd:string" />
-                    <element name="StartTime" type="xsd:dateTime" />
-                    <element name="LastModified" type="xsd:dateTime" />
-                    <element name="Attendees" type="ns5:AttendeeCollection" />
-                    <element name="MotionTypes" type="ns5:StringCollection" />
-                    <element name="Street1" type="xsd:string" />
-                    <element name="Street2" type="xsd:string" />
-                    <element name="City" type="xsd:string" />
-                    <element name="State" type="xsd:string" />
-                    <element name="Zip" type="xsd:string" />
-                    <element name="AgendaTitle" type="xsd:string" />
-                    <element name="AgendaPostedDate" type="xsd:dateTime" />
+                    <element name="ID" nillable="true" type="xsd:int" />
+                    <element name="UID" nillable="true" type="xsd:string" />
+                    <element name="EventUID" nillable="true" type="xsd:string" />
+                    <element name="ForeignID" nillable="true" type="xsd:int" />
+                    <element name="Type" nillable="true" type="xsd:string" />
+                    <element name="Name" nillable="true" type="xsd:string" />
+                    <element name="Description" nillable="true" type="xsd:string" />
+                    <element name="Keywords" nillable="true" type="xsd:string" />
+                    <element name="Date" nillable="true" type="xsd:dateTime" />
+                    <element name="CameraID" nillable="true" type="xsd:int" />
+                    <element name="FolderID" nillable="true" type="xsd:int" />
+                    <element name="FileName" nillable="true" type="xsd:string" />
+                    <element name="MinutesType" nillable="true" type="xsd:string" />
+                    <element name="MinutesFile" nillable="true" type="xsd:string" />
+                    <element name="AgendaType" nillable="true" type="xsd:string" />
+                    <element name="AgendaFile" nillable="true" type="xsd:string" />
+                    <element name="Duration" nillable="true" type="xsd:int" />
+                    <element name="Status" nillable="true" type="xsd:string" />
+                    <element name="StartTime" nillable="true" type="xsd:dateTime" />
+                    <element name="LastModified" nillable="true" type="xsd:dateTime" />
+                    <element name="Attendees" nillable="true" type="ns5:AttendeeCollection" />
+                    <element name="MotionTypes" nillable="true" type="ns5:StringCollection" />
+                    <element name="Street1" nillable="true" type="xsd:string" />
+                    <element name="Street2" nillable="true" type="xsd:string" />
+                    <element name="City" nillable="true" type="xsd:string" />
+                    <element name="State" nillable="true" type="xsd:string" />
+                    <element name="Zip" nillable="true" type="xsd:string" />
+                    <element name="AgendaTitle" nillable="true" type="xsd:string" />
+                    <element name="AgendaPostedDate" nillable="true" type="xsd:dateTime" />
                 </all>
             </complexType>
             <complexType name="CameraData">
@@ -184,6 +185,7 @@
                     <element name="ConsentVoteUID" type="xsd:string" />
                     <element name="ClosedSession" type="xsd:int" />
                     <element name="Children" type="ns5:MetaDataDataCollection" />
+                    <element name="Visibility" type="xsd:string" />
                 </all>
             </complexType>
             <complexType name="CaptionData">
@@ -289,12 +291,12 @@
             </complexType>
             <complexType name="Attendee">
                 <all>
-                    <element name="ID" type="xsd:int" />
-                    <element name="Name" type="xsd:string" />
-                    <element name="OrderID" type="xsd:int" />
-                    <element name="Voting" type="xsd:boolean" />
-                    <element name="Chair" type="xsd:boolean" />
-                    <element name="PersonUID" type="xsd:string" />
+                    <element name="ID" nillable="true" type="xsd:int" />
+                    <element name="Name" nillable="true" type="xsd:string" />
+                    <element name="OrderID" nillable="true" type="xsd:int" />
+                    <element name="Voting" nillable="true" type="xsd:boolean" />
+                    <element name="Chair" nillable="true" type="xsd:boolean" />
+                    <element name="PersonUID" nillable="true" type="xsd:string" />
                 </all>
             </complexType>
             <complexType name="Setting">
@@ -973,6 +975,29 @@
     <message name="CreateLinkedVideoResponse">
         <part name="LinkedVideoID" type="xsd:int" />
     </message>
+    <message name="CreateLinkedVideoFromEventRequest">
+        <part name="EventID" type="xsd:int" />
+        <part name="VideoUrl" type="xsd:string" />
+    </message>
+    <message name="CreateLinkedVideoFromEventResponse">
+        <part name="LinkedVideoID" type="xsd:int" />
+    </message>
+    <message name="GetLinkedVideoRequest">
+        <part name="LinkedVideoID" type="xsd:int" />
+    </message>
+    <message name="GetLinkedVideoResponse">
+        <part name="LinkedVideoData" type="ns5:LinkedVideoData" />
+    </message>
+    <message name="UpdateLinkedVideoRequest">
+        <part name="LinkedVideoData" type="ns5:LinkedVideoData" />
+    </message>
+    <message name="UpdateLinkedVideoResponse">
+        <part name="LinkedVideoID" type="xsd:int" />
+    </message>
+    <message name="DeleteLinkedVideoRequest">
+        <part name="LinkedVideoID" type="xsd:int" />
+    </message>
+    <message name="DeleteLinkedVideoResponse" />
     <portType name="UserSDKPort">
         <operation name="LogMessage">
             <input message="tns:LogMessageRequest" />
@@ -1365,6 +1390,22 @@
         <operation name="CreateLinkedVideo">
             <input message="tns:CreateLinkedVideoRequest" />
             <output message="tns:CreateLinkedVideoResponse" />
+        </operation>
+        <operation name="CreateLinkedVideoFromEvent">
+            <input message="tns:CreateLinkedVideoFromEventRequest" />
+            <output message="tns:CreateLinkedVideoFromEventResponse" />
+        </operation>
+        <operation name="GetLinkedVideo">
+            <input message="tns:GetLinkedVideoRequest" />
+            <output message="tns:GetLinkedVideoResponse" />
+        </operation>
+        <operation name="UpdateLinkedVideo">
+            <input message="tns:UpdateLinkedVideoRequest" />
+            <output message="tns:UpdateLinkedVideoResponse" />
+        </operation>
+        <operation name="DeleteLinkedVideo">
+            <input message="tns:DeleteLinkedVideoRequest" />
+            <output message="tns:DeleteLinkedVideoResponse" />
         </operation>
     </portType>
     <binding name="UserSDKBinding" type="tns:UserSDKPort">
@@ -2244,6 +2285,42 @@
         </operation>
         <operation name="CreateLinkedVideo">
             <soap:operation soapAction="urn:UserSDK#UserWebservice#CreateLinkedVideo" />
+            <input>
+                <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="CreateLinkedVideoFromEvent">
+            <soap:operation soapAction="urn:UserSDK#UserWebservice#CreateLinkedVideoFromEvent" />
+            <input>
+                <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="GetLinkedVideo">
+            <soap:operation soapAction="urn:UserSDK#UserWebservice#GetLinkedVideo" />
+            <input>
+                <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="UpdateLinkedVideo">
+            <soap:operation soapAction="urn:UserSDK#UserWebservice#UpdateLinkedVideo" />
+            <input>
+                <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="DeleteLinkedVideo">
+            <soap:operation soapAction="urn:UserSDK#UserWebservice#DeleteLinkedVideo" />
             <input>
                 <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
             </input>

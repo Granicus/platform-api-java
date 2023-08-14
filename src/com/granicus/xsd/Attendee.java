@@ -8,15 +8,15 @@
 package com.granicus.xsd;
 
 public class Attendee  implements java.io.Serializable {
-    private int ID;
+    private java.lang.Integer ID;
 
     private java.lang.String name;
 
-    private int orderID;
+    private java.lang.Integer orderID;
 
-    private boolean voting;
+    private java.lang.Boolean voting;
 
-    private boolean chair;
+    private java.lang.Boolean chair;
 
     private java.lang.String personUID;
 
@@ -24,11 +24,11 @@ public class Attendee  implements java.io.Serializable {
     }
 
     public Attendee(
-           int ID,
+           java.lang.Integer ID,
            java.lang.String name,
-           int orderID,
-           boolean voting,
-           boolean chair,
+           java.lang.Integer orderID,
+           java.lang.Boolean voting,
+           java.lang.Boolean chair,
            java.lang.String personUID) {
            this.ID = ID;
            this.name = name;
@@ -44,7 +44,7 @@ public class Attendee  implements java.io.Serializable {
      * 
      * @return ID
      */
-    public int getID() {
+    public java.lang.Integer getID() {
         return ID;
     }
 
@@ -54,7 +54,7 @@ public class Attendee  implements java.io.Serializable {
      * 
      * @param ID
      */
-    public void setID(int ID) {
+    public void setID(java.lang.Integer ID) {
         this.ID = ID;
     }
 
@@ -84,7 +84,7 @@ public class Attendee  implements java.io.Serializable {
      * 
      * @return orderID
      */
-    public int getOrderID() {
+    public java.lang.Integer getOrderID() {
         return orderID;
     }
 
@@ -94,7 +94,7 @@ public class Attendee  implements java.io.Serializable {
      * 
      * @param orderID
      */
-    public void setOrderID(int orderID) {
+    public void setOrderID(java.lang.Integer orderID) {
         this.orderID = orderID;
     }
 
@@ -104,7 +104,7 @@ public class Attendee  implements java.io.Serializable {
      * 
      * @return voting
      */
-    public boolean isVoting() {
+    public java.lang.Boolean getVoting() {
         return voting;
     }
 
@@ -114,7 +114,7 @@ public class Attendee  implements java.io.Serializable {
      * 
      * @param voting
      */
-    public void setVoting(boolean voting) {
+    public void setVoting(java.lang.Boolean voting) {
         this.voting = voting;
     }
 
@@ -124,7 +124,7 @@ public class Attendee  implements java.io.Serializable {
      * 
      * @return chair
      */
-    public boolean isChair() {
+    public java.lang.Boolean getChair() {
         return chair;
     }
 
@@ -134,7 +134,7 @@ public class Attendee  implements java.io.Serializable {
      * 
      * @param chair
      */
-    public void setChair(boolean chair) {
+    public void setChair(java.lang.Boolean chair) {
         this.chair = chair;
     }
 
@@ -170,13 +170,21 @@ public class Attendee  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true && 
-            this.ID == other.getID() &&
+            ((this.ID==null && other.getID()==null) || 
+             (this.ID!=null &&
+              this.ID.equals(other.getID()))) &&
             ((this.name==null && other.getName()==null) || 
              (this.name!=null &&
               this.name.equals(other.getName()))) &&
-            this.orderID == other.getOrderID() &&
-            this.voting == other.isVoting() &&
-            this.chair == other.isChair() &&
+            ((this.orderID==null && other.getOrderID()==null) || 
+             (this.orderID!=null &&
+              this.orderID.equals(other.getOrderID()))) &&
+            ((this.voting==null && other.getVoting()==null) || 
+             (this.voting!=null &&
+              this.voting.equals(other.getVoting()))) &&
+            ((this.chair==null && other.getChair()==null) || 
+             (this.chair!=null &&
+              this.chair.equals(other.getChair()))) &&
             ((this.personUID==null && other.getPersonUID()==null) || 
              (this.personUID!=null &&
               this.personUID.equals(other.getPersonUID())));
@@ -191,13 +199,21 @@ public class Attendee  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        _hashCode += getID();
+        if (getID() != null) {
+            _hashCode += getID().hashCode();
+        }
         if (getName() != null) {
             _hashCode += getName().hashCode();
         }
-        _hashCode += getOrderID();
-        _hashCode += (isVoting() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-        _hashCode += (isChair() ? Boolean.TRUE : Boolean.FALSE).hashCode();
+        if (getOrderID() != null) {
+            _hashCode += getOrderID().hashCode();
+        }
+        if (getVoting() != null) {
+            _hashCode += getVoting().hashCode();
+        }
+        if (getChair() != null) {
+            _hashCode += getChair().hashCode();
+        }
         if (getPersonUID() != null) {
             _hashCode += getPersonUID().hashCode();
         }
