@@ -8,19 +8,19 @@
 package com.granicus.xsd;
 
 public class EventData  implements java.io.Serializable {
-    private int ID;
+    private java.lang.Integer ID;
 
     private java.lang.String UID;
 
-    private int foreignID;
+    private java.lang.Integer foreignID;
 
     private java.lang.String name;
 
     private java.lang.String description;
 
-    private int cameraID;
+    private java.lang.Integer cameraID;
 
-    private int folderID;
+    private java.lang.Integer folderID;
 
     private java.lang.String status;
 
@@ -28,17 +28,17 @@ public class EventData  implements java.io.Serializable {
 
     private java.lang.String agendaFile;
 
-    private int playerTemplateID;
+    private java.lang.Integer playerTemplateID;
 
     private java.lang.String archiveStatus;
 
-    private int duration;
+    private java.lang.Integer duration;
 
-    private boolean broadcast;
+    private java.lang.Boolean broadcast;
 
-    private boolean record;
+    private java.lang.Boolean record;
 
-    private boolean autoStart;
+    private java.lang.Boolean autoStart;
 
     private java.util.Calendar startTime;
 
@@ -66,32 +66,34 @@ public class EventData  implements java.io.Serializable {
 
     private java.util.Calendar nextStartDate;
 
-    private int agendaRolloverID;
+    private java.lang.Integer agendaRolloverID;
 
-    private int consentAgenda;
+    private java.lang.Integer consentAgenda;
 
     private int[] views;
+
+    private java.lang.String linkedVideoStreamUrl;
 
     public EventData() {
     }
 
     public EventData(
-           int ID,
+           java.lang.Integer ID,
            java.lang.String UID,
-           int foreignID,
+           java.lang.Integer foreignID,
            java.lang.String name,
            java.lang.String description,
-           int cameraID,
-           int folderID,
+           java.lang.Integer cameraID,
+           java.lang.Integer folderID,
            java.lang.String status,
            java.lang.String agendaType,
            java.lang.String agendaFile,
-           int playerTemplateID,
+           java.lang.Integer playerTemplateID,
            java.lang.String archiveStatus,
-           int duration,
-           boolean broadcast,
-           boolean record,
-           boolean autoStart,
+           java.lang.Integer duration,
+           java.lang.Boolean broadcast,
+           java.lang.Boolean record,
+           java.lang.Boolean autoStart,
            java.util.Calendar startTime,
            java.util.Calendar lastModified,
            com.granicus.xsd.Attendee[] attendees,
@@ -105,9 +107,10 @@ public class EventData  implements java.io.Serializable {
            java.util.Calendar meetingTime,
            java.util.Calendar agendaPostedDate,
            java.util.Calendar nextStartDate,
-           int agendaRolloverID,
-           int consentAgenda,
-           int[] views) {
+           java.lang.Integer agendaRolloverID,
+           java.lang.Integer consentAgenda,
+           int[] views,
+           java.lang.String linkedVideoStreamUrl) {
            this.ID = ID;
            this.UID = UID;
            this.foreignID = foreignID;
@@ -140,6 +143,7 @@ public class EventData  implements java.io.Serializable {
            this.agendaRolloverID = agendaRolloverID;
            this.consentAgenda = consentAgenda;
            this.views = views;
+           this.linkedVideoStreamUrl = linkedVideoStreamUrl;
     }
 
 
@@ -148,7 +152,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @return ID
      */
-    public int getID() {
+    public java.lang.Integer getID() {
         return ID;
     }
 
@@ -158,7 +162,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @param ID
      */
-    public void setID(int ID) {
+    public void setID(java.lang.Integer ID) {
         this.ID = ID;
     }
 
@@ -188,7 +192,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @return foreignID
      */
-    public int getForeignID() {
+    public java.lang.Integer getForeignID() {
         return foreignID;
     }
 
@@ -198,7 +202,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @param foreignID
      */
-    public void setForeignID(int foreignID) {
+    public void setForeignID(java.lang.Integer foreignID) {
         this.foreignID = foreignID;
     }
 
@@ -248,7 +252,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @return cameraID
      */
-    public int getCameraID() {
+    public java.lang.Integer getCameraID() {
         return cameraID;
     }
 
@@ -258,7 +262,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @param cameraID
      */
-    public void setCameraID(int cameraID) {
+    public void setCameraID(java.lang.Integer cameraID) {
         this.cameraID = cameraID;
     }
 
@@ -268,7 +272,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @return folderID
      */
-    public int getFolderID() {
+    public java.lang.Integer getFolderID() {
         return folderID;
     }
 
@@ -278,7 +282,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @param folderID
      */
-    public void setFolderID(int folderID) {
+    public void setFolderID(java.lang.Integer folderID) {
         this.folderID = folderID;
     }
 
@@ -348,7 +352,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @return playerTemplateID
      */
-    public int getPlayerTemplateID() {
+    public java.lang.Integer getPlayerTemplateID() {
         return playerTemplateID;
     }
 
@@ -358,7 +362,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @param playerTemplateID
      */
-    public void setPlayerTemplateID(int playerTemplateID) {
+    public void setPlayerTemplateID(java.lang.Integer playerTemplateID) {
         this.playerTemplateID = playerTemplateID;
     }
 
@@ -388,7 +392,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @return duration
      */
-    public int getDuration() {
+    public java.lang.Integer getDuration() {
         return duration;
     }
 
@@ -398,7 +402,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @param duration
      */
-    public void setDuration(int duration) {
+    public void setDuration(java.lang.Integer duration) {
         this.duration = duration;
     }
 
@@ -408,7 +412,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @return broadcast
      */
-    public boolean isBroadcast() {
+    public java.lang.Boolean getBroadcast() {
         return broadcast;
     }
 
@@ -418,7 +422,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @param broadcast
      */
-    public void setBroadcast(boolean broadcast) {
+    public void setBroadcast(java.lang.Boolean broadcast) {
         this.broadcast = broadcast;
     }
 
@@ -428,7 +432,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @return record
      */
-    public boolean isRecord() {
+    public java.lang.Boolean getRecord() {
         return record;
     }
 
@@ -438,7 +442,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @param record
      */
-    public void setRecord(boolean record) {
+    public void setRecord(java.lang.Boolean record) {
         this.record = record;
     }
 
@@ -448,7 +452,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @return autoStart
      */
-    public boolean isAutoStart() {
+    public java.lang.Boolean getAutoStart() {
         return autoStart;
     }
 
@@ -458,7 +462,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @param autoStart
      */
-    public void setAutoStart(boolean autoStart) {
+    public void setAutoStart(java.lang.Boolean autoStart) {
         this.autoStart = autoStart;
     }
 
@@ -728,7 +732,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @return agendaRolloverID
      */
-    public int getAgendaRolloverID() {
+    public java.lang.Integer getAgendaRolloverID() {
         return agendaRolloverID;
     }
 
@@ -738,7 +742,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @param agendaRolloverID
      */
-    public void setAgendaRolloverID(int agendaRolloverID) {
+    public void setAgendaRolloverID(java.lang.Integer agendaRolloverID) {
         this.agendaRolloverID = agendaRolloverID;
     }
 
@@ -748,7 +752,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @return consentAgenda
      */
-    public int getConsentAgenda() {
+    public java.lang.Integer getConsentAgenda() {
         return consentAgenda;
     }
 
@@ -758,7 +762,7 @@ public class EventData  implements java.io.Serializable {
      * 
      * @param consentAgenda
      */
-    public void setConsentAgenda(int consentAgenda) {
+    public void setConsentAgenda(java.lang.Integer consentAgenda) {
         this.consentAgenda = consentAgenda;
     }
 
@@ -782,6 +786,26 @@ public class EventData  implements java.io.Serializable {
         this.views = views;
     }
 
+
+    /**
+     * Gets the linkedVideoStreamUrl value for this EventData.
+     * 
+     * @return linkedVideoStreamUrl
+     */
+    public java.lang.String getLinkedVideoStreamUrl() {
+        return linkedVideoStreamUrl;
+    }
+
+
+    /**
+     * Sets the linkedVideoStreamUrl value for this EventData.
+     * 
+     * @param linkedVideoStreamUrl
+     */
+    public void setLinkedVideoStreamUrl(java.lang.String linkedVideoStreamUrl) {
+        this.linkedVideoStreamUrl = linkedVideoStreamUrl;
+    }
+
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof EventData)) return false;
@@ -794,19 +818,27 @@ public class EventData  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true && 
-            this.ID == other.getID() &&
+            ((this.ID==null && other.getID()==null) || 
+             (this.ID!=null &&
+              this.ID.equals(other.getID()))) &&
             ((this.UID==null && other.getUID()==null) || 
              (this.UID!=null &&
               this.UID.equals(other.getUID()))) &&
-            this.foreignID == other.getForeignID() &&
+            ((this.foreignID==null && other.getForeignID()==null) || 
+             (this.foreignID!=null &&
+              this.foreignID.equals(other.getForeignID()))) &&
             ((this.name==null && other.getName()==null) || 
              (this.name!=null &&
               this.name.equals(other.getName()))) &&
             ((this.description==null && other.getDescription()==null) || 
              (this.description!=null &&
               this.description.equals(other.getDescription()))) &&
-            this.cameraID == other.getCameraID() &&
-            this.folderID == other.getFolderID() &&
+            ((this.cameraID==null && other.getCameraID()==null) || 
+             (this.cameraID!=null &&
+              this.cameraID.equals(other.getCameraID()))) &&
+            ((this.folderID==null && other.getFolderID()==null) || 
+             (this.folderID!=null &&
+              this.folderID.equals(other.getFolderID()))) &&
             ((this.status==null && other.getStatus()==null) || 
              (this.status!=null &&
               this.status.equals(other.getStatus()))) &&
@@ -816,14 +848,24 @@ public class EventData  implements java.io.Serializable {
             ((this.agendaFile==null && other.getAgendaFile()==null) || 
              (this.agendaFile!=null &&
               this.agendaFile.equals(other.getAgendaFile()))) &&
-            this.playerTemplateID == other.getPlayerTemplateID() &&
+            ((this.playerTemplateID==null && other.getPlayerTemplateID()==null) || 
+             (this.playerTemplateID!=null &&
+              this.playerTemplateID.equals(other.getPlayerTemplateID()))) &&
             ((this.archiveStatus==null && other.getArchiveStatus()==null) || 
              (this.archiveStatus!=null &&
               this.archiveStatus.equals(other.getArchiveStatus()))) &&
-            this.duration == other.getDuration() &&
-            this.broadcast == other.isBroadcast() &&
-            this.record == other.isRecord() &&
-            this.autoStart == other.isAutoStart() &&
+            ((this.duration==null && other.getDuration()==null) || 
+             (this.duration!=null &&
+              this.duration.equals(other.getDuration()))) &&
+            ((this.broadcast==null && other.getBroadcast()==null) || 
+             (this.broadcast!=null &&
+              this.broadcast.equals(other.getBroadcast()))) &&
+            ((this.record==null && other.getRecord()==null) || 
+             (this.record!=null &&
+              this.record.equals(other.getRecord()))) &&
+            ((this.autoStart==null && other.getAutoStart()==null) || 
+             (this.autoStart!=null &&
+              this.autoStart.equals(other.getAutoStart()))) &&
             ((this.startTime==null && other.getStartTime()==null) || 
              (this.startTime!=null &&
               this.startTime.equals(other.getStartTime()))) &&
@@ -863,11 +905,18 @@ public class EventData  implements java.io.Serializable {
             ((this.nextStartDate==null && other.getNextStartDate()==null) || 
              (this.nextStartDate!=null &&
               this.nextStartDate.equals(other.getNextStartDate()))) &&
-            this.agendaRolloverID == other.getAgendaRolloverID() &&
-            this.consentAgenda == other.getConsentAgenda() &&
+            ((this.agendaRolloverID==null && other.getAgendaRolloverID()==null) || 
+             (this.agendaRolloverID!=null &&
+              this.agendaRolloverID.equals(other.getAgendaRolloverID()))) &&
+            ((this.consentAgenda==null && other.getConsentAgenda()==null) || 
+             (this.consentAgenda!=null &&
+              this.consentAgenda.equals(other.getConsentAgenda()))) &&
             ((this.views==null && other.getViews()==null) || 
              (this.views!=null &&
-              java.util.Arrays.equals(this.views, other.getViews())));
+              java.util.Arrays.equals(this.views, other.getViews()))) &&
+            ((this.linkedVideoStreamUrl==null && other.getLinkedVideoStreamUrl()==null) || 
+             (this.linkedVideoStreamUrl!=null &&
+              this.linkedVideoStreamUrl.equals(other.getLinkedVideoStreamUrl())));
         __equalsCalc = null;
         return _equals;
     }
@@ -879,19 +928,27 @@ public class EventData  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        _hashCode += getID();
+        if (getID() != null) {
+            _hashCode += getID().hashCode();
+        }
         if (getUID() != null) {
             _hashCode += getUID().hashCode();
         }
-        _hashCode += getForeignID();
+        if (getForeignID() != null) {
+            _hashCode += getForeignID().hashCode();
+        }
         if (getName() != null) {
             _hashCode += getName().hashCode();
         }
         if (getDescription() != null) {
             _hashCode += getDescription().hashCode();
         }
-        _hashCode += getCameraID();
-        _hashCode += getFolderID();
+        if (getCameraID() != null) {
+            _hashCode += getCameraID().hashCode();
+        }
+        if (getFolderID() != null) {
+            _hashCode += getFolderID().hashCode();
+        }
         if (getStatus() != null) {
             _hashCode += getStatus().hashCode();
         }
@@ -901,14 +958,24 @@ public class EventData  implements java.io.Serializable {
         if (getAgendaFile() != null) {
             _hashCode += getAgendaFile().hashCode();
         }
-        _hashCode += getPlayerTemplateID();
+        if (getPlayerTemplateID() != null) {
+            _hashCode += getPlayerTemplateID().hashCode();
+        }
         if (getArchiveStatus() != null) {
             _hashCode += getArchiveStatus().hashCode();
         }
-        _hashCode += getDuration();
-        _hashCode += (isBroadcast() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-        _hashCode += (isRecord() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-        _hashCode += (isAutoStart() ? Boolean.TRUE : Boolean.FALSE).hashCode();
+        if (getDuration() != null) {
+            _hashCode += getDuration().hashCode();
+        }
+        if (getBroadcast() != null) {
+            _hashCode += getBroadcast().hashCode();
+        }
+        if (getRecord() != null) {
+            _hashCode += getRecord().hashCode();
+        }
+        if (getAutoStart() != null) {
+            _hashCode += getAutoStart().hashCode();
+        }
         if (getStartTime() != null) {
             _hashCode += getStartTime().hashCode();
         }
@@ -964,8 +1031,12 @@ public class EventData  implements java.io.Serializable {
         if (getNextStartDate() != null) {
             _hashCode += getNextStartDate().hashCode();
         }
-        _hashCode += getAgendaRolloverID();
-        _hashCode += getConsentAgenda();
+        if (getAgendaRolloverID() != null) {
+            _hashCode += getAgendaRolloverID().hashCode();
+        }
+        if (getConsentAgenda() != null) {
+            _hashCode += getConsentAgenda().hashCode();
+        }
         if (getViews() != null) {
             for (int i=0;
                  i<java.lang.reflect.Array.getLength(getViews());
@@ -976,6 +1047,9 @@ public class EventData  implements java.io.Serializable {
                     _hashCode += obj.hashCode();
                 }
             }
+        }
+        if (getLinkedVideoStreamUrl() != null) {
+            _hashCode += getLinkedVideoStreamUrl().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -1177,6 +1251,12 @@ public class EventData  implements java.io.Serializable {
         elemField.setFieldName("views");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Views"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        elemField.setNillable(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("linkedVideoStreamUrl");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "LinkedVideoStreamUrl"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }

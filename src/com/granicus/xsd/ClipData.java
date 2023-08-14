@@ -8,13 +8,13 @@
 package com.granicus.xsd;
 
 public class ClipData  implements java.io.Serializable {
-    private int ID;
+    private java.lang.Integer ID;
 
     private java.lang.String UID;
 
     private java.lang.String eventUID;
 
-    private int foreignID;
+    private java.lang.Integer foreignID;
 
     private java.lang.String type;
 
@@ -26,9 +26,9 @@ public class ClipData  implements java.io.Serializable {
 
     private java.util.Calendar date;
 
-    private int cameraID;
+    private java.lang.Integer cameraID;
 
-    private int folderID;
+    private java.lang.Integer folderID;
 
     private java.lang.String fileName;
 
@@ -40,7 +40,7 @@ public class ClipData  implements java.io.Serializable {
 
     private java.lang.String agendaFile;
 
-    private int duration;
+    private java.lang.Integer duration;
 
     private java.lang.String status;
 
@@ -70,23 +70,23 @@ public class ClipData  implements java.io.Serializable {
     }
 
     public ClipData(
-           int ID,
+           java.lang.Integer ID,
            java.lang.String UID,
            java.lang.String eventUID,
-           int foreignID,
+           java.lang.Integer foreignID,
            java.lang.String type,
            java.lang.String name,
            java.lang.String description,
            java.lang.String keywords,
            java.util.Calendar date,
-           int cameraID,
-           int folderID,
+           java.lang.Integer cameraID,
+           java.lang.Integer folderID,
            java.lang.String fileName,
            java.lang.String minutesType,
            java.lang.String minutesFile,
            java.lang.String agendaType,
            java.lang.String agendaFile,
-           int duration,
+           java.lang.Integer duration,
            java.lang.String status,
            java.util.Calendar startTime,
            java.util.Calendar lastModified,
@@ -136,7 +136,7 @@ public class ClipData  implements java.io.Serializable {
      * 
      * @return ID
      */
-    public int getID() {
+    public java.lang.Integer getID() {
         return ID;
     }
 
@@ -146,7 +146,7 @@ public class ClipData  implements java.io.Serializable {
      * 
      * @param ID
      */
-    public void setID(int ID) {
+    public void setID(java.lang.Integer ID) {
         this.ID = ID;
     }
 
@@ -196,7 +196,7 @@ public class ClipData  implements java.io.Serializable {
      * 
      * @return foreignID
      */
-    public int getForeignID() {
+    public java.lang.Integer getForeignID() {
         return foreignID;
     }
 
@@ -206,7 +206,7 @@ public class ClipData  implements java.io.Serializable {
      * 
      * @param foreignID
      */
-    public void setForeignID(int foreignID) {
+    public void setForeignID(java.lang.Integer foreignID) {
         this.foreignID = foreignID;
     }
 
@@ -316,7 +316,7 @@ public class ClipData  implements java.io.Serializable {
      * 
      * @return cameraID
      */
-    public int getCameraID() {
+    public java.lang.Integer getCameraID() {
         return cameraID;
     }
 
@@ -326,7 +326,7 @@ public class ClipData  implements java.io.Serializable {
      * 
      * @param cameraID
      */
-    public void setCameraID(int cameraID) {
+    public void setCameraID(java.lang.Integer cameraID) {
         this.cameraID = cameraID;
     }
 
@@ -336,7 +336,7 @@ public class ClipData  implements java.io.Serializable {
      * 
      * @return folderID
      */
-    public int getFolderID() {
+    public java.lang.Integer getFolderID() {
         return folderID;
     }
 
@@ -346,7 +346,7 @@ public class ClipData  implements java.io.Serializable {
      * 
      * @param folderID
      */
-    public void setFolderID(int folderID) {
+    public void setFolderID(java.lang.Integer folderID) {
         this.folderID = folderID;
     }
 
@@ -456,7 +456,7 @@ public class ClipData  implements java.io.Serializable {
      * 
      * @return duration
      */
-    public int getDuration() {
+    public java.lang.Integer getDuration() {
         return duration;
     }
 
@@ -466,7 +466,7 @@ public class ClipData  implements java.io.Serializable {
      * 
      * @param duration
      */
-    public void setDuration(int duration) {
+    public void setDuration(java.lang.Integer duration) {
         this.duration = duration;
     }
 
@@ -722,14 +722,18 @@ public class ClipData  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true && 
-            this.ID == other.getID() &&
+            ((this.ID==null && other.getID()==null) || 
+             (this.ID!=null &&
+              this.ID.equals(other.getID()))) &&
             ((this.UID==null && other.getUID()==null) || 
              (this.UID!=null &&
               this.UID.equals(other.getUID()))) &&
             ((this.eventUID==null && other.getEventUID()==null) || 
              (this.eventUID!=null &&
               this.eventUID.equals(other.getEventUID()))) &&
-            this.foreignID == other.getForeignID() &&
+            ((this.foreignID==null && other.getForeignID()==null) || 
+             (this.foreignID!=null &&
+              this.foreignID.equals(other.getForeignID()))) &&
             ((this.type==null && other.getType()==null) || 
              (this.type!=null &&
               this.type.equals(other.getType()))) &&
@@ -745,8 +749,12 @@ public class ClipData  implements java.io.Serializable {
             ((this.date==null && other.getDate()==null) || 
              (this.date!=null &&
               this.date.equals(other.getDate()))) &&
-            this.cameraID == other.getCameraID() &&
-            this.folderID == other.getFolderID() &&
+            ((this.cameraID==null && other.getCameraID()==null) || 
+             (this.cameraID!=null &&
+              this.cameraID.equals(other.getCameraID()))) &&
+            ((this.folderID==null && other.getFolderID()==null) || 
+             (this.folderID!=null &&
+              this.folderID.equals(other.getFolderID()))) &&
             ((this.fileName==null && other.getFileName()==null) || 
              (this.fileName!=null &&
               this.fileName.equals(other.getFileName()))) &&
@@ -762,7 +770,9 @@ public class ClipData  implements java.io.Serializable {
             ((this.agendaFile==null && other.getAgendaFile()==null) || 
              (this.agendaFile!=null &&
               this.agendaFile.equals(other.getAgendaFile()))) &&
-            this.duration == other.getDuration() &&
+            ((this.duration==null && other.getDuration()==null) || 
+             (this.duration!=null &&
+              this.duration.equals(other.getDuration()))) &&
             ((this.status==null && other.getStatus()==null) || 
              (this.status!=null &&
               this.status.equals(other.getStatus()))) &&
@@ -810,14 +820,18 @@ public class ClipData  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        _hashCode += getID();
+        if (getID() != null) {
+            _hashCode += getID().hashCode();
+        }
         if (getUID() != null) {
             _hashCode += getUID().hashCode();
         }
         if (getEventUID() != null) {
             _hashCode += getEventUID().hashCode();
         }
-        _hashCode += getForeignID();
+        if (getForeignID() != null) {
+            _hashCode += getForeignID().hashCode();
+        }
         if (getType() != null) {
             _hashCode += getType().hashCode();
         }
@@ -833,8 +847,12 @@ public class ClipData  implements java.io.Serializable {
         if (getDate() != null) {
             _hashCode += getDate().hashCode();
         }
-        _hashCode += getCameraID();
-        _hashCode += getFolderID();
+        if (getCameraID() != null) {
+            _hashCode += getCameraID().hashCode();
+        }
+        if (getFolderID() != null) {
+            _hashCode += getFolderID().hashCode();
+        }
         if (getFileName() != null) {
             _hashCode += getFileName().hashCode();
         }
@@ -850,7 +868,9 @@ public class ClipData  implements java.io.Serializable {
         if (getAgendaFile() != null) {
             _hashCode += getAgendaFile().hashCode();
         }
-        _hashCode += getDuration();
+        if (getDuration() != null) {
+            _hashCode += getDuration().hashCode();
+        }
         if (getStatus() != null) {
             _hashCode += getStatus().hashCode();
         }
@@ -1049,7 +1069,7 @@ public class ClipData  implements java.io.Serializable {
         elemField.setFieldName("street1");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Street1"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-		elemField.setNillable(true);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("street2");

@@ -7,7 +7,7 @@
 
 package com.granicus.soap;
 
-public class UserSDKBindingStub extends org.apache.axis.client.Stub implements UserSDKPort {
+public class UserSDKBindingStub extends org.apache.axis.client.Stub implements com.granicus.soap.UserSDKPort {
     private java.util.Vector cachedSerClasses = new java.util.Vector();
     private java.util.Vector cachedSerQNames = new java.util.Vector();
     private java.util.Vector cachedSerFactories = new java.util.Vector();
@@ -16,7 +16,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
     static org.apache.axis.description.OperationDesc [] _operations;
 
     static {
-        _operations = new org.apache.axis.description.OperationDesc[93];
+        _operations = new org.apache.axis.description.OperationDesc[102];
         _initOperationDesc1();
         _initOperationDesc2();
         _initOperationDesc3();
@@ -27,6 +27,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         _initOperationDesc8();
         _initOperationDesc9();
         _initOperationDesc10();
+        _initOperationDesc11();
     }
 
     private static void _initOperationDesc1(){
@@ -473,12 +474,12 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         _operations[38] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("GetClipByUID");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "ClipUID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.setName("PublishClip");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "PublishClipData"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://granicus.com/xsd", "PublishClipData"), com.granicus.xsd.PublishClipData.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://granicus.com/xsd", "ClipData"));
-        oper.setReturnClass(com.granicus.xsd.ClipData.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "clip"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://granicus.com/xsd", "PublishClipResult"));
+        oper.setReturnClass(com.granicus.xsd.PublishClipResult.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "PublishClipResult"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[39] = oper;
@@ -489,6 +490,17 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("GetClipByUID");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "ClipUID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://granicus.com/xsd", "ClipData"));
+        oper.setReturnClass(com.granicus.xsd.ClipData.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "clip"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[40] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetClipVideoLocation");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "ClipID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
@@ -497,7 +509,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnQName(new javax.xml.namespace.QName("", "url"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[40] = oper;
+        _operations[41] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetClipMetaData");
@@ -508,7 +520,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnQName(new javax.xml.namespace.QName("", "metadata"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[41] = oper;
+        _operations[42] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetClipMetaDataByUID");
@@ -519,7 +531,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnQName(new javax.xml.namespace.QName("", "metadata"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[42] = oper;
+        _operations[43] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetClipIndices");
@@ -530,7 +542,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnQName(new javax.xml.namespace.QName("", "metadata"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[43] = oper;
+        _operations[44] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetClipIndicesByUID");
@@ -541,7 +553,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnQName(new javax.xml.namespace.QName("", "metadata"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[44] = oper;
+        _operations[45] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetClipCaptions");
@@ -552,7 +564,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnQName(new javax.xml.namespace.QName("", "captions"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[45] = oper;
+        _operations[46] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetClipCaptionsByUID");
@@ -563,7 +575,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnQName(new javax.xml.namespace.QName("", "captions"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[46] = oper;
+        _operations[47] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("SetClipAgendaURL");
@@ -574,26 +586,13 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[47] = oper;
+        _operations[48] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("SetClipMinutesURL");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "ClipID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "URL"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[48] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("SetClipMinutesURLWithName");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "ClipID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "URL"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "Name"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -606,6 +605,19 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("SetClipMinutesURLWithName");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "ClipID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "URL"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "Name"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[50] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("UploadClipMinutesDocument");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "ClipID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
@@ -616,7 +628,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[50] = oper;
+        _operations[51] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetClipMinutesDocuments");
@@ -627,7 +639,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnQName(new javax.xml.namespace.QName("", "MinutesDocuments"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[51] = oper;
+        _operations[52] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("DeleteMinutesDocument");
@@ -636,7 +648,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[52] = oper;
+        _operations[53] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("UpdateClip");
@@ -645,7 +657,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[53] = oper;
+        _operations[54] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("DeleteClip");
@@ -654,7 +666,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[54] = oper;
+        _operations[55] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("AddClipMetaData");
@@ -667,7 +679,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnQName(new javax.xml.namespace.QName("", "KeyTable"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[55] = oper;
+        _operations[56] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("ImportClipMetaData");
@@ -684,7 +696,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnQName(new javax.xml.namespace.QName("", "KeyTable"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[56] = oper;
+        _operations[57] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetMetaData");
@@ -695,7 +707,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnQName(new javax.xml.namespace.QName("", "MetaData"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[57] = oper;
+        _operations[58] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetMetaDataByUID");
@@ -706,8 +718,13 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnQName(new javax.xml.namespace.QName("", "MetaData"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[58] = oper;
+        _operations[59] = oper;
 
+    }
+
+    private static void _initOperationDesc7(){
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetMetaDataVideoLocation");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "MetaDataID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
@@ -717,13 +734,8 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnQName(new javax.xml.namespace.QName("", "url"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[59] = oper;
+        _operations[60] = oper;
 
-    }
-
-    private static void _initOperationDesc7(){
-        org.apache.axis.description.OperationDesc oper;
-        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("UpdateMetaData");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "MetaData"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://granicus.com/xsd", "MetaDataData"), com.granicus.xsd.MetaDataData.class, false, false);
@@ -731,7 +743,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[60] = oper;
+        _operations[61] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("DeleteMetaData");
@@ -740,7 +752,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[61] = oper;
+        _operations[62] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("FetchAttachment");
@@ -751,7 +763,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnQName(new javax.xml.namespace.QName("", "Attachment"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[62] = oper;
+        _operations[63] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("CreateView");
@@ -762,7 +774,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnQName(new javax.xml.namespace.QName("", "ViewID"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[63] = oper;
+        _operations[64] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetViews");
@@ -771,7 +783,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnQName(new javax.xml.namespace.QName("", "views"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[64] = oper;
+        _operations[65] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetView");
@@ -782,7 +794,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnQName(new javax.xml.namespace.QName("", "view"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[65] = oper;
+        _operations[66] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("UpdateView");
@@ -791,33 +803,24 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[66] = oper;
+        _operations[67] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("CreateUser");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "UserData"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://granicus.com/xsd", "UserData"), com.granicus.xsd.UserData.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        oper.setReturnClass(int.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "UserID"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        oper.setReturnClass(java.lang.String.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "UserUID"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[67] = oper;
+        _operations[68] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetCurrentUserID");
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         oper.setReturnClass(int.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "UserID"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[68] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("GetCurrentUserLogon");
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        oper.setReturnClass(java.lang.String.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "Logon"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[69] = oper;
@@ -828,24 +831,53 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("GetCurrentUserUID");
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        oper.setReturnClass(java.lang.String.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "UserUID"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[70] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("SetUserMemberships");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "UserUID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "GroupUIDs"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://granicus.com/xsd", "StringCollection"), java.lang.String[].class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[71] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("GetCurrentUserLogon");
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        oper.setReturnClass(java.lang.String.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "Logon"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[72] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetUsers");
         oper.setReturnType(new javax.xml.namespace.QName("http://granicus.com/xsd", "UserCollection"));
         oper.setReturnClass(com.granicus.xsd.UserData[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "users"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[70] = oper;
+        _operations[73] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetUser");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "UserID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "UserUID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://granicus.com/xsd", "UserData"));
         oper.setReturnClass(com.granicus.xsd.UserData.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "user"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[71] = oper;
+        _operations[74] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("UpdateUser");
@@ -854,18 +886,27 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[72] = oper;
+        _operations[75] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("DeleteUser");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "UserUID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[76] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("CreateGroup");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "GroupData"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://granicus.com/xsd", "GroupData"), com.granicus.xsd.GroupData.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        oper.setReturnClass(int.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "GroupID"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        oper.setReturnClass(java.lang.String.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "GroupUID"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[73] = oper;
+        _operations[77] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetGroups");
@@ -874,53 +915,15 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnQName(new javax.xml.namespace.QName("", "groups"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[74] = oper;
+        _operations[78] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetGroup");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "GroupID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "GroupUID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://granicus.com/xsd", "GroupData"));
         oper.setReturnClass(com.granicus.xsd.GroupData.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "group"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[75] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("UpdateGroup");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "group"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://granicus.com/xsd", "GroupData"), com.granicus.xsd.GroupData.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[76] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("DeleteGroup");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "GroupID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[77] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("CreateTemplate");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "TemplateData"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://granicus.com/xsd", "TemplateData"), com.granicus.xsd.TemplateData.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        oper.setReturnClass(int.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "TemplateID"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[78] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("GetTemplates");
-        oper.setReturnType(new javax.xml.namespace.QName("http://granicus.com/xsd", "TemplateCollection"));
-        oper.setReturnClass(com.granicus.xsd.TemplateData[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "templates"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[79] = oper;
@@ -931,6 +934,44 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("UpdateGroup");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "group"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://granicus.com/xsd", "GroupData"), com.granicus.xsd.GroupData.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[80] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("DeleteGroup");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "GroupID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[81] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("CreateTemplate");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "TemplateData"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://granicus.com/xsd", "TemplateData"), com.granicus.xsd.TemplateData.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        oper.setReturnClass(int.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "TemplateID"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[82] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("GetTemplates");
+        oper.setReturnType(new javax.xml.namespace.QName("http://granicus.com/xsd", "TemplateCollection"));
+        oper.setReturnClass(com.granicus.xsd.TemplateData[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "templates"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[83] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetTemplate");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "TemplateID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
@@ -939,7 +980,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnQName(new javax.xml.namespace.QName("", "template"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[80] = oper;
+        _operations[84] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("UpdateTemplate");
@@ -948,7 +989,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[81] = oper;
+        _operations[85] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("CreateServer");
@@ -959,7 +1000,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnQName(new javax.xml.namespace.QName("", "ServerID"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[82] = oper;
+        _operations[86] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetServers");
@@ -968,7 +1009,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnQName(new javax.xml.namespace.QName("", "servers"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[83] = oper;
+        _operations[87] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetServer");
@@ -979,7 +1020,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnQName(new javax.xml.namespace.QName("", "server"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[84] = oper;
+        _operations[88] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("UpdateServer");
@@ -988,8 +1029,13 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[85] = oper;
+        _operations[89] = oper;
 
+    }
+
+    private static void _initOperationDesc10(){
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("DeleteServer");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "ServerID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
@@ -997,7 +1043,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[86] = oper;
+        _operations[90] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetPermissionLevel");
@@ -1010,7 +1056,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnQName(new javax.xml.namespace.QName("", "PermissionLevel"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[87] = oper;
+        _operations[91] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("CreateClipGeneratedMinutesDocument");
@@ -1027,7 +1073,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[88] = oper;
+        _operations[92] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetSettings");
@@ -1036,13 +1082,8 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnQName(new javax.xml.namespace.QName("", "settings"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[89] = oper;
+        _operations[93] = oper;
 
-    }
-
-    private static void _initOperationDesc10(){
-        org.apache.axis.description.OperationDesc oper;
-        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("CreateMotionActions");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "MotionActions"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://granicus.com/xsd", "StringCollection"), java.lang.String[].class, false, false);
@@ -1050,7 +1091,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[90] = oper;
+        _operations[94] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("CreateAttendees");
@@ -1059,7 +1100,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[91] = oper;
+        _operations[95] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetMotionActions");
@@ -1068,7 +1109,67 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         oper.setReturnQName(new javax.xml.namespace.QName("", "MotionActions"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[92] = oper;
+        _operations[96] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("CreateLinkedVideo");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "LinkedVideoData"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://granicus.com/xsd", "LinkedVideoData"), com.granicus.xsd.LinkedVideoData.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        oper.setReturnClass(int.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "LinkedVideoID"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[97] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("CreateLinkedVideoFromEvent");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "EventID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "VideoUrl"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        oper.setReturnClass(int.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "LinkedVideoID"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[98] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("GetLinkedVideo");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "LinkedVideoID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://granicus.com/xsd", "LinkedVideoData"));
+        oper.setReturnClass(com.granicus.xsd.LinkedVideoData.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "LinkedVideoData"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[99] = oper;
+
+    }
+
+    private static void _initOperationDesc11(){
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("UpdateLinkedVideo");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "LinkedVideoData"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://granicus.com/xsd", "LinkedVideoData"), com.granicus.xsd.LinkedVideoData.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        oper.setReturnClass(int.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "LinkedVideoID"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[100] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("DeleteLinkedVideo");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "LinkedVideoID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[101] = oper;
 
     }
 
@@ -1268,6 +1369,13 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
             cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
+            qName = new javax.xml.namespace.QName("http://granicus.com/xsd", "LinkedVideoData");
+            cachedSerQNames.add(qName);
+            cls = com.granicus.xsd.LinkedVideoData.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("http://granicus.com/xsd", "MetaDataData");
             cachedSerQNames.add(qName);
             cls = com.granicus.xsd.MetaDataData.class;
@@ -1317,6 +1425,20 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             qName = new javax.xml.namespace.QName("http://granicus.com/xsd", "PracticeQuestion");
             cachedSerQNames.add(qName);
             cls = com.granicus.xsd.PracticeQuestion.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://granicus.com/xsd", "PublishClipData");
+            cachedSerQNames.add(qName);
+            cls = com.granicus.xsd.PublishClipData.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://granicus.com/xsd", "PublishClipResult");
+            cachedSerQNames.add(qName);
+            cls = com.granicus.xsd.PublishClipResult.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -2646,12 +2768,43 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
 }
     }
 
-    public com.granicus.xsd.ClipData getClipByUID(java.lang.String clipUID) throws java.rmi.RemoteException {
+    public com.granicus.xsd.PublishClipResult publishClip(com.granicus.xsd.PublishClipData publishClipData) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[39]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("urn:UserSDK#UserWebservice#PublishClip");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("urn:UserSDK", "PublishClip"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {publishClipData});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (com.granicus.xsd.PublishClipResult) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (com.granicus.xsd.PublishClipResult) org.apache.axis.utils.JavaUtils.convert(_resp, com.granicus.xsd.PublishClipResult.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public com.granicus.xsd.ClipData getClipByUID(java.lang.String clipUID) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[40]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetClipByUID");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -2682,7 +2835,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[40]);
+        _call.setOperation(_operations[41]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetClipVideoLocation");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -2713,7 +2866,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[41]);
+        _call.setOperation(_operations[42]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetClipMetaData");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -2744,7 +2897,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[42]);
+        _call.setOperation(_operations[43]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetClipMetaDataByUID");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -2775,7 +2928,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[43]);
+        _call.setOperation(_operations[44]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetClipIndices");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -2806,7 +2959,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[44]);
+        _call.setOperation(_operations[45]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetClipIndicesByUID");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -2837,7 +2990,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[45]);
+        _call.setOperation(_operations[46]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetClipCaptions");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -2868,7 +3021,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[46]);
+        _call.setOperation(_operations[47]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetClipCaptionsByUID");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -2899,7 +3052,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[47]);
+        _call.setOperation(_operations[48]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#SetClipAgendaURL");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -2923,7 +3076,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[48]);
+        _call.setOperation(_operations[49]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#SetClipMinutesURL");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -2947,7 +3100,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[49]);
+        _call.setOperation(_operations[50]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#SetClipMinutesURLWithName");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -2971,7 +3124,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[50]);
+        _call.setOperation(_operations[51]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#UploadClipMinutesDocument");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -2995,7 +3148,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[51]);
+        _call.setOperation(_operations[52]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetClipMinutesDocuments");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3026,7 +3179,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[52]);
+        _call.setOperation(_operations[53]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#DeleteMinutesDocument");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3050,7 +3203,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[53]);
+        _call.setOperation(_operations[54]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#UpdateClip");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3074,7 +3227,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[54]);
+        _call.setOperation(_operations[55]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#DeleteClip");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3098,7 +3251,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[55]);
+        _call.setOperation(_operations[56]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#AddClipMetaData");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3129,7 +3282,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[56]);
+        _call.setOperation(_operations[57]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#ImportClipMetaData");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3160,7 +3313,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[57]);
+        _call.setOperation(_operations[58]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetMetaData");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3191,7 +3344,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[58]);
+        _call.setOperation(_operations[59]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetMetaDataByUID");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3222,7 +3375,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[59]);
+        _call.setOperation(_operations[60]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetMetaDataVideoLocation");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3253,7 +3406,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[60]);
+        _call.setOperation(_operations[61]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#UpdateMetaData");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3277,7 +3430,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[61]);
+        _call.setOperation(_operations[62]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#DeleteMetaData");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3301,7 +3454,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[62]);
+        _call.setOperation(_operations[63]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#FetchAttachment");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3332,7 +3485,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[63]);
+        _call.setOperation(_operations[64]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#CreateView");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3363,7 +3516,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[64]);
+        _call.setOperation(_operations[65]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetViews");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3394,7 +3547,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[65]);
+        _call.setOperation(_operations[66]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetView");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3425,7 +3578,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[66]);
+        _call.setOperation(_operations[67]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#UpdateView");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3444,12 +3597,12 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
 }
     }
 
-    public int createUser(com.granicus.xsd.UserData userData) throws java.rmi.RemoteException {
+    public java.lang.String createUser(com.granicus.xsd.UserData userData) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[67]);
+        _call.setOperation(_operations[68]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#CreateUser");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3465,9 +3618,9 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         else {
             extractAttachments(_call);
             try {
-                return ((java.lang.Integer) _resp).intValue();
+                return (java.lang.String) _resp;
             } catch (java.lang.Exception _exception) {
-                return ((java.lang.Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+                return (java.lang.String) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -3480,7 +3633,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[68]);
+        _call.setOperation(_operations[69]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetCurrentUserID");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3506,12 +3659,67 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
 }
     }
 
+    public java.lang.String getCurrentUserUID() throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[70]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetCurrentUserUID");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("urn:UserSDK", "GetCurrentUserUID"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.lang.String) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.lang.String) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public void setUserMemberships(java.lang.String userUID, java.lang.String[] groupUIDs) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[71]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("urn:UserSDK#UserWebservice#SetUserMemberships");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("urn:UserSDK", "SetUserMemberships"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {userUID, groupUIDs});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
     public java.lang.String getCurrentUserLogon() throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[69]);
+        _call.setOperation(_operations[72]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetCurrentUserLogon");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3542,7 +3750,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[70]);
+        _call.setOperation(_operations[73]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetUsers");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3568,12 +3776,12 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
 }
     }
 
-    public com.granicus.xsd.UserData getUser(int userID) throws java.rmi.RemoteException {
+    public com.granicus.xsd.UserData getUser(java.lang.String userUID) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[71]);
+        _call.setOperation(_operations[74]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetUser");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3581,7 +3789,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(userID)});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {userUID});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -3604,7 +3812,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[72]);
+        _call.setOperation(_operations[75]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#UpdateUser");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3623,12 +3831,36 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
 }
     }
 
-    public int createGroup(com.granicus.xsd.GroupData groupData) throws java.rmi.RemoteException {
+    public void deleteUser(java.lang.String userUID) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[73]);
+        _call.setOperation(_operations[76]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("urn:UserSDK#UserWebservice#DeleteUser");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("urn:UserSDK", "DeleteUser"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {userUID});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.lang.String createGroup(com.granicus.xsd.GroupData groupData) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[77]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#CreateGroup");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3644,9 +3876,9 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
         else {
             extractAttachments(_call);
             try {
-                return ((java.lang.Integer) _resp).intValue();
+                return (java.lang.String) _resp;
             } catch (java.lang.Exception _exception) {
-                return ((java.lang.Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+                return (java.lang.String) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -3659,7 +3891,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[74]);
+        _call.setOperation(_operations[78]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetGroups");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3685,12 +3917,12 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
 }
     }
 
-    public com.granicus.xsd.GroupData getGroup(int groupID) throws java.rmi.RemoteException {
+    public com.granicus.xsd.GroupData getGroup(java.lang.String groupUID) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[75]);
+        _call.setOperation(_operations[79]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetGroup");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3698,7 +3930,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(groupID)});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {groupUID});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -3721,7 +3953,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[76]);
+        _call.setOperation(_operations[80]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#UpdateGroup");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3745,7 +3977,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[77]);
+        _call.setOperation(_operations[81]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#DeleteGroup");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3769,7 +4001,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[78]);
+        _call.setOperation(_operations[82]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#CreateTemplate");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3800,7 +4032,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[79]);
+        _call.setOperation(_operations[83]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetTemplates");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3831,7 +4063,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[80]);
+        _call.setOperation(_operations[84]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetTemplate");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3862,7 +4094,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[81]);
+        _call.setOperation(_operations[85]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#UpdateTemplate");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3886,7 +4118,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[82]);
+        _call.setOperation(_operations[86]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#CreateServer");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3917,7 +4149,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[83]);
+        _call.setOperation(_operations[87]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetServers");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3948,7 +4180,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[84]);
+        _call.setOperation(_operations[88]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetServer");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -3979,7 +4211,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[85]);
+        _call.setOperation(_operations[89]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#UpdateServer");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -4003,7 +4235,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[86]);
+        _call.setOperation(_operations[90]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#DeleteServer");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -4027,7 +4259,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[87]);
+        _call.setOperation(_operations[91]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetPermissionLevel");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -4058,7 +4290,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[88]);
+        _call.setOperation(_operations[92]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#CreateClipGeneratedMinutesDocument");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -4082,7 +4314,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[89]);
+        _call.setOperation(_operations[93]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetSettings");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -4113,7 +4345,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[90]);
+        _call.setOperation(_operations[94]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#CreateMotionActions");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -4137,7 +4369,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[91]);
+        _call.setOperation(_operations[95]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#CreateAttendees");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -4161,7 +4393,7 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[92]);
+        _call.setOperation(_operations[96]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetMotionActions");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -4182,6 +4414,154 @@ public class UserSDKBindingStub extends org.apache.axis.client.Stub implements U
                 return (java.lang.String[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String[].class);
             }
         }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public int createLinkedVideo(com.granicus.xsd.LinkedVideoData linkedVideoData) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[97]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("urn:UserSDK#UserWebservice#CreateLinkedVideo");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("urn:UserSDK", "CreateLinkedVideo"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {linkedVideoData});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return ((java.lang.Integer) _resp).intValue();
+            } catch (java.lang.Exception _exception) {
+                return ((java.lang.Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public int createLinkedVideoFromEvent(int eventID, java.lang.String videoUrl) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[98]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("urn:UserSDK#UserWebservice#CreateLinkedVideoFromEvent");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("urn:UserSDK", "CreateLinkedVideoFromEvent"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(eventID), videoUrl});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return ((java.lang.Integer) _resp).intValue();
+            } catch (java.lang.Exception _exception) {
+                return ((java.lang.Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public com.granicus.xsd.LinkedVideoData getLinkedVideo(int linkedVideoID) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[99]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("urn:UserSDK#UserWebservice#GetLinkedVideo");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("urn:UserSDK", "GetLinkedVideo"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(linkedVideoID)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (com.granicus.xsd.LinkedVideoData) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (com.granicus.xsd.LinkedVideoData) org.apache.axis.utils.JavaUtils.convert(_resp, com.granicus.xsd.LinkedVideoData.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public int updateLinkedVideo(com.granicus.xsd.LinkedVideoData linkedVideoData) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[100]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("urn:UserSDK#UserWebservice#UpdateLinkedVideo");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("urn:UserSDK", "UpdateLinkedVideo"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {linkedVideoData});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return ((java.lang.Integer) _resp).intValue();
+            } catch (java.lang.Exception _exception) {
+                return ((java.lang.Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public void deleteLinkedVideo(int linkedVideoID) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[101]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("urn:UserSDK#UserWebservice#DeleteLinkedVideo");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("urn:UserSDK", "DeleteLinkedVideo"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(linkedVideoID)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
   } catch (org.apache.axis.AxisFault axisFaultException) {
   throw axisFaultException;
 }
