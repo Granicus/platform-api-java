@@ -210,11 +210,12 @@ public class PlatformClientTest {
 	@Test
 	public void testCreateLinkedVideoFromEvent() throws Exception {
 		// create a "link" type folder
-		// for some reason creating the folder with PlatformClient isn't
-		// allowing the type to be set upon create so it's a separate update.
+		// folder creation with PlatformClient isn't allowing
+		// type to be set upon create so it's a separate update.
 		FolderData folder = new FolderData();
 		folder.setName("The New Adventures of Linked");
 		int folderId = client.createFolder(folder);
+		System.out.println("folderId: " + folderId);
 		folder = client.getFolder(folderId);
 		folder.setType("link");
 		client.updateFolder(folder);
@@ -226,7 +227,11 @@ public class PlatformClientTest {
 		event.setFolderID(folderId);
 		client.updateEvent(event);
 
-		client.createLinkedVideoFromEvent(event.getID(), "https://www.google.com");
+		int linkedVideoId = client.createLinkedVideoFromEvent(event.getID(), "https://www.google.com");
+		System.out.println("linkedvideoid: " + linkedVideoId);
+
+		LinkedVideoData linkedVideo = client.getLinkedVideo(linkedVideoId);
+		System.out.println(linkedVideo.getCreated().toString());
 
 		// clean up or we'll end up with a million folders
 		event.setFolderID(originalFolderId);
