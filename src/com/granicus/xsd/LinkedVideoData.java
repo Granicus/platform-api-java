@@ -26,6 +26,10 @@ public class LinkedVideoData  implements java.io.Serializable {
 
     private java.lang.String name;
 
+    private java.util.Calendar created;
+
+    private java.util.Calendar lastModified;
+
     public LinkedVideoData() {
     }
 
@@ -38,7 +42,9 @@ public class LinkedVideoData  implements java.io.Serializable {
            java.lang.String agendaUrl,
            java.lang.String agendaPacketUrl,
            java.util.Calendar videoDate,
-           java.lang.String name) {
+           java.lang.String name,
+           java.util.Calendar created,
+           java.util.Calendar lastModified) {
            this.ID = ID;
            this.eventId = eventId;
            this.folderId = folderId;
@@ -48,6 +54,8 @@ public class LinkedVideoData  implements java.io.Serializable {
            this.agendaPacketUrl = agendaPacketUrl;
            this.videoDate = videoDate;
            this.name = name;
+           this.created = created;
+           this.lastModified = lastModified;
     }
 
 
@@ -230,6 +238,46 @@ public class LinkedVideoData  implements java.io.Serializable {
         this.name = name;
     }
 
+
+    /**
+     * Gets the created value for this LinkedVideoData.
+     * 
+     * @return created
+     */
+    public java.util.Calendar getCreated() {
+        return created;
+    }
+
+
+    /**
+     * Sets the created value for this LinkedVideoData.
+     * 
+     * @param created
+     */
+    public void setCreated(java.util.Calendar created) {
+        this.created = created;
+    }
+
+
+    /**
+     * Gets the lastModified value for this LinkedVideoData.
+     * 
+     * @return lastModified
+     */
+    public java.util.Calendar getLastModified() {
+        return lastModified;
+    }
+
+
+    /**
+     * Sets the lastModified value for this LinkedVideoData.
+     * 
+     * @param lastModified
+     */
+    public void setLastModified(java.util.Calendar lastModified) {
+        this.lastModified = lastModified;
+    }
+
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof LinkedVideoData)) return false;
@@ -268,7 +316,13 @@ public class LinkedVideoData  implements java.io.Serializable {
               this.videoDate.equals(other.getVideoDate()))) &&
             ((this.name==null && other.getName()==null) || 
              (this.name!=null &&
-              this.name.equals(other.getName())));
+              this.name.equals(other.getName()))) &&
+            ((this.created==null && other.getCreated()==null) || 
+             (this.created!=null &&
+              this.created.equals(other.getCreated()))) &&
+            ((this.lastModified==null && other.getLastModified()==null) || 
+             (this.lastModified!=null &&
+              this.lastModified.equals(other.getLastModified())));
         __equalsCalc = null;
         return _equals;
     }
@@ -306,6 +360,12 @@ public class LinkedVideoData  implements java.io.Serializable {
         }
         if (getName() != null) {
             _hashCode += getName().hashCode();
+        }
+        if (getCreated() != null) {
+            _hashCode += getCreated().hashCode();
+        }
+        if (getLastModified() != null) {
+            _hashCode += getLastModified().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -369,6 +429,18 @@ public class LinkedVideoData  implements java.io.Serializable {
         elemField.setFieldName("name");
         elemField.setXmlName(new javax.xml.namespace.QName("", "Name"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setNillable(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("created");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "Created"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setNillable(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("lastModified");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "LastModified"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }

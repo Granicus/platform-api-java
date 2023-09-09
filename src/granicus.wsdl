@@ -50,6 +50,8 @@
                     <element name="AgendaPacketUrl" nillable="true" type="xsd:string"/>
                     <element name="VideoDate" nillable="true" type="xsd:dateTime"/>
                     <element name="Name" nillable="true" type="xsd:string"/>
+                    <element name="Created" nillable="true" type="xsd:dateTime"/>
+                    <element name="LastModified" nillable="true" type="xsd:dateTime"/>
                 </all>
             </complexType>
             <complexType name="FolderData">
