@@ -478,6 +478,13 @@
         <part name="Response" type="xsd:string" />
     </message>
     <message name="SendChallengeResponseResponse" />
+    <message name="AuthenticateAppRequest">
+        <part name="Message" type="xsd:string" />
+        <part name="AuthHash" type="xsd:string" />
+        <part name="InitVector" type="xsd:string" />
+        <part name="Application" type="xsd:string" />
+    </message>
+    <message name="AuthenticateAppResponse"></message>
     <message name="LogoutRequest" />
     <message name="LogoutResponse" />
     <message name="CreateCameraRequest">
@@ -1017,6 +1024,10 @@
             <input message="tns:SendChallengeResponseRequest" />
             <output message="tns:SendChallengeResponseResponse" />
         </operation>
+        <operation name="AuthenticateApp">
+            <input message="tns:AuthenticateAppRequest" />
+            <output message="tns:AuthenticateAppResponse" />
+        </operation>
         <operation name="Logout">
             <input message="tns:LogoutRequest" />
             <output message="tns:LogoutResponse" />
@@ -1441,6 +1452,15 @@
         </operation>
         <operation name="SendChallengeResponse">
             <soap:operation soapAction="urn:UserSDK#UserWebservice#SendChallengeResponse" />
+            <input>
+                <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="AuthenticateApp">
+            <soap:operation soapAction="urn:UserSDK#UserWebservice#AuthenticateApp" />
             <input>
                 <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
             </input>
