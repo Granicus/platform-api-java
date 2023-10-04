@@ -43,3 +43,7 @@ To report an issue please open an issue in GitHub.
 
 To contribute to this API, please submit a pull request. Pull requests should take the form of a single commit, with a
 meaningful commit message. If possible, please write a unit test (we use JUnit4 for testing) for your change.
+
+This repository uses the [Apache wsdl2java tool](https://cxf.apache.org/docs/wsdl-to-java.html) to generate the Java code in the files that begin with "UserSDK". These files should not be edited directly. To change these files, edit granicus.wsdl, and then run the gen-wsdl.sh script from the src directory:
+    
+    ./gen-wsdl.sh

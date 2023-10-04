@@ -12,6 +12,7 @@ public interface UserSDKPort extends java.rmi.Remote {
     public void login(java.lang.String username, java.lang.String password) throws java.rmi.RemoteException;
     public java.lang.String getChallenge(java.lang.String challengeCode) throws java.rmi.RemoteException;
     public void sendChallengeResponse(java.lang.String challenge, java.lang.String response) throws java.rmi.RemoteException;
+    public void authenticateApp(java.lang.String message, java.lang.String authHash, java.lang.String initVector, java.lang.String application) throws java.rmi.RemoteException;
     public void logout() throws java.rmi.RemoteException;
     public int createCamera(com.granicus.xsd.CameraData cameraData) throws java.rmi.RemoteException;
     public com.granicus.xsd.CameraData[] getCameras() throws java.rmi.RemoteException;
