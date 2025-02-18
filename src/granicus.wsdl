@@ -39,21 +39,6 @@
                     <element name="LinkedVideoStreamUrl" nillable="true" type="xsd:string" />
                 </all>
             </complexType>
-            <complexType name="LinkedVideoData">
-                <all>
-                    <element name="ID" nillable="true" type="xsd:int"/>
-                    <element name="EventId" nillable="true" type="xsd:int"/>
-                    <element name="FolderId" nillable="true" type="xsd:int"/>
-                    <element name="Url" nillable="true" type="xsd:string"/>
-                    <element name="MinutesUrl" nillable="true" type="xsd:string"/>
-                    <element name="AgendaUrl" nillable="true" type="xsd:string"/>
-                    <element name="AgendaPacketUrl" nillable="true" type="xsd:string"/>
-                    <element name="VideoDate" nillable="true" type="xsd:dateTime"/>
-                    <element name="Name" nillable="true" type="xsd:string"/>
-                    <element name="Created" nillable="true" type="xsd:dateTime"/>
-                    <element name="LastModified" nillable="true" type="xsd:dateTime"/>
-                </all>
-            </complexType>
             <complexType name="FolderData">
                 <all>
                     <element name="ID" type="xsd:int" />
@@ -978,35 +963,6 @@
     <message name="GetMotionActionsResponse">
         <part name="MotionActions" type="ns5:StringCollection" />
     </message>
-    <message name="CreateLinkedVideoRequest">
-        <part name="LinkedVideoData" type="ns5:LinkedVideoData" />
-    </message>
-    <message name="CreateLinkedVideoResponse">
-        <part name="LinkedVideoID" type="xsd:int" />
-    </message>
-    <message name="CreateLinkedVideoFromEventRequest">
-        <part name="EventID" type="xsd:int" />
-        <part name="VideoUrl" type="xsd:string" />
-    </message>
-    <message name="CreateLinkedVideoFromEventResponse">
-        <part name="LinkedVideoID" type="xsd:int" />
-    </message>
-    <message name="GetLinkedVideoRequest">
-        <part name="LinkedVideoID" type="xsd:int" />
-    </message>
-    <message name="GetLinkedVideoResponse">
-        <part name="LinkedVideoData" type="ns5:LinkedVideoData" />
-    </message>
-    <message name="UpdateLinkedVideoRequest">
-        <part name="LinkedVideoData" type="ns5:LinkedVideoData" />
-    </message>
-    <message name="UpdateLinkedVideoResponse">
-        <part name="LinkedVideoID" type="xsd:int" />
-    </message>
-    <message name="DeleteLinkedVideoRequest">
-        <part name="LinkedVideoID" type="xsd:int" />
-    </message>
-    <message name="DeleteLinkedVideoResponse" />
     <portType name="UserSDKPort">
         <operation name="LogMessage">
             <input message="tns:LogMessageRequest" />
@@ -1399,26 +1355,6 @@
         <operation name="GetMotionActions">
             <input message="tns:GetMotionActionsRequest" />
             <output message="tns:GetMotionActionsResponse" />
-        </operation>
-        <operation name="CreateLinkedVideo">
-            <input message="tns:CreateLinkedVideoRequest" />
-            <output message="tns:CreateLinkedVideoResponse" />
-        </operation>
-        <operation name="CreateLinkedVideoFromEvent">
-            <input message="tns:CreateLinkedVideoFromEventRequest" />
-            <output message="tns:CreateLinkedVideoFromEventResponse" />
-        </operation>
-        <operation name="GetLinkedVideo">
-            <input message="tns:GetLinkedVideoRequest" />
-            <output message="tns:GetLinkedVideoResponse" />
-        </operation>
-        <operation name="UpdateLinkedVideo">
-            <input message="tns:UpdateLinkedVideoRequest" />
-            <output message="tns:UpdateLinkedVideoResponse" />
-        </operation>
-        <operation name="DeleteLinkedVideo">
-            <input message="tns:DeleteLinkedVideoRequest" />
-            <output message="tns:DeleteLinkedVideoResponse" />
         </operation>
     </portType>
     <binding name="UserSDKBinding" type="tns:UserSDKPort">
@@ -2298,51 +2234,6 @@
         </operation>
         <operation name="GetMotionActions">
             <soap:operation soapAction="urn:UserSDK#UserWebservice#GetMotionActions" />
-            <input>
-                <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-            </input>
-            <output>
-                <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-            </output>
-        </operation>
-        <operation name="CreateLinkedVideo">
-            <soap:operation soapAction="urn:UserSDK#UserWebservice#CreateLinkedVideo" />
-            <input>
-                <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-            </input>
-            <output>
-                <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-            </output>
-        </operation>
-        <operation name="CreateLinkedVideoFromEvent">
-            <soap:operation soapAction="urn:UserSDK#UserWebservice#CreateLinkedVideoFromEvent" />
-            <input>
-                <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-            </input>
-            <output>
-                <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-            </output>
-        </operation>
-        <operation name="GetLinkedVideo">
-            <soap:operation soapAction="urn:UserSDK#UserWebservice#GetLinkedVideo" />
-            <input>
-                <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-            </input>
-            <output>
-                <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-            </output>
-        </operation>
-        <operation name="UpdateLinkedVideo">
-            <soap:operation soapAction="urn:UserSDK#UserWebservice#UpdateLinkedVideo" />
-            <input>
-                <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-            </input>
-            <output>
-                <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-            </output>
-        </operation>
-        <operation name="DeleteLinkedVideo">
-            <soap:operation soapAction="urn:UserSDK#UserWebservice#DeleteLinkedVideo" />
             <input>
                 <soap:body use="encoded" namespace="urn:UserSDK" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
             </input>
