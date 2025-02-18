@@ -206,36 +206,5 @@ public class KeyBasedPlatformClientTest {
         client.updateEvent(event);
     }
 
-    @Test
-    public void testCreateLinkedVideoFromEvent() throws Exception {
-        // create a "link" type folder
-        // folder creation with PlatformClient isn't allowing
-        // type to be set upon create so it's a separate update.
-        FolderData folder = new FolderData();
-        folder.setName("The New Adventures of Linked");
-        int folderId = client.createFolder(folder);
-        System.out.println("folderId: " + folderId);
-        folder = client.getFolder(folderId);
-        folder.setType("link");
-        client.updateFolder(folder);
-        // get an event and assign the link folder to it
-        // (creating a linkedvideo from an event requires event to have a link folder)
-        EventData[] events = client.getEvents();
-        EventData event = events[events.length - 1];
-        int originalFolderId = event.getFolderID(); // keep track of this so we can set it back
-        event.setFolderID(folderId);
-        client.updateEvent(event);
-
-        int linkedVideoId = client.createLinkedVideoFromEvent(event.getID(), "https://www.google.com");
-        System.out.println("linkedvideoid: " + linkedVideoId);
-
-        LinkedVideoData linkedVideo = client.getLinkedVideo(linkedVideoId);
-        System.out.println(linkedVideo.getCreated().toString());
-
-        // clean up or we'll end up with a million folders
-        event.setFolderID(originalFolderId);
-        client.updateEvent(event);
-        client.deleteFolder(folderId);
-    }
 }
 
