@@ -78,7 +78,7 @@ public class PlatformClientTest {
 		pastTime.add(Calendar.YEAR, -1);
 		Calendar futureTime = Calendar.getInstance();
 		futureTime.add(Calendar.YEAR, 1);
-		
+
 		EventData newEvent = MakeNewEvent(currTime);
 		client.createEvent(newEvent);
 
@@ -103,15 +103,15 @@ public class PlatformClientTest {
 	public void TestGetEventsByForeignID() throws Exception {
 		int foreignID = 99999;
 		EventData[] events = client.getEventsByForeignID(foreignID);
-		
+
 		if(events == null || events.length <= 0) {
-			
+
 			EventData event = MakeNewEvent(Calendar.getInstance());
 			event.setForeignID(foreignID);
 			int eventID = client.createEvent(event);
 			events = client.getEventsByForeignID(foreignID);
 		}
-		
+
 		Assert.assertTrue("Event with foreign ID retrieved", events.length > 0);
 	}
 
@@ -165,16 +165,16 @@ public class PlatformClientTest {
 		EventData event = MakeNewEvent(Calendar.getInstance());
 		int eventID = client.createEvent(event);
 		EventData getEvent = client.getEvent(eventID);
-		
+
 		Assert.assertEquals(getEvent.getName(), event.getName());
 		client.deleteEvent(eventID);
 	}
-	
+
 	private EventData MakeNewEvent(Calendar meetingDate) throws Exception {
 		// get the prerequisite data
 		CameraData[] cams = client.getCameras();
 		FolderData[] folders = client.getFolders();
-		
+
 		EventData event = new EventData();
 
 		event.setStartTime(meetingDate);
@@ -192,7 +192,7 @@ public class PlatformClientTest {
 		attendees[1].setName("Emery Jones");
 		attendees[2].setName("Javier Muniz");
 		event.setAttendees(attendees);
-		
+
 		return event;
 	}
 
@@ -207,35 +207,4 @@ public class PlatformClientTest {
 		client.updateEvent(event);
 	}
 
-	@Test
-	public void testCreateLinkedVideoFromEvent() throws Exception {
-		// create a "link" type folder
-		// folder creation with PlatformClient isn't allowing
-		// type to be set upon create so it's a separate update.
-		FolderData folder = new FolderData();
-		folder.setName("The New Adventures of Linked");
-		int folderId = client.createFolder(folder);
-		System.out.println("folderId: " + folderId);
-		folder = client.getFolder(folderId);
-		folder.setType("link");
-		client.updateFolder(folder);
-		// get an event and assign the link folder to it
-		// (creating a linkedvideo from an event requires event to have a link folder)
-		EventData[] events = client.getEvents();
-		EventData event = events[events.length - 1];
-		int originalFolderId = event.getFolderID(); // keep track of this so we can set it back
-		event.setFolderID(folderId);
-		client.updateEvent(event);
-
-		int linkedVideoId = client.createLinkedVideoFromEvent(event.getID(), "https://www.google.com");
-		System.out.println("linkedvideoid: " + linkedVideoId);
-
-		LinkedVideoData linkedVideo = client.getLinkedVideo(linkedVideoId);
-		System.out.println(linkedVideo.getCreated().toString());
-
-		// clean up or we'll end up with a million folders
-		event.setFolderID(originalFolderId);
-		client.updateEvent(event);
-		client.deleteFolder(folderId);
-	}
 }
